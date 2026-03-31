@@ -126,8 +126,6 @@
     .panel-grid {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(0deg, rgba(255,255,255,0.08), rgba(255,255,255,0.08)) padding-box;
     }
     .panel-grid::before {
       content: "";
@@ -191,21 +189,17 @@
     }
     .real-img {
       height: 180px;
-      background:
-        linear-gradient(160deg, rgba(16,27,47,0.95), rgba(16,27,47,0.6)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.15) 0 2px, transparent 2px 34px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.15) 0 2px, transparent 2px 34px);
-      position: relative;
+      background-size: cover;
+      background-position: center;
     }
-    .real-img::after {
-      content: "panele PV";
-      position: absolute;
-      right: 16px;
-      bottom: 12px;
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
+    .real-img.one {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%230e1a2b'/><stop offset='1' stop-color='%231a2b46'/></linearGradient></defs><rect width='800' height='450' fill='url(%23g)'/><g stroke='rgba(255,255,255,0.25)' stroke-width='2'><path d='M0 90H800M0 180H800M0 270H800M0 360H800'/><path d='M100 0V450M200 0V450M300 0V450M400 0V450M500 0V450M600 0V450M700 0V450'/></g><circle cx='680' cy='80' r='60' fill='rgba(255,211,90,0.6)'/></svg>");
+    }
+    .real-img.two {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='800' height='450' fill='%23101927'/><g stroke='rgba(255,255,255,0.2)' stroke-width='2'><path d='M0 70H800M0 140H800M0 210H800M0 280H800M0 350H800'/><path d='M80 0V450M160 0V450M240 0V450M320 0V450M400 0V450M480 0V450M560 0V450M640 0V450M720 0V450'/></g><rect x='520' y='40' width='220' height='120' fill='rgba(107,228,177,0.35)'/></svg>");
+    }
+    .real-img.three {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='800' height='450' fill='%23142239'/><g stroke='rgba(255,255,255,0.22)' stroke-width='2'><path d='M0 80H800M0 160H800M0 240H800M0 320H800M0 400H800'/><path d='M120 0V450M240 0V450M360 0V450M480 0V450M600 0V450M720 0V450'/></g><circle cx='140' cy='90' r='50' fill='rgba(255,211,90,0.5)'/></svg>");
     }
     .real-body { padding: 18px 20px; display: grid; gap: 6px; }
 
@@ -329,21 +323,21 @@
       </div>
       <div class="grid three">
         <div class="real-card">
-          <div class="real-img"></div>
+          <div class="real-img one"></div>
           <div class="real-body">
             <strong>Dom jednorodzinny, 9,9 kWp</strong>
             <span>Małopolskie · Montaż 2 dni</span>
           </div>
         </div>
         <div class="real-card">
-          <div class="real-img"></div>
+          <div class="real-img two"></div>
           <div class="real-body">
             <strong>Firma usługowa, 19,8 kWp</strong>
             <span>Śląskie · Monitorowanie 24/7</span>
           </div>
         </div>
         <div class="real-card">
-          <div class="real-img"></div>
+          <div class="real-img three"></div>
           <div class="real-body">
             <strong>Gospodarstwo rolne, 29,7 kWp</strong>
             <span>Wielkopolskie · Rozbudowa po roku</span>
