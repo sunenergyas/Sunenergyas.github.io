@@ -17,15 +17,14 @@
       --plum: #2b203f;
       --white: #ffffff;
       --shadow: 0 20px 50px rgba(17, 16, 23, 0.12);
-      --panel: #0e1a2b;
-      --panel-line: rgba(255,255,255,0.2);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Space Grotesk", sans-serif;
       color: var(--ink);
-      background: radial-gradient(1200px 500px at 10% -10%, #fff3c6 0%, transparent 60%),
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #fff3c6 0%, transparent 60%),
         radial-gradient(900px 600px at 100% 0%, #d9f3ff 0%, transparent 60%),
         var(--paper);
       min-height: 100vh;
@@ -74,18 +73,36 @@
     main { position: relative; z-index: 1; }
 
     .hero {
+      position: relative;
+      padding: 90px 6vw 70px;
+      color: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(17,16,23,0.08);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(15, 24, 40, 0.85), rgba(15, 24, 40, 0.55)),
+        url("images/niechorze-30kwp-2.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
       align-items: center;
-      padding: 80px 6vw 60px;
-      animation: rise 0.9s ease both;
     }
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 12px;
-      color: var(--plum);
+      color: #ffe28a;
       font-weight: 600;
     }
     h1 {
@@ -94,7 +111,7 @@
       line-height: 1.05;
       margin: 12px 0 18px;
     }
-    .lead { font-size: 18px; color: var(--ink-soft); line-height: 1.6; }
+    .lead { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.6; }
     .hero-cta { margin: 28px 0 18px; display: flex; gap: 16px; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
@@ -111,60 +128,18 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 25px 55px rgba(17, 16, 23, 0.18); }
-    .btn-ghost { background: transparent; border: 1px solid rgba(17, 16, 23, 0.2); box-shadow: none; }
-
-    .hero-visual {
-      position: relative;
-      border-radius: 26px;
-      background: linear-gradient(160deg, #101b2f, #1a2b46);
-      color: #fff;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      min-height: 360px;
-    }
-    .panel-grid {
-      position: absolute;
-      inset: 0;
-    }
-    .panel-grid::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      background:
-        linear-gradient(90deg, var(--panel-line) 1px, transparent 1px) 0 0 / 36px 36px,
-        linear-gradient(0deg, var(--panel-line) 1px, transparent 1px) 0 0 / 36px 36px;
+    .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.6); color: #fff; box-shadow: none; }
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 20px;
-      opacity: 0.5;
-    }
-    .panel-glow {
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      right: -60px;
-      top: -60px;
-      background: radial-gradient(circle at 30% 30%, #ffd35a 0%, transparent 70%);
-      opacity: 0.8;
-    }
-    .hero-visual-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 16px;
-    }
-    .hero-metric {
-      display: grid;
-      gap: 6px;
-      padding: 14px 16px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 14px;
+      padding: 22px;
       backdrop-filter: blur(6px);
     }
-    .hero-metric strong { font-size: 20px; }
-    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .hero-tags span { background: rgba(17, 16, 23, 0.06); padding: 8px 14px; border-radius: 999px; font-size: 12px; }
+    .hero-card h3 { margin: 0 0 10px; }
+    .hero-card p { margin: 0; color: rgba(255,255,255,0.85); }
 
-    .section { padding: 70px 6vw; animation: fadeUp 0.9s ease both; }
+    .section { padding: 70px 6vw; }
     .section-title { max-width: 760px; }
     .section-title h2 { font-family: "Fraunces", serif; font-size: clamp(28px, 3vw, 40px); margin: 12px 0 16px; }
     .grid { display: grid; gap: 22px; margin-top: 28px; }
@@ -188,32 +163,22 @@
       box-shadow: var(--shadow);
     }
     .real-img {
-      height: 180px;
+      height: 220px;
       background-size: cover;
       background-position: center;
     }
-    .real-img.one {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%230e1a2b'/><stop offset='1' stop-color='%231a2b46'/></linearGradient></defs><rect width='800' height='450' fill='url(%23g)'/><g stroke='rgba(255,255,255,0.25)' stroke-width='2'><path d='M0 90H800M0 180H800M0 270H800M0 360H800'/><path d='M100 0V450M200 0V450M300 0V450M400 0V450M500 0V450M600 0V450M700 0V450'/></g><circle cx='680' cy='80' r='60' fill='rgba(255,211,90,0.6)'/></svg>");
-    }
-    .real-img.two {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='800' height='450' fill='%23101927'/><g stroke='rgba(255,255,255,0.2)' stroke-width='2'><path d='M0 70H800M0 140H800M0 210H800M0 280H800M0 350H800'/><path d='M80 0V450M160 0V450M240 0V450M320 0V450M400 0V450M480 0V450M560 0V450M640 0V450M720 0V450'/></g><rect x='520' y='40' width='220' height='120' fill='rgba(107,228,177,0.35)'/></svg>");
-    }
-    .real-img.three {
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='800' height='450' fill='%23142239'/><g stroke='rgba(255,255,255,0.22)' stroke-width='2'><path d='M0 80H800M0 160H800M0 240H800M0 320H800M0 400H800'/><path d='M120 0V450M240 0V450M360 0V450M480 0V450M600 0V450M720 0V450'/></g><circle cx='140' cy='90' r='50' fill='rgba(255,211,90,0.5)'/></svg>");
-    }
+    .real-img.one { background-image: url("images/niechorze-30kwp-1.jpg"); }
+    .real-img.two { background-image: url("images/niechorze-30kwp-2.jpg"); }
     .real-body { padding: 18px 20px; display: grid; gap: 6px; }
 
-    .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
-    .list { padding-left: 18px; margin: 20px 0 0; color: var(--ink-soft); }
-
     .highlight {
-      background: linear-gradient(120deg, rgba(255,211,90,0.25), rgba(107,228,177,0.2));
+      background: linear-gradient(120deg, rgba(255,211,90,0.18), rgba(107,228,177,0.16));
       border-top: 1px solid rgba(17,16,23,0.08);
       border-bottom: 1px solid rgba(17,16,23,0.08);
     }
 
     .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 24px; }
-    .step { background: var(--white); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); animation: fadeUp 0.9s ease both; }
+    .step { background: var(--white); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); }
     .step span {
       display: inline-flex; width: 36px; height: 36px; border-radius: 50%;
       align-items: center; justify-content: center; background: var(--sun);
@@ -223,7 +188,6 @@
     .cta {
       display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;
       background: var(--ink); color: var(--white); border-radius: 28px; margin: 0 6vw 70px; padding: 50px;
-      animation: rise 1s ease both;
     }
     .form { display: grid; gap: 14px; }
     .form label { display: grid; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.8); }
@@ -240,11 +204,8 @@
     .footer-links a { color: var(--ink-soft); }
     .footer-links a:hover { color: var(--ink); }
 
-    @keyframes fadeUp { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes rise { from { transform: translateY(26px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
     @media (max-width: 980px) {
-      .hero, .split, .cta { grid-template-columns: 1fr; }
+      .hero-inner, .cta { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .grid.two, .grid.three, .steps { grid-template-columns: 1fr; }
       .cta { margin: 0 6vw 60px; }
@@ -267,28 +228,19 @@
 
   <main>
     <section class="hero">
-      <div>
-        <div class="eyebrow">Instalacje PV bez dotacji</div>
-        <h1>Nowoczesna fotowoltaika, która realnie obniża rachunki.</h1>
-        <p class="lead">Projektujemy i montujemy instalacje PV dla firm i klientów indywidualnych. Stawiamy na maksymalny zwrot z inwestycji, przewidywalne koszty i szybki serwis.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#kontakt">Sprawdź ofertę</a>
-          <a class="btn btn-ghost" href="#realizacje">Zobacz realizacje</a>
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Instalacje PV bez dotacji</div>
+          <h1>Nowoczesna fotowoltaika, która realnie obniża rachunki.</h1>
+          <p class="lead">Doradzamy, projektujemy i montujemy instalacje PV tak, aby inwestycja była opłacalna bez sztucznych obietnic. Stawiamy na uczciwy audyt, dokładny opis stanu technicznego i realne oszczędności.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#kontakt">Sprawdź ofertę</a>
+            <a class="btn btn-ghost" href="#realizacje">Zobacz realizacje</a>
+          </div>
         </div>
-        <div class="hero-tags">
-          <span>Audyt i projekt</span>
-          <span>Własna ekipa</span>
-          <span>Pomoc w finansowaniu</span>
-          <span>Monitoring 24/7</span>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="panel-grid"></div>
-        <div class="panel-glow"></div>
-        <div class="hero-visual-content">
-          <div class="hero-metric"><span>Średnia oszczędność</span><strong>6 800 zł / rok</strong></div>
-          <div class="hero-metric"><span>Zwrot inwestycji</span><strong>4,9 roku</strong></div>
-          <div class="hero-metric"><span>Montaż</span><strong>2 dni</strong></div>
+        <div class="hero-card">
+          <h3>Dlaczego Sun Energy AS?</h3>
+          <p>Od 8 lat klienci polecają nas dalej, bo mówimy wprost, co się opłaca. Najpierw protokół i analiza, dopiero potem montaż lub naprawa.</p>
         </div>
       </div>
     </section>
@@ -296,21 +248,21 @@
     <section class="section" id="oferta">
       <div class="section-title">
         <div class="eyebrow">Oferta</div>
-        <h2>Kompleksowe instalacje fotowoltaiczne dla domu i biznesu.</h2>
-        <p class="lead">Łączymy analizę zużycia, projekt techniczny, montaż i serwis. Dzięki temu masz jedno miejsce odpowiedzialne za cały proces.</p>
+        <h2>Kompleksowe wsparcie: doradztwo, audyt, montaż i naprawy.</h2>
+        <p class="lead">Zajmujemy się doradztwem, audytami oraz usuwaniem awarii po źle wykonanych instalacjach. Każde zlecenie zaczynamy od protokołu i dokładnego opisu stanu technicznego, żebyś wiedział, co dokładnie robimy i dlaczego.</p>
       </div>
       <div class="grid three">
         <div class="tile">
-          <h3>Audyt i projekt</h3>
-          <p>Dobieramy instalację tak, aby maksymalnie pokryć zużycie energii i ograniczyć oddawanie nadwyżek.</p>
+          <h3>Doradztwo i audyt</h3>
+          <p>Analizujemy rachunki, profil zużycia i warunki montażu. Dobieramy instalację, która faktycznie się zwraca.</p>
         </div>
         <div class="tile">
-          <h3>Montaż premium</h3>
-          <p>Pracujemy na sprawdzonych komponentach i własnych ekipach. Gwarantujemy estetykę i bezpieczeństwo.</p>
+          <h3>Naprawy i serwis</h3>
+          <p>Usuwamy awarie po zepsutych instalacjach. Zawsze zaczynamy od protokołu i pełnego opisu przyczyn.</p>
         </div>
         <div class="tile">
-          <h3>Opieka po uruchomieniu</h3>
-          <p>Otrzymujesz monitoring produkcji, serwis i wsparcie w rozliczeniach. Wszystko w jednym pakiecie.</p>
+          <h3>Bezpieczeństwo i zgodność</h3>
+          <p>Dbamy o dokumentację i zgodność z przepisami, aby instalacja była bezpieczna i trwała.</p>
         </div>
       </div>
     </section>
@@ -318,29 +270,22 @@
     <section class="section highlight" id="realizacje">
       <div class="section-title">
         <div class="eyebrow">Realizacje</div>
-        <h2>Przykładowe instalacje z różnych regionów.</h2>
-        <p class="lead">Poniżej przykłady naszych realizacji. Każdy projekt jest dopasowany do profilu zużycia i dachu.</p>
+        <h2>Przykładowa realizacja: 30 kWp w Niechorzu.</h2>
+        <p class="lead">Instalacja dla obiektu usługowego. Projekt dobrany do profilu zużycia, montaż z pełnym protokołem odbioru i ustawień.</p>
       </div>
-      <div class="grid three">
+      <div class="grid two">
         <div class="real-card">
           <div class="real-img one"></div>
           <div class="real-body">
-            <strong>Dom jednorodzinny, 9,9 kWp</strong>
-            <span>Małopolskie · Montaż 2 dni</span>
+            <strong>Niechorze · 30 kWp</strong>
+            <span>Powierzchnia dachu zoptymalizowana pod maksymalny uzysk.</span>
           </div>
         </div>
         <div class="real-card">
           <div class="real-img two"></div>
           <div class="real-body">
-            <strong>Firma usługowa, 19,8 kWp</strong>
-            <span>Śląskie · Monitorowanie 24/7</span>
-          </div>
-        </div>
-        <div class="real-card">
-          <div class="real-img three"></div>
-          <div class="real-body">
-            <strong>Gospodarstwo rolne, 29,7 kWp</strong>
-            <span>Wielkopolskie · Rozbudowa po roku</span>
+            <strong>Niechorze · 30 kWp</strong>
+            <span>Stabilna produkcja i szybki zwrot inwestycji.</span>
           </div>
         </div>
       </div>
@@ -350,23 +295,23 @@
       <div class="section-title">
         <div class="eyebrow">Proces</div>
         <h2>Trzy kroki do własnej energii.</h2>
-        <p class="lead">Uprościliśmy cały proces, abyś szybko mógł cieszyć się nowymi panelami.</p>
+        <p class="lead">Przejrzysty proces, zero niedomówień: diagnoza, decyzja, realizacja.</p>
       </div>
       <div class="steps">
         <div class="step">
           <span>1</span>
-          <h3>Audyt</h3>
-          <p>Analizujemy rachunki, dach i zapotrzebowanie. Przygotowujemy projekt i wycenę.</p>
+          <h3>Audyt i protokół</h3>
+          <p>Sprawdzamy instalację lub miejsce montażu i wszystko opisujemy w protokole.</p>
         </div>
         <div class="step">
           <span>2</span>
-          <h3>Montaż</h3>
-          <p>Instalujemy panele, falownik i konfigurujemy monitoring produkcji.</p>
+          <h3>Projekt i decyzja</h3>
+          <p>Przygotowujemy projekt oraz realną kalkulację opłacalności.</p>
         </div>
         <div class="step">
           <span>3</span>
-          <h3>Uruchomienie</h3>
-          <p>Podłączamy instalację, testujemy i przekazujemy instrukcję obsługi.</p>
+          <h3>Montaż lub naprawa</h3>
+          <p>Wykonujemy pracę zgodnie z dokumentacją i przekazujemy gotowy system.</p>
         </div>
       </div>
     </section>
@@ -375,7 +320,7 @@
       <div>
         <div class="eyebrow">Kontakt</div>
         <h2>Bezpłatna konsultacja i wycena.</h2>
-        <p class="lead">Zostaw kontakt — oddzwonimy w 24 godziny i przygotujemy realną kalkulację kosztów i oszczędności.</p>
+        <p class="lead">Działamy w całej Polsce. Zostaw kontakt — oddzwonimy w 24 godziny.</p>
         <div class="form-links">
           <a class="icon-link" href="tel:+48691875997">
             <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.5 2.1l-1.3 1.3a16 16 0 0 0 6.7 6.7l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.5.6A2 2 0 0 1 22 16.9z"/></svg>
