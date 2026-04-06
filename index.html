@@ -16,7 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="Styles.css" />
   <style>
-    /* === Hamburger menu (missing from Styles.css) === */
     .hamburger {
       display: none;
       background: none;
@@ -44,21 +43,26 @@
       gap: 16px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
+    html { scroll-behavior: smooth; }
+    .rodo a { color: rgba(255,255,255,0.9); text-decoration: underline; }
+    .rodo a:hover { color: var(--sun); }
+    .ai-img {
+      width: calc(100% + 48px);
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(17, 16, 23, 0.08);
+      margin: -24px -24px 18px;
+    }
     @media (max-width: 980px) {
       .hamburger { display: block; }
       .nav .btn-small { display: none; }
     }
-    /* === Smooth scroll === */
-    html { scroll-behavior: smooth; }
-    /* === RODO link color fix === */
-    .rodo a { color: rgba(255,255,255,0.9); text-decoration: underline; }
-    .rodo a:hover { color: var(--sun); }
   </style>
 </head>
 <body>
   <div class="bg-shapes" aria-hidden="true"></div>
 
-  <!-- ===== NAV ===== -->
   <header class="nav">
     <div class="brand" style="font-weight:700;color:#fff;letter-spacing:0.04em;">☀️ Sun Energy AS</div>
     <nav class="nav-links" id="navLinks">
@@ -75,8 +79,6 @@
   </header>
 
   <main>
-
-    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-text">
         <p class="eyebrow">Fotowoltaika bez dotacji</p>
@@ -87,9 +89,9 @@
           <a class="btn btn-ghost" href="#realizacje">Zobacz realizacje</a>
         </div>
         <div class="hero-tags">
-          <span>⚡ EMS steruje energią</span>
-          <span>🔋 Magazyn podbija autokonsumpcję</span>
-          <span>📊 Rozliczenia pod kontrolą</span>
+          <span>EMS steruje energią</span>
+          <span>Magazyn podbija autokonsumpcję</span>
+          <span>Rozliczenia pod kontrolą</span>
         </div>
       </div>
       <div class="hero-card">
@@ -110,33 +112,46 @@
       </div>
     </section>
 
-    <!-- ===== REALIZACJE ===== -->
     <section id="realizacje" class="section realizacje">
       <div class="section-title">
         <p class="eyebrow">Realizacje</p>
         <h2>Przykładowe realizacje i&nbsp;scenariusze oszczędności</h2>
-        <p>Wizualizacje AI pokazują standard wykończenia i układ instalacji.</p>
+        <p>Wizualizacje pokazują standard wykończenia i układ instalacji.</p>
       </div>
+
       <div class="grid three">
-        <article class="tile ai-card">
-          <div class="ai-shot ai-shot-1" role="img" aria-label="Niechorze 30 kWp - dach z panelami"></div>
-          <h3>Niechorze — 30 kWp</h3>
+        <article class="tile">
+          <img
+            class="ai-img"
+            alt="Niechorze 30 kWp - dach z panelami"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%23293a55'/><polygon points='0,520 470,270 1200,500 1200,700 0,700' fill='%231f2d44'/><g stroke='rgba(255,255,255,0.45)' stroke-width='2'><path d='M120 360h780M90 420h820M60 480h860M30 540h900'/><path d='M130 300v280M210 290v300M290 280v320M370 270v335M450 260v350M530 252v360M610 250v365M690 252v355M770 260v340M850 272v320'/></g><circle cx='980' cy='150' r='80' fill='rgba(255,211,90,0.55)'/></svg>"
+          />
+          <h3>Niechorze - 30 kWp</h3>
           <p>Obiekt usługowy: stabilna produkcja i&nbsp;wysoka autokonsumpcja przez cały sezon.</p>
         </article>
-        <article class="tile ai-card">
-          <div class="ai-shot ai-shot-2" role="img" aria-label="Dom z magazynem energii"></div>
+
+        <article class="tile">
+          <img
+            class="ai-img"
+            alt="Dom z magazynem energii - wizualizacja"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%232a3f48'/><rect y='500' width='1200' height='200' fill='%231b2f36'/><polygon points='120,470 360,320 620,470' fill='%23283f4c'/><polygon points='620,470 840,330 1080,470' fill='%23283f4c'/><g stroke='rgba(255,255,255,0.4)' stroke-width='2'><path d='M170 410h400M170 440h400M170 470h400M700 410h320M700 440h320M700 470h320'/><path d='M195 360v150M240 340v170M285 330v180M330 320v190M375 325v185M420 340v170M465 360v150M730 355v145M770 340v160M810 330v170M850 320v180M890 325v175M930 340v160M970 355v145'/></g></svg>"
+          />
           <h3>Dom + magazyn energii</h3>
-          <p>EMS ładuje magazyn w szczycie produkcji i&nbsp;oddaje wieczorem — rachunki spadły o&nbsp;70%.</p>
+          <p>EMS ładuje magazyn w szczycie produkcji i&nbsp;oddaje energię wieczorem.</p>
         </article>
-        <article class="tile ai-card">
-          <div class="ai-shot ai-shot-3" role="img" aria-label="Firma po audycie awaryjnym"></div>
+
+        <article class="tile">
+          <img
+            class="ai-img"
+            alt="Firma po audycie awaryjnym - wizualizacja"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%2331405a'/><rect x='90' y='180' width='1020' height='420' rx='24' fill='%23203046'/><rect x='160' y='250' width='360' height='250' rx='12' fill='%23364761'/><rect x='560' y='250' width='480' height='70' rx='8' fill='%234b5f7f'/><rect x='560' y='340' width='420' height='50' rx='8' fill='%234b5f7f'/><rect x='560' y='410' width='300' height='50' rx='8' fill='%234b5f7f'/><g stroke='rgba(255,255,255,0.4)' stroke-width='2'><path d='M190 290h300M190 330h300M190 370h300M190 410h300M190 450h300'/><path d='M220 250v250M250 250v250M280 250v250M310 250v250M340 250v250M370 250v250M400 250v250M430 250v250M460 250v250'/></g></svg>"
+          />
           <h3>Firma po audycie awaryjnym</h3>
-          <p>Najpierw protokół i diagnostyka, potem naprawa instalacji — produkcja wzrosła o&nbsp;40%.</p>
+          <p>Najpierw protokół i diagnostyka, potem naprawa instalacji — odzyskanie pełnej sprawności.</p>
         </article>
       </div>
     </section>
 
-    <!-- ===== ENERGY PANEL ===== -->
     <section class="section highlight">
       <div class="split">
         <div>
@@ -175,7 +190,6 @@
       </div>
     </section>
 
-    <!-- ===== JAK DZIAŁAMY ===== -->
     <section id="jak-dzialamy" class="section">
       <div class="section-title">
         <p class="eyebrow">Proces</p>
@@ -201,7 +215,6 @@
       </div>
     </section>
 
-    <!-- ===== KALKULATOR ===== -->
     <section id="kalkulator" class="section calculator">
       <div class="section-title">
         <p class="eyebrow">Kalkulator</p>
@@ -219,15 +232,15 @@
           <button class="btn" type="button" id="calcBtn">Oblicz oszczędności</button>
         </div>
         <div class="calc-result">
-          <div class="result-label">Szacunkowa roczna oszczędność</div>
-          <div class="result-value" id="resultValue">— zł</div>
-          <div class="result-kwh" id="resultKwh">Wpisz dane i kliknij „Oblicz"</div>
+          <div class="result-label">Szacowana oszczędność roczna</div>
+          <div class="result-value"><span id="resultValue">0</span> zł</div>
+          <div class="result-kwh">Przybliżony poziom autokonsumpcji: <span id="resultAuto">0</span>%</div>
           <div class="result-bar"><div class="result-fill" id="resultFill"></div></div>
+          <p class="card-note">To estymacja poglądowa. Dokładny wynik liczymy po analizie rachunków i profilu zużycia.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
     <section id="faq" class="section faq">
       <div class="section-title">
         <p class="eyebrow">FAQ</p>
@@ -235,108 +248,108 @@
       </div>
       <div class="grid two">
         <div class="tile">
-          <h3>Czy fotowoltaika opłaca się bez dotacji?</h3>
-          <p>Tak — przy dobrze zaprojektowanym systemie z EMS i magazynem autokonsumpcja sięga 80–90%. Zwrot inwestycji to 5–7 lat bez żadnych dotacji.</p>
+          <h3>Czy bez dotacji to ma sens?</h3>
+          <p>Tak, jeśli instalacja jest dobrze dobrana, a EMS i magazyn zwiększają autokonsumpcję.</p>
         </div>
         <div class="tile">
-          <h3>Co to jest EMS?</h3>
-          <p>Energy Management System — inteligentny sterownik, który decyduje, kiedy ładować magazyn, kiedy zużywać energię PV, a kiedy korzystać z sieci.</p>
+          <h3>Czy naprawiacie źle wykonane instalacje?</h3>
+          <p>Tak. Najpierw przygotowujemy protokół, opisujemy błędy i dopiero potem wdrażamy naprawę.</p>
         </div>
         <div class="tile">
-          <h3>Jak wygląda audyt?</h3>
-          <p>Najpierw robimy protokół i dokładny opis stanu technicznego. Analizujemy rachunki, profil zużycia i możliwości dachu. Dopiero potem proponujemy rozwiązanie.</p>
+          <h3>Jak długo trwa analiza?</h3>
+          <p>Zwykle 24–48 godzin od otrzymania rachunków i podstawowych danych.</p>
         </div>
         <div class="tile">
-          <h3>Czy potrzebuję magazyn energii?</h3>
-          <p>Nie zawsze, ale magazyn znacząco podnosi autokonsumpcję — szczególnie jeśli zużywasz prąd głównie wieczorem. Zawsze doradzamy indywidualnie.</p>
+          <h3>Czy działacie w całej Polsce?</h3>
+          <p>Tak. Obsługujemy klientów indywidualnych i firmy na terenie całego kraju.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== KONTAKT / CTA ===== -->
-    <section id="kontakt" class="cta">
+    <section id="kontakt" class="section cta">
       <div>
-        <h2>Bezpłatna wycena i&nbsp;konsultacja</h2>
-        <p>Zostaw kontakt — oddzwonimy w 24&nbsp;godziny. Bez zobowiązań.</p>
-        <div class="form-links" style="margin-top:20px;">
-          <a href="tel:+48691875997" class="icon-link">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +48 691 875 997
-          </a>
-          <a href="mailto:Sun.energy.as@gmail.com" class="icon-link">
-            <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Sun.energy.as@gmail.com
-          </a>
-        </div>
+        <h2>Bezpłatna wycena i konsultacja</h2>
+        <p>Doradztwo, audyty, montaż i naprawy po źle wykonanych instalacjach. Zostaw kontakt — oddzwonimy.</p>
       </div>
-      <form class="form" action="https://formsubmit.co/Sun.energy.as@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nowe zapytanie ze strony Sun Energy AS" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://sunenergyas.github.io#kontakt" />
-        <label>Imię i nazwisko
+      <form class="form" action="mailto:Sun.energy.as@gmail.com" method="POST" enctype="text/plain">
+        <label>
+          Imię i nazwisko
           <input type="text" name="name" placeholder="Jan Kowalski" required />
         </label>
-        <label>Telefon
+        <label>
+          Telefon
           <input type="tel" name="phone" placeholder="+48 691 875 997" required />
         </label>
-        <label>E-mail
+        <label>
+          E-mail
           <input type="email" name="email" placeholder="jan@email.pl" required />
         </label>
-        <div class="rodo">
-          <input type="checkbox" id="rodo" required />
-          <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania, zgodnie z <a href="#" target="_blank">Polityką Prywatności</a>. Administratorem danych jest Sun Energy AS.</label>
-        </div>
-        <button class="btn" type="submit">Wyślij zapytanie</button>
-        <div class="form-note">Odpowiadamy w ciągu 24 godzin. Twoje dane są bezpieczne.</div>
+        <label>
+          Krótki opis
+          <input type="text" name="opis" placeholder="np. audyt instalacji / nowa wycena / naprawa" />
+        </label>
+        <input type="hidden" name="Temat" value="Bezplatna wycena - Sun Energy AS" />
+        <button class="btn" type="submit">Bezpłatna wycena</button>
+        <p class="form-note">Po kliknięciu otworzy się mail do `Sun.energy.as@gmail.com`.</p>
+        <label class="rodo">
+          <input type="checkbox" name="rodo" required />
+          <span>Wyrażam zgodę na kontakt w celu przygotowania oferty.</span>
+        </label>
       </form>
     </section>
-
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div>© 2026 Sun Energy AS — Cała Polska</div>
+    <div class="footer-brand" style="font-weight:700;">Sun Energy AS</div>
     <div class="footer-links">
+      <a href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
       <a href="tel:+48691875997">+48 691 875 997</a>
-      <a href="mailto:Sun.energy.as@gmail.com">E-mail</a>
     </div>
   </footer>
 
-  <!-- ===== STICKY CALL ===== -->
-  <a class="sticky-call" href="tel:+48691875997">📞 Zadzwoń: +48 691 875 997</a>
+  <a class="sticky-call" href="tel:+48691875997">Zadzwoń teraz: +48 691 875 997</a>
 
-  <!-- ===== SCRIPTS ===== -->
   <script>
-    // Hamburger menu
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-    // Close menu on link click
-    document.querySelectorAll('#navLinks a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.getElementById('navLinks').classList.remove('open');
-      });
-    });
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
 
-    // Simple calculator
-    document.getElementById('calcBtn').addEventListener('click', function() {
-      var bill = parseFloat(document.getElementById('calcBill').value) || 0;
-      var kwh = parseFloat(document.getElementById('calcKwh').value) || 0;
-      if (bill <= 0 && kwh <= 0) {
-        document.getElementById('resultValue').textContent = '— zł';
-        document.getElementById('resultKwh').textContent = 'Wpisz dane i kliknij „Oblicz"';
-        document.getElementById('resultFill').style.width = '0%';
-        return;
-      }
-      // Estimate: ~75% savings with PV + EMS + battery
-      var savingsPercent = 0.75;
-      var yearlySavings = Math.round(bill * 12 * savingsPercent);
-      var yearlyKwh = Math.round(kwh * 12 * savingsPercent);
-      document.getElementById('resultValue').textContent = yearlySavings.toLocaleString('pl-PL') + ' zł/rok';
-      document.getElementById('resultKwh').textContent = 'Szacunek: ~' + yearlyKwh + ' kWh/rok z PV zamiast z sieci';
-      var fillPercent = Math.min(savingsPercent * 100, 100);
-      document.getElementById('resultFill').style.width = fillPercent + '%';
-    });
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+
+    const calcBill = document.getElementById("calcBill");
+    const calcKwh = document.getElementById("calcKwh");
+    const calcBtn = document.getElementById("calcBtn");
+    const resultValue = document.getElementById("resultValue");
+    const resultAuto = document.getElementById("resultAuto");
+    const resultFill = document.getElementById("resultFill");
+
+    function formatPLN(value) {
+      return value.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
+    }
+
+    if (calcBtn) {
+      calcBtn.addEventListener("click", () => {
+        const bill = Number(calcBill.value) || 0;
+        const kwh = Number(calcKwh.value) || 0;
+
+        if (bill <= 0 || kwh <= 0) {
+          resultValue.textContent = "0";
+          resultAuto.textContent = "0";
+          resultFill.style.width = "0%";
+          return;
+        }
+
+        const auto = Math.min(85, Math.max(35, Math.round((bill / Math.max(kwh, 1)) * 10)));
+        const yearly = Math.round(bill * 12 * (auto / 100));
+
+        resultValue.textContent = formatPLN(yearly);
+        resultAuto.textContent = auto;
+        resultFill.style.width = auto + "%";
+      });
+    }
   </script>
 </body>
 </html>
