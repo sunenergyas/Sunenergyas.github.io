@@ -3,864 +3,346 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sun Energy AS — fotowoltaika bez dotacji</title>
-  <meta name="description" content="Sun Energy AS — doradztwo, audyty, fotowoltaika, magazyny energii i naprawy instalacji w całej Polsce." />
-  <meta property="og:title" content="Sun Energy AS — fotowoltaika bez dotacji" />
-  <meta property="og:description" content="Doradzamy, audytujemy i naprawiamy instalacje PV. Projektujemy systemy, które realnie obniżają rachunki." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sunenergyas.github.io/" />
+  <title>Sun Energy AS - fotowoltaika bez dotacji ma sens</title>
+  <meta name="description" content="Sun Energy AS - doradztwo, audyty, magazyny energii, EMS i naprawy instalacji PV w calej Polsce." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #f3efe6;
-      --card: rgba(255, 255, 255, 0.88);
-      --ink: #111827;
-      --ink-soft: #5b6474;
-      --line: rgba(17, 24, 39, 0.08);
-      --sun: #ffcf4d;
-      --mint: #67d8b3;
-      --navy: #0d1a2b;
-      --navy-soft: #16263d;
-      --white: #fff;
-      --shadow: 0 20px 50px rgba(10, 18, 30, 0.14);
-      --radius: 24px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "Space Grotesk", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(900px 500px at 10% -10%, rgba(255, 207, 77, 0.22), transparent 60%),
-        radial-gradient(900px 600px at 100% 0%, rgba(103, 216, 179, 0.18), transparent 60%),
-        var(--bg);
-    }
-
-    .bg-shapes {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      background:
-        radial-gradient(280px 280px at 15% 82%, rgba(103, 216, 179, 0.12), transparent 70%),
-        radial-gradient(260px 260px at 85% 74%, rgba(125, 170, 255, 0.1), transparent 70%);
-    }
-
-    main, header, footer { position: relative; z-index: 1; }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 6vw;
-      background: rgba(8, 14, 24, 0.78);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .brand {
-      color: var(--white);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 18px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.86);
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .nav-links a:hover { color: var(--white); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--sun);
-      color: #161616;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover { transform: translateY(-2px); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .hero {
-      position: relative;
-      margin: 22px 6vw 0;
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      padding: 84px 5vw 70px;
-      min-height: 620px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, rgba(8, 13, 22, 0.90), rgba(15, 26, 44, 0.78)),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%230c1d33'/%3E%3Cstop offset='1' stop-color='%23183b63'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g)'/%3E%3Cg stroke='rgba(255,255,255,0.17)' stroke-width='2'%3E%3Cpath d='M0 180h1600M0 320h1600M0 460h1600M0 600h1600M0 740h1600'/%3E%3Cpath d='M120 0v900M260 0v900M400 0v900M540 0v900M680 0v900M820 0v900M960 0v900M1100 0v900M1240 0v900M1380 0v900M1520 0v900'/%3E%3C/g%3E%3Ccircle cx='1300' cy='155' r='125' fill='rgba(255,207,77,0.34)'/%3E%3C/svg%3E");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: #ffe08c;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-weight: 700;
-    }
-
-    h1, h2, h3 {
-      font-family: "Fraunces", serif;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 1.02;
-      color: var(--white);
-      margin-bottom: 18px;
-      max-width: 11ch;
-    }
-
-    .lead {
-      color: rgba(255,255,255,0.86);
-      font-size: 18px;
-      line-height: 1.75;
-      max-width: 640px;
-      margin: 0;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin: 30px 0 22px;
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-tags span {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      color: var(--white);
-      font-size: 12px;
-    }
-
-    .hero-card {
-      padding: 28px;
-      border-radius: 26px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(10px);
-      color: var(--white);
-    }
-
-    .hero-card h3 {
-      font-size: 26px;
-      margin-bottom: 18px;
-    }
-
-    .metric {
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .metric:last-of-type { border-bottom: 0; }
-
-    .metric-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 8px;
-    }
-
-    .metric-value {
-      font-size: 28px;
-      font-weight: 700;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .metric-value span {
-      font-size: 13px;
-      color: rgba(255,255,255,0.72);
-      font-weight: 500;
-    }
-
-    .card-note {
-      margin-top: 18px;
-      font-size: 13px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.76);
-    }
-
-    .section {
-      padding: 78px 6vw;
-    }
-
-    .section-title {
-      max-width: 760px;
-      margin-bottom: 24px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 4vw, 46px);
-      margin: 10px 0 16px;
-    }
-
-    .section-title p {
-      margin: 0;
-      line-height: 1.75;
-      color: var(--ink-soft);
-    }
-
-    .grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .tile {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .tile h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .tile p {
-      margin: 0;
-      color: var(--ink-soft);
-      line-height: 1.75;
-    }
-
-    .ai-img {
-      width: calc(100% + 48px);
-      margin: -24px -24px 18px;
-      height: 200px;
-      display: block;
-      object-fit: cover;
-      border-radius: 24px 24px 0 0;
-      border-bottom: 1px solid var(--line);
-      background: #dbe3ef;
-    }
-
-    .highlight {
-      background: linear-gradient(120deg, rgba(255, 207, 77, 0.16), rgba(103, 216, 179, 0.14));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .list {
-      margin: 20px 0 0;
-      padding-left: 18px;
-      color: var(--ink-soft);
-      line-height: 1.9;
-    }
-
-    .panel {
-      border-radius: 26px;
-      padding: 28px;
-      background: linear-gradient(155deg, #16253a, #22324d);
-      color: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .panel .card-header {
-      font-size: 24px;
-      margin-bottom: 16px;
-      font-family: "Fraunces", serif;
-    }
-
-    .panel-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 14px;
-      font-size: 14px;
-    }
-
-    .panel-bar {
-      height: 10px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.14);
-      margin-top: 8px;
-    }
-
-    .bar {
-      height: 100%;
-      border-radius: inherit;
-    }
-
-    .bar-solar { width: 100%; background: var(--sun); }
-    .bar-home { width: 68%; background: var(--mint); }
-    .bar-battery { width: 42%; background: #8ebcff; }
-
-    .panel-note {
-      margin-top: 18px;
-      color: rgba(255,255,255,0.74);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .steps {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .step {
-      background: rgba(255,255,255,0.9);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .step span {
-      width: 38px;
-      height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--sun);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .step p {
-      color: var(--ink-soft);
-      line-height: 1.7;
-      margin: 12px 0 0;
-    }
-
-    .calculator .calc-card {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      padding: 28px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .calc-fields {
-      display: grid;
-      gap: 14px;
-    }
-
-    .calc-fields label {
-      display: grid;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--ink-soft);
-    }
-
-    .calc-fields input {
-      min-height: 48px;
-      border-radius: 14px;
-      border: 1px solid rgba(17, 24, 39, 0.12);
-      padding: 0 14px;
-      font: inherit;
-    }
-
-    .calc-result {
-      border-radius: 22px;
-      padding: 22px;
-      background: linear-gradient(135deg, rgba(255, 207, 77, 0.22), rgba(103, 216, 179, 0.18));
-      display: grid;
-      gap: 10px;
-      align-content: start;
-    }
-
-    .result-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--ink-soft);
-    }
-
-    .result-value {
-      font-size: 34px;
-      font-weight: 700;
-    }
-
-    .result-kwh {
-      color: var(--ink-soft);
-      font-size: 14px;
-    }
-
-    .result-bar {
-      height: 10px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: rgba(17, 24, 39, 0.12);
-    }
-
-    .result-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--mint);
-      border-radius: inherit;
-      transition: width .25s ease;
-    }
-
-    .faq .tile {
-      background: rgba(255,255,255,0.92);
-    }
-
-    .cta {
-      margin: 0 6vw 78px;
-      padding: 46px;
-      border-radius: 30px;
-      background: linear-gradient(155deg, #141d2f, #1d2a42);
-      color: var(--white);
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      margin-bottom: 16px;
-    }
-
-    .cta p {
-      margin: 0;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.75;
-    }
-
-    .form {
-      display: grid;
-      gap: 14px;
-    }
-
-    .form label {
-      display: grid;
-      gap: 8px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .form input {
-      min-height: 48px;
-      padding: 0 14px;
-      border-radius: 14px;
-      border: none;
-      font: inherit;
-    }
-
-    .form-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.68);
-      line-height: 1.6;
-    }
-
-    .rodo {
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 10px;
-      align-items: start;
-      color: rgba(255,255,255,0.78);
-      font-size: 12px;
-    }
-
-    .footer {
-      padding: 0 6vw 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      color: var(--ink-soft);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-    .sticky-call {
-      position: fixed;
-      right: 16px;
-      bottom: 18px;
-      z-index: 50;
-      background: linear-gradient(135deg, #0f1f36, #173356);
-      color: var(--white);
-      padding: 13px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.26);
-      box-shadow: 0 18px 34px rgba(10, 15, 28, 0.42);
-    }
-
-    .sticky-call:hover {
-      background: linear-gradient(135deg, #173356, #1f4b79);
-    }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      padding: 4px;
-      cursor: pointer;
-    }
-
-    .hamburger svg {
-      width: 28px;
-      height: 28px;
-      stroke: #fff;
-      stroke-width: 2;
-      stroke-linecap: round;
-      fill: none;
-    }
-
-    @media (max-width: 980px) {
-      .hero-inner,
-      .split,
-      .steps,
-      .grid.two,
-      .grid.three,
-      .calculator .calc-card,
-      .cta {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .nav-links.open {
-        display: flex !important;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 16px;
-        padding: 18px 6vw;
-        background: rgba(8, 14, 24, 0.96);
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .nav .btn-primary {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav { padding: 14px 5vw; }
-      .hero { margin: 12px 5vw 0; padding: 62px 5vw 44px; }
-      .section { padding: 58px 5vw; }
-      .cta { margin: 0 5vw 58px; padding: 32px 22px; }
-      .footer { padding: 0 5vw 86px; flex-direction: column; align-items: flex-start; }
-      .hero-cta .btn { width: 100%; }
-      .sticky-call {
-        right: 10px;
-        left: 10px;
-        bottom: 10px;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="Styles.css" />
 </head>
 <body>
   <div class="bg-shapes" aria-hidden="true"></div>
 
   <header class="nav">
-    <div class="brand">Sun Energy AS</div>
+    <div class="brand">
+      <span class="brand-badge" aria-hidden="true"></span>
+      <div class="brand-copy">
+        <strong>Sun Energy AS</strong>
+        <span>fotowoltaika, magazyny, audyty</span>
+      </div>
+    </div>
+
     <nav class="nav-links" id="navLinks">
+      <a href="#dlaczego">Dlaczego teraz</a>
       <a href="#realizacje">Realizacje</a>
-      <a href="#jak-dzialamy">Jak działamy</a>
+      <a href="#jak-dzialamy">Jak dzialamy</a>
       <a href="#kalkulator">Kalkulator</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-    <a class="btn btn-primary" href="#kontakt">Zamów audyt</a>
+    <a class="btn btn-primary btn-small" href="#kontakt">Zamow audyt</a>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-text">
-          <div class="eyebrow">Fotowoltaika bez dotacji</div>
-          <h1>Oszczędzaj na prądzie dzięki autokonsumpcji, nie obietnicom.</h1>
-          <p class="lead">Doradzamy, audytujemy i projektujemy instalacje PV tak, by inwestycja była opłacalna w realnych warunkach. Zajmujemy się też naprawami źle wykonanych instalacji i zawsze zaczynamy od protokołu oraz dokładnego opisu stanu technicznego.</p>
+        <div class="hero-copy">
+          <p class="eyebrow">Fotowoltaika bez dotacji ma sens</p>
+          <h1>Przy dotacji 2026 na magazyny energii wyglada to jeszcze lepiej.</h1>
+          <p class="lead">Tworzymy instalacje, ktore sa efektowne wizualnie, ale przede wszystkim oplacalne. Doradztwo, audyty, EMS, magazyny energii i naprawy po zle wykonanych instalacjach skladamy w jeden uporzadkowany proces.</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#kontakt">Bezpłatna analiza rachunków</a>
+            <a class="btn btn-primary" href="#kontakt">Bezplatna analiza rachunkow</a>
             <a class="btn btn-ghost" href="#realizacje">Zobacz realizacje</a>
           </div>
           <div class="hero-tags">
-            <span>EMS steruje energią</span>
-            <span>Magazyn podbija autokonsumpcję</span>
-            <span>Naprawy po błędnych montażach</span>
+            <span>Dotacja 2026 na magazyny energii</span>
+            <span>Autokonsumpcja zamiast pustych obietnic</span>
+            <span>Audyty i naprawy po blednych montazach</span>
           </div>
         </div>
 
-        <div class="hero-card">
-          <h3>Twoja energia w liczbach</h3>
-          <div class="metric">
-            <div class="metric-label">Autokonsumpcja z EMS</div>
-            <div class="metric-value">do 85%<span>energia zużyta na miejscu</span></div>
+        <div class="hero-glass">
+          <div class="hero-visual">
+            <div class="hero-stat">
+              <span>Autokonsumpcja</span>
+              <strong>45-80%</strong>
+              <small>w zaleznosci od profilu zuzycia</small>
+            </div>
+            <div class="hero-stat">
+              <span>Dotacja 2026</span>
+              <strong>Magazyny energii</strong>
+              <small>jeszcze lepszy bilans inwestycji</small>
+            </div>
+            <div class="hero-stat">
+              <span>Doswiadczenie</span>
+              <strong>8+ lat</strong>
+              <small>zadowolonych klientow w fotowoltaice</small>
+            </div>
           </div>
-          <div class="metric">
-            <div class="metric-label">Zwrot inwestycji</div>
-            <div class="metric-value">5–7 lat<span>przy dobrze dobranym systemie</span></div>
-          </div>
-          <div class="metric">
-            <div class="metric-label">Doświadczenie</div>
-            <div class="metric-value">8+ lat<span>na rynku fotowoltaiki</span></div>
-          </div>
-          <div class="card-note">Od lat stawiamy na rzetelne doradztwo zamiast pustych obietnic. Najpierw analiza, potem decyzja.</div>
+          <p class="hero-note">Najpierw protokol, pomiary i opis stanu technicznego. Dopiero potem projekt, naprawa albo montaz.</p>
         </div>
       </div>
     </section>
 
-    <section id="realizacje" class="section">
+    <section id="dlaczego" class="section">
       <div class="section-title">
-        <div class="eyebrow" style="color:#cc9d00;">Realizacje</div>
-        <h2>Przykładowe realizacje i scenariusze oszczędności</h2>
-        <p>Pokazujemy, jak może wyglądać dobrze zaprojektowana instalacja: od dużych dachów usługowych po domy z magazynami energii i audyty awaryjne.</p>
+        <p class="eyebrow warm">Dlaczego warto teraz</p>
+        <h2>Fotowoltaika bez dotacji nadal sie spina. Z magazynem energii robi sie po prostu jeszcze mocniejsza.</h2>
+        <p>Nie budujemy oferty na modnych haslach. Liczymy realny sens inwestycji na Twoich rachunkach, godzinach zuzycia i mozliwosciach magazynowania energii. To daje efekt, ktory widac na fakturach, a nie tylko w prezentacji.</p>
       </div>
-
       <div class="grid three">
         <article class="tile">
-          <img class="ai-img" alt="Niechorze 30 kWp - dach z panelami" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%23293a55'/><polygon points='0,520 470,270 1200,500 1200,700 0,700' fill='%231f2d44'/><g stroke='rgba(255,255,255,0.45)' stroke-width='2'><path d='M120 360h780M90 420h820M60 480h860M30 540h900'/><path d='M130 300v280M210 290v300M290 280v320M370 270v335M450 260v350M530 252v360M610 250v365M690 252v355M770 260v340M850 272v320'/></g><circle cx='980' cy='150' r='80' fill='rgba(255,211,90,0.55)'/></svg>">
+          <h3>Projekt w realiach 2026</h3>
+          <p>Uwzgledniamy nowe warunki rynku i sens wykorzystania dotacji na magazyn energii, a nie tylko sama moc paneli.</p>
+        </article>
+        <article class="tile">
+          <h3>Silna autokonsumpcja</h3>
+          <p>Im wiecej energii zuzywasz u siebie, tym mniej oddajesz ja za slabe stawki. Tu EMS i magazyn maja najwiekszy sens.</p>
+        </article>
+        <article class="tile">
+          <h3>Naprawy tez sa oplacalne</h3>
+          <p>Kiedy instalacja jest zle wykonana, zaczynamy od audytu i protokolu. Czasem dobra naprawa daje lepszy wynik niz wymiana wszystkiego.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="realizacje" class="section section-dark">
+      <div class="section-title section-title-light">
+        <p class="eyebrow">Realizacje AI</p>
+        <h2>Nowoczesny obraz inwestycji, ktora wyglada premium i pracuje jak trzeba.</h2>
+        <p>To wizualizacje AI stworzone po to, by pokazac klimat naszych realizacji. Elegancki dach, czyste linie modulow, sensowny projekt i technika, ktora ma pracowac dlugo i przewidywalnie.</p>
+      </div>
+      <div class="grid three">
+        <article class="tile tile-dark showcase-card">
+          <svg class="ai-art" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" aria-label="Niechorze 30 kWp">
+            <defs>
+              <linearGradient id="skyA" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#0d2239"/>
+                <stop offset="100%" stop-color="#2f5c88"/>
+              </linearGradient>
+              <linearGradient id="roofA" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#161f2f"/>
+                <stop offset="100%" stop-color="#365273"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="760" fill="url(#skyA)"/>
+            <circle cx="935" cy="120" r="92" fill="rgba(255,207,77,0.88)"/>
+            <rect y="560" width="1200" height="200" fill="#1f332f"/>
+            <polygon points="50,575 455,275 1088,435 1135,760 22,760" fill="url(#roofA)"/>
+            <g stroke="rgba(255,255,255,0.48)" stroke-width="3">
+              <path d="M150 420h780M120 474h826M92 526h872"/>
+              <path d="M175 340v250M243 322v270M311 304v288M379 286v306M447 270v320M515 286v304M583 302v286M651 318v270M719 334v252M787 350v236M855 366v220"/>
+            </g>
+            <rect x="790" y="208" width="290" height="110" rx="18" fill="rgba(255,255,255,0.10)"/>
+            <rect x="814" y="232" width="242" height="16" rx="8" fill="rgba(255,255,255,0.58)"/>
+            <rect x="814" y="260" width="206" height="12" rx="6" fill="rgba(255,255,255,0.34)"/>
+            <rect x="814" y="282" width="170" height="12" rx="6" fill="rgba(255,255,255,0.22)"/>
+          </svg>
           <h3>Niechorze - 30 kWp</h3>
-          <p>Instalacja dla obiektu usługowego z dużym dachem. Priorytetem była stabilna produkcja i maksymalne wykorzystanie energii w ciągu dnia.</p>
+          <p>Obiekt uslugowy z duzym dachem. Liczyl sie mocny uzysk, estetyka i praca systemu w rytmie sezonowego obciazenia.</p>
         </article>
 
-        <article class="tile">
-          <img class="ai-img" alt="Dom z magazynem energii - wizualizacja" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%232a3f48'/><rect y='500' width='1200' height='200' fill='%231b2f36'/><polygon points='120,470 360,320 620,470' fill='%23283f4c'/><polygon points='620,470 840,330 1080,470' fill='%23283f4c'/><g stroke='rgba(255,255,255,0.4)' stroke-width='2'><path d='M170 410h400M170 440h400M170 470h400M700 410h320M700 440h320M700 470h320'/><path d='M195 360v150M240 340v170M285 330v180M330 320v190M375 325v185M420 340v170M465 360v150M730 355v145M770 340v160M810 330v170M850 320v180M890 325v175M930 340v160M970 355v145'/></g></svg>">
+        <article class="tile tile-dark showcase-card">
+          <svg class="ai-art" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" aria-label="Dom z magazynem energii">
+            <defs>
+              <linearGradient id="skyB" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#12343a"/>
+                <stop offset="100%" stop-color="#2c6d62"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="760" fill="url(#skyB)"/>
+            <rect y="566" width="1200" height="194" fill="#20312d"/>
+            <polygon points="130,526 392,306 664,526" fill="#263c49"/>
+            <polygon points="640,526 932,276 1110,526" fill="#2d4558"/>
+            <rect x="252" y="526" width="292" height="148" rx="20" fill="#f1ede3"/>
+            <rect x="738" y="526" width="228" height="148" rx="20" fill="#eef1f6"/>
+            <rect x="984" y="448" width="88" height="174" rx="18" fill="#132437"/>
+            <rect x="998" y="472" width="58" height="16" rx="8" fill="#8de4c4"/>
+            <rect x="998" y="501" width="44" height="10" rx="5" fill="#d8f3ea"/>
+            <g stroke="rgba(255,255,255,0.42)" stroke-width="3">
+              <path d="M170 416h438M170 450h438M170 484h438M724 392h318M724 424h318M724 456h318"/>
+              <path d="M198 348v176M242 332v192M286 316v208M330 300v224M374 318v206M418 334v190M462 350v174M760 324v162M802 308v178M844 292v194M886 308v178M928 324v162"/>
+            </g>
+          </svg>
           <h3>Dom + magazyn energii</h3>
-          <p>Scenariusz dla domu z większym zużyciem wieczorem. EMS ładuje magazyn w szczycie produkcji i oddaje energię po zmroku.</p>
+          <p>Scenariusz dla klienta, ktory chce miec spokoj wieczorem i wiekszy udzial energii u siebie. EMS i magazyn robia tu prawdziwa roznice.</p>
         </article>
 
-        <article class="tile">
-          <img class="ai-img" alt="Firma po audycie awaryjnym - wizualizacja" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'><rect width='1200' height='700' fill='%2331405a'/><rect x='90' y='180' width='1020' height='420' rx='24' fill='%23203046'/><rect x='160' y='250' width='360' height='250' rx='12' fill='%23364761'/><rect x='560' y='250' width='480' height='70' rx='8' fill='%234b5f7f'/><rect x='560' y='340' width='420' height='50' rx='8' fill='%234b5f7f'/><rect x='560' y='410' width='300' height='50' rx='8' fill='%234b5f7f'/><g stroke='rgba(255,255,255,0.4)' stroke-width='2'><path d='M190 290h300M190 330h300M190 370h300M190 410h300M190 450h300'/><path d='M220 250v250M250 250v250M280 250v250M310 250v250M340 250v250M370 250v250M400 250v250M430 250v250M460 250v250'/></g></svg>">
-          <h3>Firma po audycie awaryjnym</h3>
-          <p>Najpierw protokół, pomiary i diagnostyka, dopiero potem naprawa. Dzięki temu wiadomo, gdzie naprawdę leży problem i jak go skutecznie usunąć.</p>
+        <article class="tile tile-dark showcase-card">
+          <svg class="ai-art" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" aria-label="Audyt i naprawa instalacji">
+            <defs>
+              <linearGradient id="skyC" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#1d2743"/>
+                <stop offset="100%" stop-color="#4f5d80"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="760" fill="url(#skyC)"/>
+            <rect x="92" y="164" width="1014" height="430" rx="28" fill="#182236"/>
+            <rect x="158" y="228" width="350" height="270" rx="16" fill="#33445f"/>
+            <rect x="548" y="228" width="484" height="90" rx="12" fill="#4b6384"/>
+            <rect x="548" y="340" width="432" height="58" rx="12" fill="#577294"/>
+            <rect x="548" y="422" width="304" height="58" rx="12" fill="#60799c"/>
+            <circle cx="955" cy="532" r="68" fill="#ffcf4d"/>
+            <path d="M926 532l18 18 39-48" fill="none" stroke="#172132" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            <g stroke="rgba(255,255,255,0.40)" stroke-width="3">
+              <path d="M188 292h302M188 332h302M188 372h302M188 412h302M188 452h302"/>
+              <path d="M220 228v270M252 228v270M284 228v270M316 228v270M348 228v270M380 228v270M412 228v270M444 228v270"/>
+            </g>
+          </svg>
+          <h3>Audyt i naprawa instalacji</h3>
+          <p>Kiedy cos nie dziala jak powinno, zaczynamy od pomiarow, protokolu i opisu problemu. Dopiero potem wdrazamy sensowna naprawe.</p>
         </article>
       </div>
     </section>
 
-    <section class="section highlight">
-      <div class="split">
-        <div>
-          <div class="eyebrow" style="color:#cc9d00;">Jak to działa</div>
-          <h2>EMS i magazyn energii zwiększają wartość każdej wyprodukowanej kWh</h2>
-          <p style="color:var(--ink-soft); line-height:1.8; margin:0;">Dobrze zaprojektowany system nie kończy się na samych panelach. To sterowanie energią, profil zużycia, świadomy dobór mocy oraz decyzja, kiedy energię zużyć, zmagazynować albo oddać do sieci.</p>
-          <ul class="list">
-            <li>analizujemy rachunki i profil zużycia</li>
-            <li>dobieramy moc instalacji pod realne potrzeby</li>
-            <li>ustawiamy EMS pod autokonsumpcję</li>
-            <li>rozwiązujemy awarie po źle wykonanych instalacjach</li>
-          </ul>
+    <section id="ems" class="section split">
+      <div>
+        <p class="eyebrow warm">EMS + Magazyn</p>
+        <h2>Inteligentne sterowanie robi z dobrej instalacji system, ktory naprawde zarzadza energia.</h2>
+        <p class="section-copy">EMS decyduje, kiedy ladowac magazyn, kiedy uruchomic urzadzenia i kiedy energie wykorzystac na miejscu. Wlasnie tu zaczyna sie przewaga dobrze zaprojektowanej fotowoltaiki nad przypadkowym montazem.</p>
+        <ul class="list">
+          <li>automatyczne przesuwanie pracy urzadzen na godziny produkcji</li>
+          <li>magazyn pokrywa wieczorne szczyty zuzycia</li>
+          <li>stala kontrola kosztu 1 kWh i mniejsza zaleznosc od sieci</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="card-header">Przykladowy dzien pracy systemu</div>
+        <div class="panel-row">
+          <span>Produkcja dzienna</span>
+          <strong>100%</strong>
         </div>
-
-        <div class="panel">
-          <div class="card-header">Przykładowy dzień pracy instalacji</div>
-          <div class="panel-row"><span>Produkcja PV</span><span>38 kWh</span></div>
-          <div class="panel-bar"><div class="bar bar-solar"></div></div>
-
-          <div class="panel-row"><span>Zużycie na miejscu</span><span>26 kWh</span></div>
-          <div class="panel-bar"><div class="bar bar-home"></div></div>
-
-          <div class="panel-row"><span>Magazyn energii</span><span>10 kWh</span></div>
-          <div class="panel-bar"><div class="bar bar-battery"></div></div>
-
-          <div class="panel-note">Przy dobrze ustawionym EMS autokonsumpcja może znacząco wzrosnąć, a rachunki spadają nie na papierze, tylko w praktyce.</div>
+        <div class="panel-bar">
+          <div class="bar bar-solar"></div>
         </div>
+        <div class="panel-row">
+          <span>Zuzycie na miejscu</span>
+          <strong>+ 60%</strong>
+        </div>
+        <div class="panel-bar">
+          <div class="bar bar-home"></div>
+        </div>
+        <div class="panel-row">
+          <span>Magazyn - wieczor</span>
+          <strong>+ 20%</strong>
+        </div>
+        <div class="panel-bar">
+          <div class="bar bar-battery"></div>
+        </div>
+        <p class="panel-note">To modelowy przyklad. Ostateczny wynik zalezy od Twojego profilu zuzycia i sensownie dobranego magazynu.</p>
       </div>
     </section>
 
-    <section id="jak-dzialamy" class="section">
+    <section id="rachunki" class="section">
       <div class="section-title">
-        <div class="eyebrow" style="color:#cc9d00;">Jak działamy</div>
-        <h2>Doradztwo, audyty, naprawy i montaż w uporządkowanym procesie</h2>
-        <p>Zaczynamy od rzetelnego rozpoznania sytuacji. Jeśli instalacja już istnieje i działa źle, najpierw przygotowujemy protokół oraz dokładnie opisujemy usterki. Jeśli projekt jest nowy, dobieramy system pod realne rachunki i przyszłe potrzeby.</p>
+        <p class="eyebrow warm">Optymalizacja rachunkow</p>
+        <h2>Nie pytamy tylko ile paneli. Pytamy ile realnie zostanie Ci w kieszeni.</h2>
+        <p>Analizujemy faktury, profil zuzycia i mozliwosc magazynowania energii. To pozwala dobrać system tak, aby zmniejszac zakup energii z sieci, a nie tylko produkowac ladne wykresy.</p>
       </div>
+      <div class="grid two">
+        <div class="tile">
+          <h3>Profil zuzycia</h3>
+          <p>Sprawdzamy, kiedy zuzywasz najwiecej energii i jak ustawic system, aby pracowal pod Twoje godziny.</p>
+        </div>
+        <div class="tile">
+          <h3>Dobor mocy i magazynu</h3>
+          <p>Moc instalacji i pojemnosc magazynu dobieramy do konkretu, nie do sredniej z internetu.</p>
+        </div>
+        <div class="tile">
+          <h3>Scenariusze kosztowe</h3>
+          <p>Pokazujemy kilka wariantow i porownujemy, gdzie inwestycja ma najsilniejszy sens ekonomiczny.</p>
+        </div>
+        <div class="tile">
+          <h3>Monitoring i opieka</h3>
+          <p>Po realizacji masz podglad produkcji, zuzycia i wynikow, a my dalej wiemy, jak utrzymac system w formie.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="jak-dzialamy" class="section highlight">
+      <div class="section-title">
+        <p class="eyebrow">Proces</p>
+        <h2>3 kroki do nizszych rachunkow i spokojnej glowy</h2>
+      </div>
       <div class="steps">
-        <article class="step">
+        <div class="step">
           <span>1</span>
-          <h3>Audyt i protokół</h3>
-          <p>Sprawdzamy stan techniczny, analizujemy rachunki i opisujemy wszystko jasno, bez skrótów i zgadywania.</p>
-        </article>
-        <article class="step">
+          <h3>Audyt i protokol</h3>
+          <p>Zaczynamy od rachunkow, pomiarow i opisu stanu technicznego. Bez zgadywania.</p>
+        </div>
+        <div class="step">
           <span>2</span>
-          <h3>Projekt i dobór</h3>
-          <p>Dobieramy instalację, magazyn energii i EMS do rzeczywistego profilu zużycia, nie do średnich z internetu.</p>
-        </article>
-        <article class="step">
+          <h3>Projekt z EMS</h3>
+          <p>Dobieramy instalacje, magazyn i automatyke do realnego profilu zuzycia.</p>
+        </div>
+        <div class="step">
           <span>3</span>
           <h3>Montaż lub naprawa</h3>
-          <p>Realizujemy nową instalację albo usuwamy błędy po źle wykonanych systemach, a potem konfigurujemy monitoring.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="kalkulator" class="section calculator">
-      <div class="section-title">
-        <div class="eyebrow" style="color:#cc9d00;">Kalkulator</div>
-        <h2>Sprawdź orientacyjny potencjał oszczędności</h2>
-        <p>To szybki szacunek. Dokładną kalkulację przygotowujemy po analizie rachunków i profilu zużycia.</p>
-      </div>
-
-      <div class="calc-card">
-        <div class="calc-fields">
-          <label>
-            Miesięczny rachunek za prąd (zł)
-            <input type="number" id="calcBill" placeholder="450" min="0" />
-          </label>
-          <label>
-            Miesięczne zużycie (kWh)
-            <input type="number" id="calcKwh" placeholder="500" min="0" />
-          </label>
-          <button class="btn btn-primary" type="button" id="calcBtn">Oblicz oszczędności</button>
-        </div>
-
-        <div class="calc-result">
-          <div class="result-label">Szacowana oszczędność roczna</div>
-          <div class="result-value"><span id="resultValue">0</span> zł</div>
-          <div class="result-kwh">Przybliżony poziom autokonsumpcji: <span id="resultAuto">0</span>%</div>
-          <div class="result-bar"><div class="result-fill" id="resultFill"></div></div>
-          <p style="margin:0; color:var(--ink-soft); line-height:1.7;">Wynik ma charakter poglądowy i pomaga ocenić, czy warto wejść w dokładniejszy audyt.</p>
+          <p>Uruchamiamy nowy system albo porzadkujemy stary tak, zeby wreszcie zaczal pracowac jak trzeba.</p>
         </div>
       </div>
     </section>
 
     <section id="faq" class="section faq">
       <div class="section-title">
-        <div class="eyebrow" style="color:#cc9d00;">FAQ</div>
-        <h2>Najczęstsze pytania</h2>
+        <p class="eyebrow warm">FAQ</p>
+        <h2>Najczesciej zadawane pytania</h2>
       </div>
-
       <div class="grid two">
-        <article class="tile">
+        <div class="tile">
           <h3>Czy bez dotacji to ma sens?</h3>
-          <p>Tak, jeśli system jest dobrze dobrany i maksymalizuje autokonsumpcję zamiast produkować nadmiar bez planu.</p>
-        </article>
-        <article class="tile">
-          <h3>Czy naprawiacie źle zrobione instalacje?</h3>
-          <p>Tak. Właśnie od tego zaczynamy: protokół, opis błędów, plan naprawy i dopiero realizacja.</p>
-        </article>
-        <article class="tile">
-          <h3>Czy działacie w całej Polsce?</h3>
-          <p>Tak, obsługujemy klientów indywidualnych i firmy w całym kraju.</p>
-        </article>
-        <article class="tile">
-          <h3>Jak długo trwa analiza?</h3>
-          <p>Zwykle od 24 do 48 godzin od otrzymania podstawowych danych i rachunków.</p>
-        </article>
+          <p>Tak. Fotowoltaika bez dotacji ma sens, jesli instalacja jest dobrze dobrana do zuzycia i pracuje na autokonsumpcje.</p>
+        </div>
+        <div class="tile">
+          <h3>Czy dotacja 2026 na magazyny cos zmienia?</h3>
+          <p>Tak, bo przy dobrze dobranym magazynie energii jeszcze mocniej poprawia sie logika ekonomiczna calego projektu.</p>
+        </div>
+        <div class="tile">
+          <h3>Jak dlugo trwa analiza?</h3>
+          <p>Zwykle 24-48 godzin od otrzymania rachunkow i podstawowych danych technicznych.</p>
+        </div>
+        <div class="tile">
+          <h3>Czy naprawiacie cudze instalacje?</h3>
+          <p>Tak. Audyt, protokol i naprawy po blednych montazach to jedna z naszych specjalizacji.</p>
+        </div>
       </div>
     </section>
 
-    <section id="kontakt" class="cta">
-      <div>
-        <h2>Bezpłatna wycena i konsultacja</h2>
-        <p>Doradztwo, audyty, projekt, montaż oraz usuwanie awarii po źle wykonanych instalacjach. Zostaw kontakt, a wrócimy z konkretem.</p>
+    <section id="kalkulator" class="section calculator">
+      <div class="section-title">
+        <p class="eyebrow warm">Kalkulator oszczednosci</p>
+        <h2>Policz, ile mozesz oszczedzic rocznie</h2>
+        <p>To szybki szacunek oparty o rachunek miesieczny, autokonsumpcje i cene 1 kWh.</p>
       </div>
+      <div class="calc-card">
+        <div class="calc-fields">
+          <label>
+            Rachunek miesieczny (zl)
+            <input id="bill" type="number" inputmode="decimal" value="300" min="0" step="10" />
+          </label>
+          <label>
+            Autokonsumpcja (%)
+            <input id="auto" type="number" inputmode="decimal" value="60" min="0" max="100" step="5" />
+          </label>
+          <label>
+            Cena 1 kWh brutto (zl)
+            <input id="price" type="number" inputmode="decimal" value="1.23" min="0" step="0.01" />
+          </label>
+        </div>
+        <div class="calc-result">
+          <div class="result-label">Szacowane oszczednosci roczne</div>
+          <div class="result-value"><span id="savings">2 160</span> zl</div>
+          <div class="result-kwh">Szacowane zuzycie: <span id="kwh">244</span> kWh / mies.</div>
+          <div class="result-bar">
+            <div id="savings-bar" class="result-fill"></div>
+          </div>
+          <p class="card-note">To punkt wyjscia. Dokladniejszy wynik liczymy po analizie Twoich rachunkow i profilu pracy domu albo firmy.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="kontakt" class="section cta">
+      <div>
+        <h2>Chcesz wiedziec, ile realnie mozesz oszczedzic?</h2>
+        <p>Wypelnij krotki formularz, a przygotujemy bezplatna analize rachunkow, wariantow instalacji i sensownego wykorzystania magazynu energii.</p>
+      </div>
       <form class="form" action="mailto:Sun.energy.as@gmail.com" method="POST" enctype="text/plain">
         <label>
-          Imię i nazwisko
+          Imie i nazwisko
           <input type="text" name="name" placeholder="Jan Kowalski" required />
         </label>
         <label>
@@ -872,71 +354,78 @@
           <input type="email" name="email" placeholder="jan@email.pl" required />
         </label>
         <label>
-          Krótki opis sprawy
-          <input type="text" name="opis" placeholder="np. nowa instalacja / audyt / naprawa" />
+          Miesieczny rachunek
+          <input type="text" name="bill" placeholder="np. 450 zl" />
         </label>
-        <input type="hidden" name="Temat" value="Bezpłatna wycena - Sun Energy AS" />
-        <button class="btn btn-primary" type="submit">Bezpłatna wycena</button>
-        <div class="form-note">Po kliknięciu otworzy się wiadomość e-mail do `Sun.energy.as@gmail.com`.</div>
+        <input type="hidden" name="Temat" value="Bezplatna wycena - Sun Energy AS" />
+        <button class="btn btn-primary" type="submit">Bezplatna wycena</button>
+        <p class="form-note">Klikajac przycisk otworzysz gotowa wiadomosc e-mail do Sun.energy.as@gmail.com.</p>
         <label class="rodo">
-          <input type="checkbox" required />
-          <span>Wyrażam zgodę na kontakt w celu przygotowania oferty.</span>
+          <input type="checkbox" name="rodo" required />
+          <span>Wyrazam zgode na kontakt w celu przedstawienia oferty oraz przygotowania analizy.</span>
         </label>
+        <div class="form-links">
+          <a class="icon-link" href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
+          <a class="icon-link" href="tel:+48691875997">+48 691 875 997</a>
+          <a class="icon-link" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp: +48 691 875 997</a>
+        </div>
       </form>
     </section>
   </main>
 
   <footer class="footer">
-    <div style="font-weight:700;">Sun Energy AS</div>
+    <div class="footer-brand">
+      <strong>Sun Energy AS</strong>
+      <span>Caly kraj, jedna odpowiedzialna ekipa</span>
+    </div>
     <div class="footer-links">
-      <a href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
-      <a href="tel:+48691875997">+48 691 875 997</a>
+      <a class="icon-link" href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
+      <a class="icon-link" href="tel:+48691875997">+48 691 875 997</a>
+      <a class="icon-link" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a>
     </div>
   </footer>
 
   <a class="sticky-call" href="tel:+48691875997">Zadzwoń teraz: +48 691 875 997</a>
+  <a class="sticky-whatsapp" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a>
 
   <script>
+    const billEl = document.getElementById("bill");
+    const autoEl = document.getElementById("auto");
+    const priceEl = document.getElementById("price");
+    const savingsEl = document.getElementById("savings");
+    const kwhEl = document.getElementById("kwh");
+    const barEl = document.getElementById("savings-bar");
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("navLinks");
+
+    function formatPLN(value) {
+      return value.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
+    }
+
+    function recalc() {
+      const bill = Math.max(0, Number(billEl.value) || 0);
+      const autoPct = Math.min(100, Math.max(0, Number(autoEl.value) || 0)) / 100;
+      const price = Math.max(0.01, Number(priceEl.value) || 0.01);
+      const annualBill = bill * 12;
+      const monthlyKwh = bill / price;
+      const savings = annualBill * autoPct;
+
+      savingsEl.textContent = formatPLN(savings);
+      kwhEl.textContent = monthlyKwh.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
+
+      const ratio = Math.min(1, annualBill === 0 ? 0 : savings / annualBill);
+      barEl.style.width = `${Math.max(6, ratio * 100)}%`;
+    }
+
+    [billEl, autoEl, priceEl].forEach((el) => el.addEventListener("input", recalc));
+    recalc();
 
     if (hamburger && navLinks) {
       hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("open");
       });
     }
-
-    const calcBill = document.getElementById("calcBill");
-    const calcKwh = document.getElementById("calcKwh");
-    const calcBtn = document.getElementById("calcBtn");
-    const resultValue = document.getElementById("resultValue");
-    const resultAuto = document.getElementById("resultAuto");
-    const resultFill = document.getElementById("resultFill");
-
-    function formatPLN(value) {
-      return value.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
-    }
-
-    if (calcBtn) {
-      calcBtn.addEventListener("click", () => {
-        const bill = Number(calcBill.value) || 0;
-        const kwh = Number(calcKwh.value) || 0;
-
-        if (bill <= 0 || kwh <= 0) {
-          resultValue.textContent = "0";
-          resultAuto.textContent = "0";
-          resultFill.style.width = "0%";
-          return;
-        }
-
-        const auto = Math.min(85, Math.max(35, Math.round((bill / Math.max(kwh, 1)) * 10)));
-        const yearly = Math.round(bill * 12 * (auto / 100));
-
-        resultValue.textContent = formatPLN(yearly);
-        resultAuto.textContent = auto;
-        resultFill.style.width = auto + "%";
-      });
-    }
   </script>
 </body>
 </html>
+
