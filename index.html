@@ -3,67 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Ekspercka Fotowoltaika</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <title>Sun Energy | Professional PV Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
-<div class="bg-grid"></div>
-
-<header class="hero">
-    <div class="hero-content">
-        <div class="top-tag">PROTOKÓŁ NIEZALEŻNOŚCI 2026</div>
-        <h1>FOTOWOLTAIKA <br><span class="orange-glow">BEZ DOTACJI MA SENS</span></h1>
-        <p>Inżynieria autokonsumpcji. EMS. Magazynowanie energii. Serwis Sonel.</p>
-        <div class="hero-btns">
-            <a href="tel:691875997" class="btn-main">ZADZWOŃ: 691 875 997</a>
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="tag">TECHNOLOGIA PRZYSZŁOŚCI</span>
+            <h1>FOTOWOLTAIKA <br><span class="highlight">BEZ DOTACJI MA SENS</span></h1>
+            <p>Maksymalna autokonsumpcja. Inteligentne magazynowanie. Serwis inżynieryjny.</p>
+            <a href="tel:691875997" class="cta-btn">ZADZWOŃ: 691 875 997</a>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="container">
-    <div class="calc-panel">
-        <div class="calc-head">KALKULATOR OPTYMALIZACJI</div>
-        <div class="calc-grid">
-            <div class="c-input">
-                <label>RACHUNEK MIESIĘCZNY (ZŁ)</label>
-                <input type="number" id="rachunek" placeholder="350">
+    <section class="calculator-section">
+        <div class="calc-box">
+            <h2>KALKULATOR OPTYMALIZACJI</h2>
+            <div class="calc-flex">
+                <div class="c-field">
+                    <label>TWÓJ RACHUNEK (ZŁ)</label>
+                    <input type="number" id="rachunek" placeholder="350">
+                </div>
+                <div class="c-divider">>>></div>
+                <div class="c-field">
+                    <label>ZYSK ROCZNY (ZŁ)</label>
+                    <div id="wynik" class="result-badge">3570 ZŁ</div>
+                </div>
             </div>
-            <div class="c-arrow">>>></div>
-            <div class="c-result">
-                <label>ZYSK ROCZNY</label>
-                <div id="wynik" class="res-tag">3570 ZŁ</div>
+            <button class="run-btn" onclick="oblicz()">OBLICZ SYSTEM</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1558444479-c849519d7360?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="card-text">
+                <h3>01. AUTOKONSUMPCJA</h3>
+                <p>Projektujemy systemy zorientowane na zatrzymanie energii wewnątrz budynku. Wykorzystujemy 90% produkcji własnej.</p>
             </div>
         </div>
-        <button class="btn-action" onclick="oblicz()">URUCHOM SYMULACJĘ</button>
-    </div>
-</section>
+        <div class="feature-card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&w=600&q=80')"></div>
+            <div class="card-text">
+                <h3>02. SERWIS I POMIARY</h3>
+                <p>Wykonujemy profesjonalne pomiary instalacji miernikami Sonel. Diagnozujemy usterki, których inni nie potrafią znaleźć.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="container info-grid">
-    <div class="info-card">
-        <h3>01. AUTOKONSUMPCJA</h3>
-        <p>Projektujemy systemy tak, aby 90% energii zostawało w Twoim domu. Wykorzystujemy inteligentne sterowniki i bufory ciepła.</p>
+    <div class="tech-footer">
+        <div class="stat"><strong>90%</strong><span>PRODUKCJI U CIEBIE</span></div>
+        <div class="stat"><strong>SONEL</strong><span>POMIARY</span></div>
+        <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
     </div>
-    <div class="info-card">
-        <h3>02. SERWIS I POMIARY</h3>
-        <p>Pełna diagnostyka instalacji. Pomiary rezystancji, termowizja, naprawy falowników. Pracujemy na sprzęcie marki Sonel.</p>
-    </div>
-</section>
 
-<div class="footer-stats">
-    <div class="s-item"><strong>90%</strong><span>EFFICIENCY</span></div>
-    <div class="s-item"><strong>24/7</strong><span>MONITORING</span></div>
-    <div class="s-item"><strong>SONEL</strong><span>TESTED</span></div>
-</div>
-
-<script>
-    function oblicz() {
-        let r = document.getElementById('rachunek').value;
-        if(r > 0) {
-            document.getElementById('wynik').innerText = Math.round(r * 12 * 0.85) + " ZŁ";
+    <script>
+        function oblicz() {
+            let r = document.getElementById('rachunek').value;
+            if(r > 0) {
+                document.getElementById('wynik').innerText = Math.round(r * 12 * 0.85) + " ZŁ";
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>
