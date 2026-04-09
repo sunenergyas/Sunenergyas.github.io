@@ -1,214 +1,90 @@
-/* =========================================
-   1. RESET I PODSTAWY
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+:root {
+    --orange: #ff8c00;
+    --dark: #0a0e14;
+    --light: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
-body {
-    background-color: #f4f7f6;
-    color: #333;
-    overflow-x: hidden;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #0f141a; color: white; overflow-x: hidden; }
 
-.text-orange { color: #ff8c00; }
-.text-white { color: #ffffff; }
-
-/* =========================================
-   2. HERO SECTION (GÓRA)
-   ========================================= */
-.hero-section {
-    background: linear-gradient(rgba(18, 24, 32, 0.9), rgba(18, 24, 32, 0.9)), 
-                url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?auto=format&fit=crop&w=1600&q=80');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 100px 20px 160px 20px;
-}
-
-.badge {
-    display: inline-block;
-    border: 1px solid #ff8c00;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    background: rgba(0,0,0,0.5);
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-buttons {
+/* HERO SECTION */
+.hero {
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?q=80&w=1600') center/cover;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.btn {
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    display: inline-block;
-    border: none;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background-color: #ff8c00;
-    color: white;
-    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
-}
-
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-    background: transparent;
-}
-
-/* =========================================
-   3. KALKULATOR
-   ========================================= */
-.calculator-section {
-    max-width: 850px;
-    margin: -100px auto 60px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.calculator-card {
-    background: white;
-    border-radius: 25px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.calc-flex {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.calc-value {
-    padding: 15px 35px;
-    border: 2px solid #f0f0f0;
-    border-radius: 50px;
-    font-size: 22px;
-    font-weight: 800;
-}
-
-.calc-value.highlight {
-    background: #ff8c00;
-    color: white;
-    border: none;
-}
-
-/* =========================================
-   4. FUNKCJE (ZDJĘCIA)
-   ========================================= */
-.features-section {
-    display: flex;
-    max-width: 1100px;
-    margin: 40px auto;
-    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
     padding: 20px;
 }
 
-.feature {
-    flex: 1;
-    background: white;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(10,14,20,0.4), #0f141a);
 }
 
-/* OBRAZEK 1: Autokonsumpcja */
-.feature:nth-child(1) .image-placeholder {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    background-image: url('https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-position: center;
+.hero-content { position: relative; z-index: 2; max-width: 600px; }
+
+.badge {
+    background: var(--orange);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-/* OBRAZEK 2: Serwis */
-.feature:nth-child(2) .image-placeholder {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ead?auto=format&fit=crop&w=800&q=80');
-    background-size: cover;
-    background-position: center;
-}
+h1 { font-size: 2.8rem; font-weight: 900; margin: 20px 0; line-height: 1; }
+.highlight { color: var(--orange); }
+p { color: #ccc; font-size: 1.1rem; margin-bottom: 30px; }
 
-.feature h3 { margin-bottom: 10px; font-size: 20px; }
-.feature p { color: #666; font-size: 14px; }
+/* PRZYCISKI */
+.cta-group { display: flex; gap: 10px; justify-content: center; }
+.btn-main { background: var(--orange); color: white; padding: 16px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+.btn-sub { border: 1px solid white; color: white; padding: 16px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; }
 
-/* =========================================
-   5. STOPKA I FORMULARZ
-   ========================================= */
-.footer-section {
-    background: #0f141a;
-    color: white;
-    padding: 80px 20px 40px;
-}
-
-.stats-row {
-    display: flex;
-    justify-content: space-around;
-    max-width: 900px;
-    margin: 0 auto 60px;
-    text-align: center;
-}
-
-.stat-number { font-size: 35px; font-weight: 800; color: #ff8c00; }
-
-.contact-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.contact-form-container {
-    background: white;
+/* KALKULATOR */
+.container { padding: 0 20px; margin-top: -60px; position: relative; z-index: 5; }
+.calc-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
     padding: 30px;
-    border-radius: 20px;
-    width: 350px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
+.calc-grid { display: flex; align-items: center; justify-content: space-around; }
+.price { font-size: 2rem; font-weight: 900; }
+.price span { font-size: 1rem; color: #888; }
+.orange { color: var(--orange); }
 
-.contact-form input {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
+/* KARTY */
+.grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 40px 0; }
+.card { background: #161b22; border-radius: 20px; overflow: hidden; border: 1px solid #21262d; }
+.card-img { height: 200px; background-size: cover; background-position: center; }
+.img-auto { background-image: url('https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?w=800'); }
+.img-service { background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ead?w=800'); }
+.card-body { padding: 25px; }
+.card-body h3 { margin-bottom: 10px; }
+.card-body p { color: #8b949e; font-size: 0.9rem; }
 
-.btn-block { width: 100%; background: #ff8c00; color: white; cursor: pointer; }
+/* STOPKA */
+footer { background: #0a0e14; padding: 60px 20px; text-align: center; }
+.stat-box { display: inline-block; margin: 0 20px 30px; }
+.num { font-size: 2rem; font-weight: 900; color: var(--orange); }
+.lab { font-size: 0.7rem; color: #888; text-transform: uppercase; }
 
-/* MOBILNOŚĆ */
-@media (max-width: 768px) {
-    .features-section, .stats-row, .calc-flex, .hero-buttons { flex-direction: column; }
-    .calc-value { width: 100%; }
+.footer-form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.footer-form input { background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 8px; color: white; }
+.footer-form button { background: var(--orange); border: none; padding: 15px; border-radius: 8px; color: white; font-weight: 900; cursor: pointer; }
+.copy { margin-top: 40px; font-size: 0.7rem; color: #444; }
+
+/* TELEFON */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .calc-grid { flex-direction: column; gap: 20px; }
+    .separator { transform: rotate(90deg); }
+    .cta-group { flex-direction: column; }
 }
