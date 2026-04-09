@@ -1,17 +1,16 @@
 /* =========================================
-   1. RESET, FONTS & GENERAL SETTINGS
+   1. RESET I PODSTAWY
    ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif; /* Pamiętaj o imporcie czcionki w HTML */
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background-color: #f4f7f6;
     color: #333;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -19,351 +18,197 @@ body {
 .text-white { color: #ffffff; }
 
 /* =========================================
-   2. HERO SECTION (TOP)
+   2. HERO SECTION (GÓRA)
    ========================================= */
 .hero-section {
-    background-color: #121820; /* Kolor bazowy */
-    
-    /* DODANO: Tło techniczne/obwody (ładowane z internetu) */
-    background-image: 
-        linear-gradient(rgba(18, 24, 32, 0.85), rgba(18, 24, 32, 0.95)), /* Ciemny filtr */
-        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2048&auto=format&fit=crop'); /* Zdjęcie obwodu scalonego */
+    background: linear-gradient(rgba(18, 24, 32, 0.9), rgba(18, 24, 32, 0.9)), 
+                url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Subtelny efekt paralaksy */
-    
     color: white;
     text-align: center;
-    padding: 80px 20px 140px 20px; /* Duży dół dla efektu kalkulatora */
-    position: relative;
+    padding: 100px 20px 160px 20px;
 }
 
 .badge {
     display: inline-block;
-    border: 1px solid rgba(255, 140, 0, 0.5);
-    padding: 8px 20px;
-    border-radius: 12px;
+    border: 1px solid #ff8c00;
+    padding: 10px 20px;
+    border-radius: 10px;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
     margin-bottom: 25px;
-    color: #ccc;
-    background-color: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
 }
 
 .hero-section h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 15px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.hero-section p {
-    font-size: 15px;
-    color: #a0a0a0;
-    margin-bottom: 35px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Przyciski */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .btn {
-    padding: 14px 28px;
+    padding: 15px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 13px;
-    transition: all 0.3s ease;
     display: inline-block;
     border: none;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-primary {
     background-color: #ff8c00;
     color: white;
-    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
 }
 
 .btn-outline {
-    background-color: transparent;
+    border: 2px solid white;
     color: white;
-    border: 2px solid #555;
-}
-
-.btn-outline:hover {
-    border-color: white;
-    background-color: rgba(255,255,255,0.05);
+    background: transparent;
 }
 
 /* =========================================
-   3. CALCULATOR (OVERLAPPING CARD)
+   3. KALKULATOR
    ========================================= */
 .calculator-section {
     max-width: 850px;
-    margin: -80px auto 60px auto; /* Efekt "wejścia" na górną sekcję */
+    margin: -100px auto 60px;
     padding: 0 20px;
     position: relative;
     z-index: 10;
 }
 
 .calculator-card {
-    background-color: white;
+    background: white;
     border-radius: 25px;
     padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-
-.calculator-card h2 {
-    font-size: 22px;
-    margin-bottom: 30px;
-    font-weight: 700;
 }
 
 .calc-flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-}
-
-.calc-box p {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 10px;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .calc-value {
-    border: 1.5px solid #eee;
+    padding: 15px 35px;
+    border: 2px solid #f0f0f0;
     border-radius: 50px;
-    padding: 12px 40px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
 }
 
 .calc-value.highlight {
-    background: linear-gradient(90deg, #ff8c00, #ffaa00);
+    background: #ff8c00;
     color: white;
     border: none;
-    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
-}
-
-.calc-arrow {
-    font-size: 28px;
-    color: #333;
 }
 
 /* =========================================
-   4. FEATURES SECTION (IMAGES + DESC)
+   4. FUNKCJE (ZDJĘCIA)
    ========================================= */
 .features-section {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px 20px;
     max-width: 1100px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 20px;
 }
 
 .feature {
     flex: 1;
-    min-width: 320px;
     background: white;
     padding: 15px;
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.feature:hover {
-    transform: translateY(-5px);
-}
-
-/* ZMODYFIKOWANO: Placeholdery na zdjęcia załadowane z internetu */
-.image-placeholder {
+/* OBRAZEK 1: Autokonsumpcja */
+.feature:nth-child(1) .image-placeholder {
     width: 100%;
-    height: 220px;
-    background-color: #0d2a4a; /* Kolor zapasowy */
+    height: 250px;
     border-radius: 15px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&w=800&q=80');
     background-size: cover;
     background-position: center;
-    position: relative;
-    overflow: hidden;
 }
 
-/* DODANO: Zdjęcie dla "Autokonsumpcja" (Panele słoneczne na dachu) */
-.feature:nth-child(1) .image-placeholder {
-    background-image: 
-        linear-gradient(rgba(13, 42, 74, 0.4), rgba(13, 42, 74, 0.7)), /* Niebieski filtr */
-        url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?q=80&w=800&auto=format&fit=crop');
-}
-
-/* DODANO: Zdjęcie dla "Serwis i Pomiary" (Miernik elektryczny) */
+/* OBRAZEK 2: Serwis */
 .feature:nth-child(2) .image-placeholder {
-    background-image: 
-        linear-gradient(rgba(13, 42, 74, 0.4), rgba(13, 42, 74, 0.7)), /* Niebieski filtr */
-        url('https://images.unsplash.com/photo-1619191060690-b183a65a585f?q=80&w=800&auto=format&fit=crop');
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ead?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
 }
 
-.feature h3 {
-    font-size: 19px;
-    margin-bottom: 12px;
-    padding-left: 10px;
-    margin-top: 10px;
-}
-
-.feature p {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.6;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
+.feature h3 { margin-bottom: 10px; font-size: 20px; }
+.feature p { color: #666; font-size: 14px; }
 
 /* =========================================
-   5. FOOTER & STATISTICS
+   5. STOPKA I FORMULARZ
    ========================================= */
 .footer-section {
-    background-color: #0a0e14;
+    background: #0f141a;
     color: white;
-    padding: 70px 20px 30px 20px;
-    margin-top: 50px;
+    padding: 80px 20px 40px;
 }
 
 .stats-row {
     display: flex;
     justify-content: space-around;
-    max-width: 1000px;
-    margin: 0 auto 70px auto;
-    flex-wrap: wrap;
-    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
 }
 
-.stat { text-align: center; }
+.stat-number { font-size: 35px; font-weight: 800; color: #ff8c00; }
 
-.stat-number {
-    font-size: 38px;
-    font-weight: 800;
-}
-
-.stat-number .arrow {
-    color: #76ff03;
-    font-size: 28px;
-}
-
-.stat-label {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #888;
-    margin-top: 5px;
-}
-
-/* Formularz */
 .contact-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto 50px auto;
+    gap: 50px;
     flex-wrap: wrap;
-    gap: 60px;
-}
-
-.contact-icons {
-    display: flex;
-    gap: 30px;
-    font-size: 50px;
-    opacity: 0.6;
 }
 
 .contact-form-container {
-    background-color: white;
-    padding: 35px;
+    background: white;
+    padding: 30px;
     border-radius: 20px;
-    width: 100%;
-    max-width: 380px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    width: 350px;
 }
 
 .contact-form input {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-    color: #333;
 }
 
-.contact-form input:focus {
-    border-color: #ff8c00;
-}
+.btn-block { width: 100%; background: #ff8c00; color: white; cursor: pointer; }
 
-.btn-block {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 15px;
-}
-
-.copyright {
-    text-align: center;
-    font-size: 11px;
-    color: #444;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 30px;
-    margin-top: 40px;
-}
-
-/* =========================================
-   6. RESPONSIVENESS (MOBILE)
-   ========================================= */
+/* MOBILNOŚĆ */
 @media (max-width: 768px) {
-    .hero-section h1 { font-size: 2rem; }
-    
-    .calc-flex {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .calc-arrow {
-        transform: rotate(90deg);
-        margin: 10px 0;
-    }
-    
-    .contact-row {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .features-section {
-        gap: 20px;
-    }
+    .features-section, .stats-row, .calc-flex, .hero-buttons { flex-direction: column; }
+    .calc-value { width: 100%; }
 }
