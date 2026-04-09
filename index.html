@@ -1,91 +1,285 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy - Fotowoltaika</title>
-    <!-- Łącze do pliku Styles.css (pamiętaj o dużej literze S na GitHubie!) -->
-    <link rel="stylesheet" href="Styles.css?v=1.1">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+/* =========================================
+   1. PODSTAWOWE USTAWIENIA
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <div class="badge">INŻYNIERIA NIEZALEŻNOŚCI<br>2026</div>
-            <h1><span class="text-orange">FOTOWOLTAIKA</span><br>BEZ DOTACJI <span class="text-white">MA SENS</span></h1>
-            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS)</p>
-            <div class="hero-buttons">
-                <a href="tel:691875997" class="btn btn-primary">DARMOWY AUDYT TECHNICZNY</a>
-                <a href="tel:691875997" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
-            </div>
-        </div>
-    </header>
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <section class="calculator-section">
-        <div class="calculator-card">
-            <h2>Kalkulator Oszczędności</h2>
-            <div class="calc-flex">
-                <div class="calc-box">
-                    <p>Twój miesięczny rachunek:</p>
-                    <div class="calc-value">350 zł</div>
-                </div>
-                <div class="calc-arrow">➔</div>
-                <div class="calc-box">
-                    <p>Szacowany roczny zysk:</p>
-                    <div class="calc-value highlight">3570 zł</div>
-                </div>
-            </div>
-        </div>
-    </section>
+.text-orange { color: #ff8c00; }
+.text-white { color: #ffffff; }
 
-    <section class="features-section">
-        <div class="feature">
-            <div class="image-placeholder"></div>
-            <h3>Silna Autokonsumpcja</h3>
-            <p>Maksymalizuj wykorzystanie darmowej energii ze słońca w czasie rzeczywistym.</p>
-        </div>
-        <div class="feature">
-            <div class="image-placeholder"></div>
-            <h3>Serwis i Pomiary</h3>
-            <p>Profesjonalne przeglądy i diagnostyka termowizyjna Twojej instalacji.</p>
-        </div>
-    </section>
+/* =========================================
+   2. SEKCJA GŁÓWNA (HERO)
+   ========================================= */
+.hero-section {
+    background: linear-gradient(rgba(18, 24, 32, 0.85), rgba(18, 24, 32, 0.95)), 
+                url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px 150px 20px;
+}
 
-    <footer class="footer-section">
-        <div class="stats-row">
-            <div class="stat">
-                <div class="stat-number">90% <span class="arrow">↑</span></div>
-                <div class="stat-label">AUTOKONSUMPCJI</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number text-orange">100%</div>
-                <div class="stat-label">BEZPIECZEŃSTWA</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number text-orange">24/7</div>
-                <div class="stat-label">MONITORING</div>
-            </div>
-        </div>
+.badge {
+    display: inline-block;
+    border: 1px solid #ff8c00;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background-color: rgba(0,0,0,0.3);
+}
 
-        <div class="contact-row">
-            <div class="contact-icons">
-                <div class="icon">📱</div>
-                <div class="icon">✉️</div>
-            </div>
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <input type="text" placeholder="Imię i nazwisko">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Hasło">
-                    <button type="submit" class="btn btn-primary btn-block">ZADZWOŃ</button>
-                </form>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2026 Sun Energy - Inżynieria Optymalizacji Energii.
-        </div>
-    </footer>
+.hero-section h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
 
-</body>
-</html>
+.hero-section p {
+    font-size: 15px;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 35px;
+}
+
+/* PRZYCISKI */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #ff8c00;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* =========================================
+   3. KALKULATOR (BIAŁA KARTA)
+   ========================================= */
+.calculator-section {
+    max-width: 850px;
+    margin: -80px auto 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.calculator-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.calculator-card h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.calc-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.calc-box p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.calc-value {
+    border: 1px solid #eee;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.calc-value.highlight {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+}
+
+.calc-arrow {
+    font-size: 24px;
+    color: #333;
+}
+
+/* =========================================
+   4. SEKCJA ZDJĘĆ I FUNKCJI
+   ========================================= */
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 230px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ZDJĘCIE 1: Autokonsumpcja (Panele) */
+.feature:nth-child(1) .image-placeholder {
+    background-image: url('https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&w=800&q=80');
+}
+
+/* ZDJĘCIE 2: Serwis (Inżynier/Narzędzia) */
+.feature:nth-child(2) .image-placeholder {
+    background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ead?auto=format&fit=crop&w=800&q=80');
+}
+
+.feature h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+    padding-left: 5px;
+}
+
+/* =========================================
+   5. STOPKA I FORMULARZ
+   ========================================= */
+.footer-section {
+    background-color: #0d1117;
+    color: white;
+    padding: 60px 20px 30px;
+    margin-top: 50px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff8c00;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 40px;
+}
+
+.contact-form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 360px;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 11px;
+    color: #555;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 25px;
+    margin-top: 40px;
+}
+
+/* =========================================
+   6. MOBILNOŚĆ (TELEFONY)
+   ========================================= */
+@media (max-width: 768px) {
+    .calc-flex { flex-direction: column; }
+    .calc-arrow { transform: rotate(90deg); margin: 5px 0; }
+    .hero-buttons { flex-direction: column; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .stats-row { flex-direction: column; gap: 30px; }
+}
