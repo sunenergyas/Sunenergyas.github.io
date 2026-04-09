@@ -1,82 +1,65 @@
 :root {
     --primary: #f39c12;
-    --primary-dark: #d35400;
     --dark: #0f172a;
-    --light: #f8fafc;
+    --darker: #020617;
+    --gold: #fbbf24;
     --white: #ffffff;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-body { background-color: var(--light); color: #334155; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--darker); color: #f8fafc; line-height: 1.6; }
 
-/* HERO - TWOJE ZDJĘCIE DACHU (image_4.png) */
+/* HERO - TŁO TECHNICZNE (OBRAZEK Z SIECI, NIE MUSISZ NIC DODAWAĆ) */
 .hero {
-    min-height: 85vh;
-    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                url('image_4.png') center/cover fixed;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px;
+    min-height: 90vh;
+    background: radial-gradient(circle at center, rgba(15, 23, 42, 0.4) 0%, var(--darker) 100%),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png'),
+                linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9));
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
 }
-.hero-box { max-width: 900px; }
-.badge { background: var(--primary); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; display: inline-block; letter-spacing: 1px; }
-.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; }
-.hero p { font-size: 1.25rem; opacity: 0.95; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 500; }
-.hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
-/* BUTTONS */
-.btn { padding: 18px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; text-transform: uppercase; }
-.btn-outline { background: transparent; border: 2px solid white; }
-.btn:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-.btn-full { width: 100%; display: block; }
+.highlight { color: var(--primary); }
+.badge { border: 1px solid var(--primary); color: var(--primary); padding: 5px 15px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+.hero h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 20px; }
+.hero p { max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem; color: #94a3b8; }
 
-/* KALKULATOR PREMIUM */
+/* PRZYCISKI */
+.btn { padding: 15px 30px; background: var(--primary); color: var(--white); text-decoration: none; border-radius: 8px; font-weight: 800; transition: 0.3s; border: none; cursor: pointer; }
+.btn-outline { background: transparent; border: 2px solid #334155; margin-left: 10px; color: #fff; }
+.btn-full { width: 100%; display: block; font-size: 1rem; }
+.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(243, 156, 18, 0.4); }
+
+/* KALKULATOR - WYGLĄD Z TWOJEGO PROJEKTU */
 .calculator-card {
-    background: white; max-width: 700px; margin: -120px auto 60px; padding: 40px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); position: relative; z-index: 10;
+    background: var(--white); color: var(--dark); max-width: 800px; margin: -100px auto 50px; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-.calc-header { text-align: center; margin-bottom: 30px; }
-.calc-header h2 { font-size: 1.9rem; color: var(--dark); font-weight: 800; }
-.input-group { margin-bottom: 20px; text-align: left; }
-.input-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.95rem; }
-.input-group input { width: 100%; padding: 16px; border-radius: 10px; border: 2px solid #e2e8f0; font-size: 1.2rem; outline: none; transition: 0.3s; font-weight: 600; }
-.input-group input:focus { border-color: var(--primary); }
-.wynik-box { margin-top: 30px; text-align: center; padding: 25px; background: #fff7ed; border-radius: 15px; display: none; }
-.wynik-box.active { display: block; }
-.wynik-box h3 { font-size: 2.8rem; color: var(--primary); font-weight: 900; }
+.calc-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.input-wrapper { display: flex; align-items: center; border: 2px solid #e2e8f0; border-radius: 10px; padding: 10px 20px; margin-top: 10px; }
+.input-wrapper input { border: none; font-size: 1.5rem; font-weight: bold; width: 100px; outline: none; }
+.calc-arrow { font-size: 2rem; color: var(--primary); font-weight: bold; }
+.result-display { background: var(--primary); color: white; padding: 15px 30px; border-radius: 50px; font-size: 1.5rem; font-weight: 900; margin-top: 10px; }
 
-/* GRID LAYOUT */
-.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.reverse { direction: rtl; }
-.reverse .text-box { direction: ltr; }
-.section-tag { color: var(--primary); font-weight: 900; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
-.text-box h2 { font-size: 3rem; color: var(--dark); line-height: 1.15; margin: 15px 0 25px; font-weight: 800; }
-.features { list-style: none; margin-top: 25px; }
-.features li { margin-bottom: 15px; font-weight: 600; color: var(--dark); font-size: 1.1rem; }
+/* KARTY */
+.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { background: #1e293b; padding: 40px; border-radius: 20px; border: 1px solid #334155; transition: 0.3s; }
+.card:hover { border-color: var(--primary); }
+.card-icon { font-size: 3rem; margin-bottom: 20px; }
 
-/* === TWOJE NOWE ZDJĘCIA TECHNICZNE === */
-.image-box { height: 500px; border-radius: 30px; background-size: cover; background-position: center; box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+/* STATYSTYKI */
+.stats-bar { background: #000; padding: 60px 0; border-top: 1px solid #334155; border-bottom: 1px solid #334155; }
+.stats-grid { display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 30px; }
+.stat h3 { font-size: 2.5rem; color: var(--primary); font-weight: 900; }
+.stat p { font-size: 0.8rem; font-weight: bold; color: #64748b; letter-spacing: 2px; }
 
-/* Klasa .img-autokonsumpcja -> Twoje zdjęcie inwertera z magazynem (image_7.png) */
-.img-autokonsumpcja { background-image: url('image_7.png'); }
+/* KONTAKT */
+.contact-section { text-align: center; }
+.contact-box { background: linear-gradient(145deg, #1e293b, #0f172a); padding: 60px; border-radius: 30px; max-width: 700px; margin: 0 auto; }
+.contact-form input { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px; border: 1px solid #334155; background: #0f172a; color: white; }
 
-/* Klasa .img-serwis -> Twoje zdjęcie z pomiarów miernikiem Sonel (image_9.png) */
-.img-serwis { background-image: url('image_9.png'); }
-
-/* STATS */
-.dark-section { background: var(--dark); color: white; padding: 100px 0; text-align: center; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-.stat-item h3 { font-size: 4rem; color: var(--primary); margin-bottom: 12px; font-weight: 900; }
-.stat-item p { font-size: 1.2rem; font-weight: 500; }
-
-/* CONTACT */
-.contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: white; padding: 60px; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
-.contact-info h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; color: var(--dark); }
-.contact-details { font-size: 1.1rem; margin-top: 30px; }
-.contact-form-box input, .contact-form-box textarea { width: 100%; padding: 18px; margin-bottom: 18px; border-radius: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-size: 1rem; }
-
-@media (max-width: 900px) {
-    .grid, .contact-wrapper { grid-template-columns: 1fr; text-align: center; }
-    .image-box { height: 350px; margin-top: 30px; }
-    .reverse { direction: ltr; }
+@media (max-width: 768px) {
+    .calc-grid { flex-direction: column; }
+    .btn-outline { margin-left: 0; margin-top: 10px; }
 }
 
-footer { text-align: center; padding: 60px; color: #94a3b8; font-size: 0.95rem; font-weight: 500; }
+footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #64748b; }
