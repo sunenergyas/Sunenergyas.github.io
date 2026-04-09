@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optymalizacja Energii</title>
-    <!-- CZCIONKA -->
+    <title>Optymalizacja Energii | Sun Energy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- POPRAWIONY LINK DO TWOJEGO PLIKU (Z DUŻĄ LITERĄ S) -->
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
@@ -14,30 +12,90 @@
     <header class="hero">
         <div class="hero-box">
             <h1>Fotowoltaika bez dotacji ma sens</h1>
-            <p>Maksymalna autokonsumpcja i systemy EMS.</p>
-            <a href="mailto:kontakt@optymalizacjaenergii.org" class="btn">Darmowa Analiza</a>
+            <p>Projektujemy systemy oparte na maksymalnej autokonsumpcji i inteligentnym zarządzaniu energią (EMS).</p>
+            <div style="margin-top: 20px;">
+                <a href="#kontakt" class="btn">Darmowa Analiza</a>
+                <p style="margin-top: 15px; font-weight: bold;">Zadzwoń: 691 875 997</p>
+            </div>
         </div>
     </header>
+
+    <section class="container">
+        <div class="calculator-box">
+            <h2>Kalkulator Oszczędności Sun Energy</h2>
+            <p>Sprawdź, ile możesz zaoszczędzić rocznie dzięki naszej optymalizacji:</p>
+            <div style="margin: 20px 0;">
+                <input type="number" id="rachunek" placeholder="Miesięczny rachunek (zł)">
+                <button class="btn" onclick="oblicz()">Oblicz zysk</button>
+            </div>
+            <h3 id="wynik" style="color: #f39c12; min-height: 1.5em;"></h3>
+        </div>
+    </section>
 
     <section class="container">
         <div class="grid">
             <div class="text-box">
                 <h2>Silna Autokonsumpcja</h2>
-                <p>Optymalizujemy systemy tak, abyś zużywał energię u siebie.</p>
+                <p>Nie skupiamy się na wielkości instalacji, ale na jej efektywności. Dobieramy magazyny energii i systemy grzewcze tak, abyś zużywał 80-90% własnej produkcji zamiast oddawać ją za bezcen do sieci.</p>
+                <p style="margin-top: 15px;">Przestań być "magazynem" dla zakładu energetycznego. Zacznij zarabiać na własnym prądzie poprzez inteligentne jego wykorzystanie.</p>
             </div>
             <div class="image-box img-autokonsumpcja"></div>
+        </div>
+
+        <div class="grid" style="margin-top: 60px;">
+            <div class="image-box img-serwis"></div>
+            <div class="text-box">
+                <h2>Serwis, Pomiary, Naprawy</h2>
+                <p>Twoja instalacja przestała działać, a firma montażowa nie odbiera telefonów? My nie uciekamy od trudnych zadań.</p>
+                <ul>
+                    <li>✓ Diagnostyka i naprawa falowników</li>
+                    <li>✓ Pomiary kamerą termowizyjną</li>
+                    <li>✓ Rozbudowa istniejących systemów o magazyny energii</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section class="ems-dark">
         <div class="container">
             <h2>Inteligentny System EMS</h2>
+            <p>Twoje urządzenia (pompa ciepła, pralka, ładowarka EV) włączają się wtedy, gdy słońce świeci najmocniej. Pełna kontrola w Twoim smartfonie.</p>
             <div class="stats">
-                <div class="stat-card"><h3>100%</h3><p>Zysku</p></div>
-                <div class="stat-card"><h3>80%</h3><p>Niezależności</p></div>
+                <div class="stat-card"><h3>100%</h3><p>Wykorzystania Słońca</p></div>
+                <div class="stat-card"><h3>80%</h3><p>Mniejsze Rachunki</p></div>
+                <div class="stat-card"><h3>24/7</h3><p>Monitoring</p></div>
             </div>
         </div>
     </section>
 
+    <section id="kontakt" class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2>Zacznij Oszczędzać Dzisiaj</h2>
+            <p>Zadzwoń: <strong>691 875 997</strong> | Napisz: <strong>Sun.energy.as@gmail.com</strong></p>
+        </div>
+        
+        <div class="contact-form">
+            <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
+                <input type="text" name="imie" placeholder="Twoje Imię i Nazwisko" required>
+                <input type="text" name="telefon" placeholder="Twój Numer Telefonu" required>
+                <textarea name="wiadomosc" placeholder="Opisz swoją instalację lub problem..." rows="4"></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Wyślij Zapytanie</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sun Energy | Sun.energy.as@gmail.com | Tel: 691 875 997</p>
+    </footer>
+
+    <script>
+        function oblicz() {
+            let kwota = document.getElementById('rachunek').value;
+            if(kwota > 0) {
+                let rocznie = kwota * 12 * 0.85; 
+                document.getElementById('wynik').innerText = "Szacowana oszczędność: ok. " + rocznie.toFixed(0) + " zł rocznie!";
+            }
+        }
+    </script>
 </body>
 </html>
