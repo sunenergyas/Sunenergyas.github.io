@@ -9,14 +9,15 @@
 </head>
 <body>
 
+    <div class="grid-overlay"></div>
+
     <header class="hero">
         <div class="hero-box">
-            <div class="tech-icon-top">⚡</div>
-            <span class="badge">Inżynieria Niezależności 2026</span>
-            <h1>FOTOWOLTAIKA<br><span class="highlight">BEZ DOTACJI MA SENS</span></h1>
-            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS). Budujemy systemy, które pracują na Twój zysk.</p>
+            <div class="tech-label">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
+            <h1>FOTOWOLTAIKA<br><span class="glow">BEZ DOTACJI MA SENS</span></h1>
+            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS). Projektujemy systemy, które realnie zarabiają.</p>
             <div class="hero-btns">
-                <a href="#kontakt" class="btn">Darmowy Audyt Techniczny</a>
+                <a href="#kontakt" class="btn btn-primary">DARMOWY AUDYT TECHNICZNY</a>
                 <a href="tel:691875997" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
             </div>
         </div>
@@ -24,64 +25,47 @@
 
     <section class="container">
         <div class="calculator-card">
-            <div class="calc-grid">
-                <div class="calc-input">
+            <h3>Kalkulator Oszczędności</h3>
+            <div class="calc-row">
+                <div class="input-group">
                     <label>Twój miesięczny rachunek:</label>
-                    <div class="input-wrapper">
+                    <div class="input-field">
                         <input type="number" id="rachunek" placeholder="350">
                         <span>zł</span>
                     </div>
                 </div>
-                <div class="calc-arrow">→</div>
-                <div class="calc-result">
+                <div class="arrow">→</div>
+                <div class="result-group">
                     <label>Szacowany roczny zysk:</label>
-                    <div id="wynik-box" class="result-display">3570 zł</div>
+                    <div id="wynik-box" class="result-tag">3570 zł</div>
                 </div>
             </div>
-            <button class="btn btn-full" onclick="oblicz()" style="margin-top: 20px;">Przelicz oszczędności</button>
+            <button class="btn-calc" onclick="oblicz()">PRZELICZ SYSTEM</button>
         </div>
     </section>
 
-    <section class="container">
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">🏗️</div>
-                <h2>Silna Autokonsumpcja</h2>
-                <p>Inteligentne przekierowanie energii do odbiorników domowych i magazynów ciepła. Zwiększamy wykorzystanie prądu z 30% do 90%.</p>
+    <section class="container tech-grid">
+        <div class="tech-card">
+            <div class="icon-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <div class="card">
-                <div class="card-icon">🔍</div>
-                <h2>Serwis i Pomiary</h2>
-                <p>Profesjonalna diagnostyka systemów PV. Wykonujemy pomiary impedancji pętli zwarcia, rezystancji izolacji oraz audyty termowizyjne.</p>
+            <h2>Silna Autokonsumpcja</h2>
+            <p>Schematy przepływu energii zorientowane na domowe magazyny LiFePO4 i systemy grzewcze.</p>
+        </div>
+        <div class="tech-card">
+            <div class="icon-svg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
+            <h2>Serwis i Pomiary</h2>
+            <p>Diagnostyka techniczna, audyty termowizyjne oraz pełne pomiary instalacji miernikami Sonel.</p>
         </div>
     </section>
 
-    <section class="stats-bar">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat"><h3>90% ↑</h3><p>AUTOKONSUMPCJI</p></div>
-                <div class="stat"><h3>100%</h3><p>BEZPIECZEŃSTWA</p></div>
-                <div class="stat"><h3>24/7</h3><p>MONITORING</p></div>
-            </div>
-        </div>
+    <section class="stats-footer">
+        <div class="stat-box"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
+        <div class="stat-box"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
+        <div class="stat-box"><strong>24/7</strong><span>MONITORING</span></div>
     </section>
-
-    <section id="kontakt" class="container contact-section">
-        <div class="contact-box">
-            <h2>POROZMAWIAJMY O TWOJEJ ENERGII</h2>
-            <div class="contact-form">
-                <input type="text" placeholder="Imię">
-                <input type="email" placeholder="Email">
-                <button class="btn btn-full">ZAMÓW KONSULTACJĘ</button>
-            </div>
-            <p style="margin-top: 20px; font-weight: bold;">ZADZWOŃ: 691 875 997</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Sun Energy - Inżynieria Optymalizacji Energii. Wszelkie prawa zastrzeżone.</p>
-    </footer>
 
     <script>
         function oblicz() {
