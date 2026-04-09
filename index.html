@@ -3,291 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optymalizacja Energii - Fotowoltaika, która ma sens</title>
-    <!-- Nowoczesny font Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <title>Optymalizacja Energii | Fotowoltaika i Magazyny</title>
     
-    <style>
-        /* RESET I BAZA */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 { color: #111; margin-bottom: 1rem; }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 1. HERO SECTION (Efekt WOW na start z Paralaksą) */
-        .hero {
-            height: 100vh;
-            /* Zdjęcie dachu z panelami + przyciemnienie */
-            background: linear-gradient(rgba(10, 20, 30, 0.7), rgba(10, 20, 30, 0.7)), 
-                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 300;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #e67e22; /* Pomarańczowy akcent energetyczny */
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #d35400;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4);
-        }
-
-        /* 2. ZIG-ZAG SECTION (Argumenty) */
-        .section-padding { padding: 100px 0; }
-        
-        .zig-zag {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            margin-bottom: 80px;
-        }
-
-        .zig-zag:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .zig-zag-text { flex: 1; }
-        
-        .zig-zag-text h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-        }
-
-        .zig-zag-img {
-            flex: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .zig-zag-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .zig-zag-img:hover img { transform: scale(1.05); }
-
-        /* 3. PROCES (3 Kroki) */
-        .process-section {
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .process-section h2 { font-size: 3rem; margin-bottom: 60px; }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .process-card {
-            padding: 30px;
-            border-radius: 20px;
-            background: #f8f9fa;
-            transition: all 0.3s ease;
-        }
-
-        .process-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-
-        .process-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px auto;
-            border: 5px solid #e67e22;
-        }
-
-        /* 4. EMS MOCKUP SECTION */
-        .ems-section {
-            background: #1a1a2e; /* Ciemne tło premium */
-            color: white;
-        }
-
-        .ems-section h2 { color: white; font-size: 2.5rem; }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat-box {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border-bottom: 4px solid #e67e22;
-        }
-
-        .stat-box h3 { color: #e67e22; font-size: 2rem; margin: 0; }
-
-        /* MEDIA QUERIES (Dla telefonów) */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .zig-zag, .zig-zag:nth-child(even) { flex-direction: column; }
-            .stats-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- SEKACJA 1: HERO (Ekran startowy) -->
     <header class="hero">
-        <div>
+        <div class="hero-box">
             <h1>Fotowoltaika bez dotacji ma sens</h1>
-            <p>Projektujemy systemy nastawione na maksymalną autokonsumpcję. Magazyny energii, EMS i pełna niezależność. Prawdziwa optymalizacja, zero ściemy.</p>
-            <a href="#kontakt" class="btn">Darmowy Audyt</a>
+            <p>Projektujemy systemy oparte na maksymalnej autokonsumpcji i inteligentnym zarządzaniu energią (EMS).</p>
+            <a href="mailto:kontakt@optymalizacjaenergii.org" class="btn">Darmowa Analiza Rachunków</a>
         </div>
     </header>
 
-    <!-- SEKACJA 2: ARGUMENTY (Układ Zyg-Zag) -->
-    <section class="section-padding container">
-        
-        <!-- Blok 1 -->
-        <div class="zig-zag">
-            <div class="zig-zag-text">
+    <section class="container">
+        <div class="grid">
+            <div class="text-box">
                 <h2>Silna Autokonsumpcja</h2>
-                <p>Nie produkuj prądu dla zakładu energetycznego. Optymalizujemy instalację tak, abyś zużywał prąd wtedy, kiedy go najwięcej generujesz. Dopasowujemy sprzęt pod Twoje realne potrzeby, a nie pod maksymalną dotację.</p>
+                <p>Nie skupiamy się na wielkości instalacji, ale na jej efektywności. Dobieramy magazyny energii tak, abyś zużywał prąd u siebie, zamiast oddawać go za bezcen.</p>
             </div>
-            <div class="zig-zag-img">
-                <!-- Zdjęcie nowoczesnego domu z magazynem (placeholder) -->
-                <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Magazyn Energii">
-            </div>
-        </div>
-
-        <!-- Blok 2 (Odwrócony) -->
-        <div class="zig-zag">
-            <div class="zig-zag-text">
-                <h2>Serwis i Uczciwe Naprawy</h2>
-                <p>Instalacja to inwestycja na lata. Nie uciekamy po montażu. Diagnozujemy usterki, używamy kamer termowizyjnych i dbamy o to, żeby Twój system pracował z pełną wydajnością. Uczciwe podejście do każdego klienta.</p>
-            </div>
-            <div class="zig-zag-img">
-                <!-- Zdjęcie inżyniera / serwisu -->
-                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Serwis Fotowoltaiki">
-            </div>
-        </div>
-
-    </section>
-
-    <!-- SEKACJA 3: EMS i MAGAZYNY -->
-    <section class="section-padding ems-section">
-        <div class="container zig-zag" style="margin-bottom: 0;">
-            <div class="zig-zag-img" style="box-shadow: none;">
-                <!-- Zdjęcie smartfona / technologii (Mockup) -->
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aplikacja EMS" style="border-radius: 20px;">
-            </div>
-            <div class="zig-zag-text">
-                <h2>EMS - Inteligencja Twojego Domu</h2>
-                <p>System zarządzania energią (EMS) automatycznie przesuwa pracę urządzeń na czas, gdy słońce świeci najmocniej. Masz pełną kontrolę w swoim telefonie.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <h3>100%</h3>
-                        <p>Produkcja</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>60%</h3>
-                        <p>Bieżące zużycie</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>20%</h3>
-                        <p>Magazyn</p>
-                    </div>
-                </div>
-            </div>
+            <div class="image-box img-autokonsumpcja"></div>
         </div>
     </section>
 
-    <!-- SEKACJA 4: PROCES (3 KROKI) -->
-    <section class="section-padding process-section">
+    <section class="container" style="background-color: #fff; max-width: 100%;">
         <div class="container">
-            <h2>3 Kroki do niższych rachunków</h2>
-            <div class="process-grid">
-                
-                <div class="process-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Audyt" class="process-img">
-                    <h3>1. Szczery Audyt</h3>
-                    <p>Analizujemy Twoje rachunki i realne zużycie prądu. Bez mydlenia oczu.</p>
+            <div class="grid">
+                <div class="image-box img-serwis"></div>
+                <div class="text-box">
+                    <h2>Audyt i Naprawy</h2>
+                    <p>Twoja instalacja przestała działać? Diagnozujemy usterki, wykonujemy pomiary i przywracamy system do pełnej sprawności. Uczciwie i profesjonalnie.</p>
                 </div>
-
-                <div class="process-card">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Projekt" class="process-img">
-                    <h3>2. Projekt pod realia</h3>
-                    <p>Dobieramy sprzęt tak, aby zwrócił się jak najszybciej. Mniej znaczy często więcej.</p>
-                </div>
-
-                <div class="process-card">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Montaż" class="process-img">
-                    <h3>3. Profesjonalny Montaż</h3>
-                    <p>Nasi fachowcy instalują sprzęt z dbałością o detale i estetykę Twojego dachu.</p>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SEKACJA 5: FOOTER / CTA -->
-    <footer id="kontakt" style="background: #2c3e50; color: white; text-align: center; padding: 60px 20px;">
-        <h2 style="color: white; margin-bottom: 20px;">Gotowy na zyskowną energię?</h2>
-        <p style="margin-bottom: 30px; font-size: 1.2rem;">Porozmawiajmy o systemie dla Ciebie. Wyślij zapytanie, a my zajmiemy się resztą.</p>
-        <a href="mailto:kontakt@optymalizacjaenergii.org" class="btn">Napisz do nas</a>
-        <p style="margin-top: 50px; font-size: 0.9rem; color: #aaa;">&copy; 2026 OptymalizacjaEnergii.org - Fotowoltaika, Magazyny, EMS</p>
+    <section class="ems-dark">
+        <div class="container">
+            <h2>Inteligentne Zarządzanie (EMS)</h2>
+            <p>System, który decyduje, kiedy ładować magazyn, a kiedy uruchomić urządzenia.</p>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Produkcji</p>
+                </div>
+                <div class="stat-card">
+                    <h3>60%</h3>
+                    <p>Autokonsumpcji</p>
+                </div>
+                <div class="stat-card">
+                    <h3>20%</h3>
+                    <p>Magazyn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #111; color: #fff; padding: 60px 20px; text-align: center;">
+        <h2>Zróbmy to porządnie.</h2>
+        <p>OptymalizacjaEnergii.org - Twoja niezależność energetyczna.</p>
+        <div style="margin-top: 30px;">
+            <a href="mailto:kontakt@optymalizacjaenergii.org" class="btn">Napisz do nas</a>
+        </div>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #555;">&copy; 2026 Wszelkie prawa zastrzeżone.</p>
     </footer>
 
 </body>
