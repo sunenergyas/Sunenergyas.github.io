@@ -3,132 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Eksperci od Autokonsumpcji i Magazynowania</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <title>Sun Energy | Inżynieria Niezależności</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
     <header class="hero">
         <div class="hero-box">
+            <div class="tech-icon-top">⚡</div>
             <span class="badge">Inżynieria Niezależności 2026</span>
-            <h1>Fotowoltaika bez dotacji ma sens</h1>
-            <p>Projektujemy i wdrażamy systemy oparte na maksymalnej autokonsumpcji i inteligentnym zarządzaniu energią (EMS). Budujemy instalacje, które zarabiają na siebie.</p>
+            <h1>FOTOWOLTAIKA<br><span class="highlight">BEZ DOTACJI MA SENS</span></h1>
+            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS). Budujemy systemy, które pracują na Twój zysk.</p>
             <div class="hero-btns">
                 <a href="#kontakt" class="btn">Darmowy Audyt Techniczny</a>
-                <a href="tel:691875997" class="btn btn-outline">Zadzwoń: 691 875 997</a>
+                <a href="tel:691875997" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
             </div>
         </div>
     </header>
 
     <section class="container">
         <div class="calculator-card">
-            <div class="calc-header">
-                <h2>Kalkulator Zysku Sun Energy</h2>
-                <p>Sprawdź, ile realnie zaoszczędzisz na profesjonalnej optymalizacji</p>
-            </div>
-            <div class="calc-body">
-                <div class="input-group">
-                    <label>Twój miesięczny rachunek za prąd:</label>
-                    <input type="number" id="rachunek" placeholder="Wpisz kwotę w zł">
+            <div class="calc-grid">
+                <div class="calc-input">
+                    <label>Twój miesięczny rachunek:</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="rachunek" placeholder="350">
+                        <span>zł</span>
+                    </div>
                 </div>
-                <button class="btn btn-full" onclick="oblicz()">Oblicz roczną oszczędność</button>
-                <div id="wynik-box" class="wynik-box">
-                    <span id="wynik-label">Szacowany zysk roczny:</span>
-                    <h3 id="wynik-kwota">0 zł</h3>
+                <div class="calc-arrow">→</div>
+                <div class="calc-result">
+                    <label>Szacowany roczny zysk:</label>
+                    <div id="wynik-box" class="result-display">3570 zł</div>
                 </div>
             </div>
+            <button class="btn btn-full" onclick="oblicz()" style="margin-top: 20px;">Przelicz oszczędności</button>
         </div>
     </section>
 
     <section class="container">
         <div class="grid">
-            <div class="text-box">
-                <span class="section-tag">Technologia Inżynieryjna</span>
+            <div class="card">
+                <div class="card-icon">🏗️</div>
                 <h2>Silna Autokonsumpcja</h2>
-                <p>Nie skupiamy się na wielkości instalacji, ale na jej efektywności. Dobieramy magazyny energii i systemy grzewcze tak, abyś zużywał 80-90% własnej produkcji zamiast oddawać ją za bezcen.</p>
-                <ul class="features">
-                    <li>✓ Inteligentne magazynowanie energii</li>
-                    <li>✓ Zarządzanie odbiornikami (Smart Home)</li>
-                    <li>✓ Zero strat na przesyle do sieci</li>
-                </ul>
+                <p>Inteligentne przekierowanie energii do odbiorników domowych i magazynów ciepła. Zwiększamy wykorzystanie prądu z 30% do 90%.</p>
             </div>
-            <div class="image-box img-autokonsumpcja"></div>
-        </div>
-    </section>
-
-    <section class="container" style="background: #fff; max-width: 100%;">
-        <div class="container">
-            <div class="grid reverse">
-                <div class="image-box img-serwis"></div>
-                <div class="text-box">
-                    <span class="section-tag">Serwis i Bezpieczeństwo</span>
-                    <h2>Serwis, Pomiary, Naprawy</h2>
-                    <p>Twoja instalacja przestała działać, a firma montażowa nie odbiera? Diagnozujemy usterki, wykonujemy pomiary profesjonalnym sprzętem (Sonel) i przywracamy system do pełnej sprawności.</p>
-                    <ul class="features">
-                        <li>✓ Diagnostyka falowników i optymalizatorów</li>
-                        <li>✓ Pomiary kamerą termowizyjną i audyty</li>
-                        <li>✓ Rozbudowa o systemy EMS i Backup</li>
-                    </ul>
-                </div>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <h2>Serwis i Pomiary</h2>
+                <p>Profesjonalna diagnostyka systemów PV. Wykonujemy pomiary impedancji pętli zwarcia, rezystancji izolacji oraz audyty termowizyjne.</p>
             </div>
         </div>
     </section>
 
-    <section class="dark-section">
+    <section class="stats-bar">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Technicznej Pewności</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Monitoring systemu</p>
-                </div>
-                <div class="stat-item">
-                    <h3>85%</h3>
-                    <p>Średniej autokonsumpcji</p>
-                </div>
+                <div class="stat"><h3>90% ↑</h3><p>AUTOKONSUMPCJI</p></div>
+                <div class="stat"><h3>100%</h3><p>BEZPIECZEŃSTWA</p></div>
+                <div class="stat"><h3>24/7</h3><p>MONITORING</p></div>
             </div>
         </div>
     </section>
 
-    <section id="kontakt" class="container">
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h2>Gotowy na zmiany?</h2>
-                <p>Porozmawiajmy o Twojej inżynieryjnej niezależności energetycznej.</p>
-                <div class="contact-details">
-                    <p><strong>Telefon:</strong> 691 875 997</p>
-                    <p><strong>Email:</strong> Sun.energy.as@gmail.com</p>
-                </div>
+    <section id="kontakt" class="container contact-section">
+        <div class="contact-box">
+            <h2>POROZMAWIAJMY O TWOJEJ ENERGII</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Imię">
+                <input type="email" placeholder="Email">
+                <button class="btn btn-full">ZAMÓW KONSULTACJĘ</button>
             </div>
-            <div class="contact-form-box">
-                <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Twoje Imię" required>
-                    <input type="tel" name="phone" placeholder="Numer telefonu" required>
-                    <textarea name="msg" placeholder="W czym możemy pomóc? Opisz krótko problem." rows="4"></textarea>
-                    <button type="submit" class="btn btn-full">Wyślij zapytanie techniczne</button>
-                </form>
-            </div>
+            <p style="margin-top: 20px; font-weight: bold;">ZADZWOŃ: 691 875 997</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sun Energy - Inżynieria Optymalizacji Energii.</p>
+        <p>&copy; 2026 Sun Energy - Inżynieria Optymalizacji Energii. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
     <script>
         function oblicz() {
             let kwota = document.getElementById('rachunek').value;
-            let box = document.getElementById('wynik-box');
             if(kwota > 0) {
                 let rocznie = kwota * 12 * 0.85; 
-                document.getElementById('wynik-kwota').innerText = rocznie.toFixed(0) + " zł";
-                box.classList.add('active');
+                document.getElementById('wynik-box').innerText = rocznie.toFixed(0) + " zł";
             }
         }
     </script>
