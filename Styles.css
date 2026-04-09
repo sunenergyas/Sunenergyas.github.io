@@ -1,22 +1,21 @@
 /* 1. KOLORY I KONFIGURACJA */
 :root {
-    --primary: #f39c12;    /* Energetyczny pomarańcz */
-    --dark: #1a1a2e;       /* Nowoczesny granat */
-    --light: #f4f7f6;      /* Jasne tło */
+    --primary: #f39c12;    /* Pomarańcz */
+    --dark: #1a1a2e;       /* Granat */
+    --light: #f4f7f6;      /* Tło */
     --white: #ffffff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 body { background-color: var(--light); color: #333; line-height: 1.6; }
 
-/* 2. HERO - NAGŁÓWEK */
+/* 2. HERO */
 .hero {
     height: 70vh;
     background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                 url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
     display: flex; align-items: center; justify-content: center; text-align: center; color: white;
 }
-
 .hero-box { max-width: 800px; padding: 20px; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
 
@@ -27,11 +26,11 @@ body { background-color: var(--light); color: #333; line-height: 1.6; }
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     text-align: center;
-    margin: -80px auto 40px; /* Wyciąga kalkulator na zdjęcie hero */
+    margin: -80px auto 40px;
     position: relative;
     max-width: 800px;
+    z-index: 10;
 }
-
 .calculator-box input {
     padding: 15px;
     width: 280px;
@@ -39,22 +38,23 @@ body { background-color: var(--light); color: #333; line-height: 1.6; }
     border: 1px solid #ddd;
     margin: 10px;
     font-size: 1rem;
-    outline: none;
 }
 
-/* 4. LAYOUT I ZDJĘCIA */
+/* 4. LAYOUT I ZDJĘCIA TECHNICZNE */
 .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 40px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 
 .image-box { 
     height: 400px; border-radius: 25px; background-size: cover; background-position: center;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.img-autokonsumpcja { background-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=800&q=80'); }
+/* Zdjęcie: Magazyn Energii i Falownik */
+.img-autokonsumpcja { background-image: url('https://images.unsplash.com/photo-1695610816867-b508f755694c?q=80&w=800&auto=format&fit=crop'); }
+/* Zdjęcie: Panele fotowoltaiczne zbliżenie */
 .img-serwis { background-image: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80'); }
 
-/* 5. FORMULARZ KONTAKTOWY */
+/* 5. FORMULARZ */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -63,7 +63,6 @@ body { background-color: var(--light); color: #333; line-height: 1.6; }
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
-
 .contact-form input, .contact-form textarea {
     width: 100%;
     padding: 15px;
@@ -73,29 +72,28 @@ body { background-color: var(--light); color: #333; line-height: 1.6; }
     background: #f9f9f9;
 }
 
-/* 6. ELEMENTY CIEMNE (EMS) */
+/* 6. EMS CIEMNE */
 .ems-dark { background: var(--dark); color: white; padding: 80px 0; text-align: center; }
 .stats { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
 .stat-card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); flex: 1; min-width: 200px; }
 .stat-card h3 { color: var(--primary); font-size: 2.5rem; }
 
-/* 7. PRZYCISKI I DODATKI */
+/* 7. PRZYCISKI */
 .btn {
     padding: 16px 35px; background: var(--primary); color: white; 
     border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none;
     display: inline-block; transition: 0.3s;
 }
-
 .btn:hover { background: #e67e22; transform: translateY(-3px); }
 
-ul { list-style: none; margin-top: 20px; }
+ul { list-style: none; margin-top: 20px; text-align: left; }
 ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
 ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
 /* 8. MOBILE */
 @media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
-    .grid div:nth-child(2) { order: -1; } /* Zdjęcie nad tekst */
+    .grid { grid-template-columns: 1fr; text-align: center; }
+    .grid div:nth-child(2) { order: -1; }
     .calculator-box input { width: 100%; }
 }
 
