@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Professional PV Solutions</title>
+    <title>Sun Energy | Kontakt i Serwis PV</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
@@ -12,52 +12,57 @@
     <header class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-            <span class="tag">TECHNOLOGIA PRZYSZŁOŚCI</span>
-            <h1>FOTOWOLTAIKA <br><span class="highlight">BEZ DOTACJI MA SENS</span></h1>
-            <p>Maksymalna autokonsumpcja. Inteligentne magazynowanie. Serwis inżynieryjny.</p>
-            <a href="tel:691875997" class="cta-btn">ZADZWOŃ: 691 875 997</a>
+            <span class="tag">INŻYNIERIA ODPOWIEDZIALNOŚCI</span>
+            <h1>SUN <span class="highlight">ENERGY</span></h1>
+            <p>Ekspercki serwis i optymalizacja systemów fotowoltaicznych.</p>
+            <a href="tel:691875997" class="cta-btn">ZADZWOŃ TERAZ</a>
         </div>
     </header>
 
+    <!-- Sekcja Kalkulatora (zostaje bez zmian) -->
     <section class="calculator-section">
         <div class="calc-box">
-            <h2>KALKULATOR OPTYMALIZACJI</h2>
+            <h2>KALKULATOR ZYSKU</h2>
             <div class="calc-flex">
                 <div class="c-field">
-                    <label>TWÓJ RACHUNEK (ZŁ)</label>
+                    <label>RACHUNEK (ZŁ)</label>
                     <input type="number" id="rachunek" placeholder="350">
                 </div>
                 <div class="c-divider">>>></div>
                 <div class="c-field">
-                    <label>ZYSK ROCZNY (ZŁ)</label>
+                    <label>ZYSK ROCZNY</label>
                     <div id="wynik" class="result-badge">3570 ZŁ</div>
                 </div>
             </div>
-            <button class="run-btn" onclick="oblicz()">OBLICZ SYSTEM</button>
+            <button class="run-btn" onclick="oblicz()">OBLICZ OSZCZĘDNOŚCI</button>
         </div>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1558444479-c849519d7360?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="card-text">
-                <h3>01. AUTOKONSUMPCJA</h3>
-                <p>Projektujemy systemy zorientowane na zatrzymanie energii wewnątrz budynku. Wykorzystujemy 90% produkcji własnej.</p>
+    <!-- NOWA: SEKCJA KONTAKTOWA -->
+    <section id="kontakt" class="container contact-area">
+        <div class="contact-card">
+            <h2 class="orbitron">DANE KONTAKTOWE</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <h3>TELEFON</h3>
+                    <a href="tel:691875997" class="contact-link">691 875 997</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <h3>E-MAIL</h3>
+                    <a href="mailto:Sun.energy.as@gmail.com" class="contact-link">Sun.energy.as@gmail.com</a>
+                </div>
             </div>
-        </div>
-        <div class="feature-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="card-text">
-                <h3>02. SERWIS I POMIARY</h3>
-                <p>Wykonujemy profesjonalne pomiary instalacji miernikami Sonel. Diagnozujemy usterki, których inni nie potrafią znaleźć.</p>
+            <div class="action-box">
+                <p>Masz awarię? Potrzebujesz pomiarów Sonel?</p>
+                <a href="tel:691875997" class="btn-call-big">WEZWIJ SERWIS</a>
             </div>
         </div>
     </section>
 
     <div class="tech-footer">
-        <div class="stat"><strong>90%</strong><span>PRODUKCJI U CIEBIE</span></div>
-        <div class="stat"><strong>SONEL</strong><span>POMIARY</span></div>
-        <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
+        <p>&copy; 2026 Sun Energy. Profesjonalne systemy PV.</p>
     </div>
 
     <script>
