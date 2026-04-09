@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Fotowoltaika i Magazyny</title>
-    <!-- Link musi dokładnie pasować do nazwy pliku na GitHubie -->
-    <link rel="stylesheet" href="Styless.css">
+    <title>Sun Energy | Fotowoltaika i Serwis</title>
+    
+    <!-- CZCIONKA GOOGLE -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- POPRAWIONA NAZWA PLIKU (jedno 's' na końcu) -->
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
@@ -16,7 +19,7 @@
             <p>Maksymalna autokonsumpcja i inteligentne zarządzanie energią (EMS).</p>
             <div style="margin-top: 25px;">
                 <a href="#kontakt" class="btn">Darmowa Analiza</a>
-                <p style="margin-top: 15px; font-weight: 900; font-size: 1.4rem; letter-spacing: 1px;">TEL: 691 875 997</p>
+                <p style="margin-top: 15px; font-weight: 900; font-size: 1.4rem;">TEL: 691 875 997</p>
             </div>
         </div>
     </header>
@@ -24,9 +27,9 @@
     <section class="container">
         <div class="calculator-box">
             <h2>Kalkulator Oszczędności Sun Energy</h2>
-            <p>Sprawdź, ile zostanie w Twojej kieszeni dzięki optymalizacji:</p>
+            <p>Wpisz swój miesięczny rachunek (zł):</p>
             <div style="margin: 20px 0;">
-                <input type="number" id="rachunek" placeholder="Miesięczny rachunek (zł)">
+                <input type="number" id="rachunek" placeholder="Kwota rachunku">
                 <button class="btn" onclick="oblicz()">Oblicz zysk</button>
             </div>
             <h3 id="wynik" style="color: #f39c12; min-height: 1.5em; font-weight: 700;"></h3>
@@ -37,60 +40,42 @@
         <div class="grid">
             <div class="text-box">
                 <h2>Silna Autokonsumpcja</h2>
-                <p>Dobieramy magazyny energii tak, abyś zużywał 80-90% własnej produkcji. Przestań oddawać prąd do sieci za bezcen.</p>
-                <ul class="check-list">
-                    <li>✓ Niezależność energetyczna</li>
-                    <li>✓ Wykorzystanie prądu w nocy</li>
-                    <li>✓ Ochrona przed wzrostem cen</li>
-                </ul>
+                <p>Projektujemy systemy tak, abyś zużywał prąd u siebie. Magazyny energii dobieramy pod realne zużycie, a nie pod wielkość dachu.</p>
             </div>
             <div class="image-box img-autokonsumpcja"></div>
         </div>
-
-        <div class="grid" style="margin-top: 60px;">
-            <div class="image-box img-serwis"></div>
-            <div class="text-box">
-                <h2>Serwis i Naprawy</h2>
-                <p>Twoja firma montażowa zniknęła? My naprawiamy, serwisujemy i rozbudowujemy istniejące systemy.</p>
-                <ul class="check-list">
-                    <li>✓ Diagnostyka i pomiary</li>
-                    <li>✓ Serwis falowników</li>
-                    <li>✓ Termowizja instalacji</li>
-                </ul>
-            </div>
-        </div>
     </section>
 
-    <section class="ems-dark">
+    <section class="container" style="background-color: #fff; max-width: 100%;">
         <div class="container">
-            <h2>Inteligentne Zarządzanie EMS</h2>
-            <div class="stats">
-                <div class="stat-card"><h3>100%</h3><p>Efektywności</p></div>
-                <div class="stat-card"><h3>85%</h3><p>Oszczędności</p></div>
-                <div class="stat-card"><h3>24/7</h3><p>Wsparcia</p></div>
+            <div class="grid">
+                <div class="image-box img-serwis"></div>
+                <div class="text-box">
+                    <h2>Serwis i Naprawy</h2>
+                    <p>Naprawiamy instalacje po innych firmach. Wykonujemy pomiary termowizyjne, audyty i rozbudowy o systemy EMS.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="kontakt" class="container">
         <div style="text-align: center; margin-bottom: 40px;">
-            <h2>Skontaktuj się z nami</h2>
-            <p>Zadzwoń: <strong>691 875 997</strong></p>
-            <p>E-mail: <strong>Sun.energy.as@gmail.com</strong></p>
+            <h2>Zadzwoń do nas</h2>
+            <p><strong>691 875 997</strong> | <strong>Sun.energy.as@gmail.com</strong></p>
         </div>
         
         <div class="contact-form">
             <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
-                <input type="text" name="tel" placeholder="Twój Numer Telefonu" required>
-                <textarea name="wiadomosc" placeholder="W czym możemy pomóc?" rows="4"></textarea>
-                <button type="submit" class="btn" style="width: 100%;">Wyślij wiadomość</button>
+                <input type="text" name="tel" placeholder="Twój Telefon" required>
+                <textarea name="wiadomosc" placeholder="Opisz krótko sprawę..." rows="4"></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Wyślij zapytanie</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sun Energy | Sun.energy.as@gmail.com | 691 875 997</p>
+        <p>&copy; 2026 Sun Energy | 691 875 997</p>
     </footer>
 
     <script>
@@ -98,7 +83,7 @@
             let kwota = document.getElementById('rachunek').value;
             if(kwota > 0) {
                 let rocznie = kwota * 12 * 0.85; 
-                document.getElementById('wynik').innerText = "Oszczędzisz około " + rocznie.toFixed(0) + " zł rocznie!";
+                document.getElementById('wynik').innerText = "Oszczędzisz ok. " + rocznie.toFixed(0) + " zł rocznie!";
             }
         }
     </script>
