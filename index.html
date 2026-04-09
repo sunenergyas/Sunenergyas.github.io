@@ -3,75 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Kontakt i Serwis PV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sun Energy | Inżynieria Niezależności</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
-    <header class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <span class="tag">INŻYNIERIA ODPOWIEDZIALNOŚCI</span>
-            <h1>SUN <span class="highlight">ENERGY</span></h1>
-            <p>Ekspercki serwis i optymalizacja systemów fotowoltaicznych.</p>
-            <a href="tel:691875997" class="cta-btn">ZADZWOŃ TERAZ</a>
-        </div>
-    </header>
+<div class="grid-bg"></div>
 
-    <!-- Sekcja Kalkulatora (zostaje bez zmian) -->
-    <section class="calculator-section">
-        <div class="calc-box">
-            <h2>KALKULATOR ZYSKU</h2>
-            <div class="calc-flex">
-                <div class="c-field">
-                    <label>RACHUNEK (ZŁ)</label>
-                    <input type="number" id="rachunek" placeholder="350">
-                </div>
-                <div class="c-divider">>>></div>
-                <div class="c-field">
-                    <label>ZYSK ROCZNY</label>
-                    <div id="wynik" class="result-badge">3570 ZŁ</div>
-                </div>
-            </div>
-            <button class="run-btn" onclick="oblicz()">OBLICZ OSZCZĘDNOŚCI</button>
+<header class="hero">
+    <div class="hero-inner">
+        <div class="top-badge">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
+        <h1>FOTOWOLTAIKA <br><span class="orange-text">BEZ DOTACJI MA SENS</span></h1>
+        <p class="hero-sub">Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS)</p>
+        <div class="hero-actions">
+            <a href="#" class="btn-fill">DARMOWY AUDYT TECHNICZNY</a>
+            <a href="tel:691875997" class="btn-outline">ZADZWOŃ: 691 875 997</a>
         </div>
-    </section>
-
-    <!-- NOWA: SEKCJA KONTAKTOWA -->
-    <section id="kontakt" class="container contact-area">
-        <div class="contact-card">
-            <h2 class="orbitron">DANE KONTAKTOWE</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <span class="icon">📞</span>
-                    <h3>TELEFON</h3>
-                    <a href="tel:691875997" class="contact-link">691 875 997</a>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">✉️</span>
-                    <h3>E-MAIL</h3>
-                    <a href="mailto:Sun.energy.as@gmail.com" class="contact-link">Sun.energy.as@gmail.com</a>
-                </div>
-            </div>
-            <div class="action-box">
-                <p>Masz awarię? Potrzebujesz pomiarów Sonel?</p>
-                <a href="tel:691875997" class="btn-call-big">WEZWIJ SERWIS</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="tech-footer">
-        <p>&copy; 2026 Sun Energy. Profesjonalne systemy PV.</p>
     </div>
+</header>
 
-    <script>
-        function oblicz() {
-            let r = document.getElementById('rachunek').value;
-            if(r > 0) {
-                document.getElementById('wynik').innerText = Math.round(r * 12 * 0.85) + " ZŁ";
-            }
-        }
-    </script>
+<section class="calc-section">
+    <div class="calc-card">
+        <h3>Kalkulator Oszczędności</h3>
+        <div class="calc-row">
+            <div class="calc-group">
+                <label>Twój miesięczny rachunek:</label>
+                <div class="input-wrap">
+                    <input type="number" id="rachunek" value="350"> <span>zł</span>
+                </div>
+            </div>
+            <div class="calc-arrow">→</div>
+            <div class="calc-group">
+                <label>Szacowany roczny zysk:</label>
+                <div class="result-box" id="wynik">3570 zł</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4064/4064313.png" alt="Inwerter" class="tech-img">
+        <h2>Silna Autokonsumpcja</h2>
+        <p>Systemy projektowane pod maksymalne wykorzystanie energii na miejscu.</p>
+    </div>
+    <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3565/3565345.png" alt="Pomiary" class="tech-img">
+        <h2>Serwis i Pomiary</h2>
+        <p>Profesjonalna diagnostyka i pomiary instalacji miernikami Sonel.</p>
+    </div>
+</section>
+
+<section class="stats-footer">
+    <div class="stat"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
+    <div class="stat"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
+    <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
+</section>
+
+<section class="final-contact">
+    <div class="contact-form">
+        <input type="text" placeholder="Imię i Nazwisko">
+        <input type="email" placeholder="E-mail">
+        <input type="tel" placeholder="Telefon">
+        <button class="btn-fill">ZAMÓW KONTAKT</button>
+    </div>
+</section>
+
+<script>
+    document.getElementById('rachunek').addEventListener('input', function(e) {
+        let v = e.target.value;
+        document.getElementById('wynik').innerText = Math.round(v * 12 * 0.85) + " zł";
+    });
+</script>
+
 </body>
 </html>
