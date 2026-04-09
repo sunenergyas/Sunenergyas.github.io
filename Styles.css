@@ -1,5 +1,5 @@
 /* =========================================
-   1. RESET I USTAWIENIA OGÓLNE
+   1. RESET, FONTS & GENERAL SETTINGS
    ========================================= */
 * {
     margin: 0;
@@ -19,13 +19,19 @@ body {
 .text-white { color: #ffffff; }
 
 /* =========================================
-   2. SEKCJA HERO (GÓRA STRONY)
+   2. HERO SECTION (TOP)
    ========================================= */
 .hero-section {
-    background-color: #121820; /* Ciemny granat z projektu */
-    /* Tutaj możesz dodać tło z obwodami: background-image: url('twoje-tlo.png'); */
+    background-color: #121820; /* Kolor bazowy */
+    
+    /* DODANO: Tło techniczne/obwody (ładowane z internetu) */
+    background-image: 
+        linear-gradient(rgba(18, 24, 32, 0.85), rgba(18, 24, 32, 0.95)), /* Ciemny filtr */
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2048&auto=format&fit=crop'); /* Zdjęcie obwodu scalonego */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Subtelny efekt paralaksy */
+    
     color: white;
     text-align: center;
     padding: 80px 20px 140px 20px; /* Duży dół dla efektu kalkulatora */
@@ -42,6 +48,7 @@ body {
     letter-spacing: 1px;
     margin-bottom: 25px;
     color: #ccc;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .hero-section h1 {
@@ -99,14 +106,15 @@ body {
 
 .btn-outline:hover {
     border-color: white;
+    background-color: rgba(255,255,255,0.05);
 }
 
 /* =========================================
-   3. KALKULATOR (KARTA NAKŁADAJĄCA SIĘ)
+   3. CALCULATOR (OVERLAPPING CARD)
    ========================================= */
 .calculator-section {
     max-width: 850px;
-    margin: -80px auto 60px auto; /* To robi ten efekt "wejścia" na górną sekcję */
+    margin: -80px auto 60px auto; /* Efekt "wejścia" na górną sekcję */
     padding: 0 20px;
     position: relative;
     z-index: 10;
@@ -160,7 +168,7 @@ body {
 }
 
 /* =========================================
-   4. SEKCJA FUNKCJI (ZDJĘCIA + OPIS)
+   4. FEATURES SECTION (IMAGES + DESC)
    ========================================= */
 .features-section {
     display: flex;
@@ -178,27 +186,52 @@ body {
     background: white;
     padding: 15px;
     border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+/* ZMODYFIKOWANO: Placeholdery na zdjęcia załadowane z internetu */
 .image-placeholder {
     width: 100%;
     height: 220px;
-    background-color: #0d2a4a; /* Ciemniejszy granat dla grafik */
+    background-color: #0d2a4a; /* Kolor zapasowy */
     border-radius: 15px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4a6a8a;
+    color: white;
     font-size: 14px;
     text-align: center;
     padding: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* DODANO: Zdjęcie dla "Autokonsumpcja" (Panele słoneczne na dachu) */
+.feature:nth-child(1) .image-placeholder {
+    background-image: 
+        linear-gradient(rgba(13, 42, 74, 0.4), rgba(13, 42, 74, 0.7)), /* Niebieski filtr */
+        url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?q=80&w=800&auto=format&fit=crop');
+}
+
+/* DODANO: Zdjęcie dla "Serwis i Pomiary" (Miernik elektryczny) */
+.feature:nth-child(2) .image-placeholder {
+    background-image: 
+        linear-gradient(rgba(13, 42, 74, 0.4), rgba(13, 42, 74, 0.7)), /* Niebieski filtr */
+        url('https://images.unsplash.com/photo-1619191060690-b183a65a585f?q=80&w=800&auto=format&fit=crop');
 }
 
 .feature h3 {
     font-size: 19px;
     margin-bottom: 12px;
     padding-left: 10px;
+    margin-top: 10px;
 }
 
 .feature p {
@@ -206,10 +239,11 @@ body {
     color: #666;
     line-height: 1.6;
     padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 /* =========================================
-   5. STOPKA I STATYSTYKI
+   5. FOOTER & STATISTICS
    ========================================= */
 .footer-section {
     background-color: #0a0e14;
@@ -281,6 +315,7 @@ body {
     border-radius: 8px;
     font-size: 14px;
     outline: none;
+    color: #333;
 }
 
 .contact-form input:focus {
@@ -303,7 +338,7 @@ body {
 }
 
 /* =========================================
-   6. RESPONSYWNOŚĆ (TELEFONY)
+   6. RESPONSIVENESS (MOBILE)
    ========================================= */
 @media (max-width: 768px) {
     .hero-section h1 { font-size: 2rem; }
@@ -325,5 +360,10 @@ body {
     
     .hero-buttons {
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .features-section {
+        gap: 20px;
     }
 }
