@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sun Energy - Fotowoltaika</title>
-    <!-- Poprawiona nazwa pliku na Styles.css z dużej litery -->
+    <!-- Odwołanie do pliku Styles.css z dużej litery -->
     <link rel="stylesheet" href="Styles.css">
+    <!-- Import czcionki Montserrat z Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Sekcja Hero -->
     <header class="hero-section">
         <div class="hero-content">
             <div class="badge">INŻYNIERIA NIEZALEŻNOŚCI<br>2026</div>
             <h1><span class="text-orange">FOTOWOLTAIKA</span><br>BEZ DOTACJI <span class="text-white">MA SENS</span></h1>
-            <p>Optymalizacja autokonsumpcji i inteligentne<br>zarządzanie energią (EMS)</p>
+            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS)</p>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-primary">DARMOWY AUDYT TECHNICZNY</a>
                 <a href="#" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
@@ -22,6 +24,7 @@
         </div>
     </header>
 
+    <!-- Sekcja Kalkulatora -->
     <section class="calculator-section">
         <div class="calculator-card">
             <h2>Kalkulator Oszczędności</h2>
@@ -39,19 +42,21 @@
         </div>
     </section>
 
+    <!-- Sekcja Funkcji z obrazkami z CSS -->
     <section class="features-section">
         <div class="feature">
-            <div class="image-placeholder">Ilustracja Autokonsumpcji</div>
+            <div class="image-placeholder"><!-- Obrazek ładuje się z Styles.css --></div>
             <h3>Silna Autokonsumpcja</h3>
-            <p>Optymalne wykorzystanie energii z paneli bezpośrednio w Twoim domu dzięki nowoczesnym systemom EMS.</p>
+            <p>Maksymalizuj zyski, zużywając energię tam, gdzie powstaje. Nasze systemy EMS inteligentnie zarządzają Twoim domem.</p>
         </div>
         <div class="feature">
-            <div class="image-placeholder">Ilustracja Serwis/Pomiary</div>
+            <div class="image-placeholder"><!-- Obrazek ładuje się z Styles.css --></div>
             <h3>Serwis i Pomiary</h3>
-            <p>Profesjonalne pomiary termowizyjne oraz przeglądy instalacji dla maksymalnego bezpieczeństwa.</p>
+            <p>Wykorzystujemy termowizję i precyzyjne mierniki, aby Twoja instalacja działała bezpiecznie przez lata.</p>
         </div>
     </section>
 
+    <!-- Stopka i Statystyki -->
     <footer class="footer-section">
         <div class="stats-row">
             <div class="stat">
@@ -75,15 +80,16 @@
             </div>
             <div class="contact-form-container">
                 <form class="contact-form">
-                    <input type="text" placeholder="Imię i nazwisko">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Hasło">
+                    <input type="text" placeholder="Imię i nazwisko" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Hasło" required>
                     <button type="submit" class="btn btn-primary btn-block">ZADZWOŃ</button>
                 </form>
             </div>
         </div>
+        
         <div class="copyright">
-            © 2026 Sun Energy - Inżynieria Optymalizacji Energii.
+            © 2026 Sun Energy - Inżynieria Optymalizacji Energii. Wszelkie prawa zastrzeżone.
         </div>
     </footer>
 
