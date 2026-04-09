@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Optymalizacja Energii i Serwis</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href Styles.css">
+    <title>Sun Energy | Serwis i Optymalizacja PV</title>
+    <!-- Ważne: Styles.css z dużej litery -->
+    <link rel="stylesheet" href="Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="hero">
         <div class="hero-box">
-            <span class="badge">Niezależność Energetyczna 2026</span>
-            <h1>Fotowoltaika bez dotacji ma sens</h1>
-            <p>Projektujemy systemy nastawione na maksymalną autokonsumpcję i inteligentne zarządzanie energią (EMS). Budujemy instalacje, które zarabiają na siebie.</p>
+            <h1>Sun Energy</h1>
+            <p>Eksperckie podejście do fotowoltaiki. Autokonsumpcja, magazyny energii i profesjonalny serwis.</p>
             <div class="hero-btns">
-                <a href="#kontakt" class="btn">Darmowa Analiza</a>
-                <a href="tel:691875997" class="btn btn-outline">Zadzwoń: 691 875 997</a>
+                <a href="#kontakt" class="btn">Darmowa Wycena</a>
+                <a href="tel:691875997" class="btn" style="background:transparent; border:2px solid white; margin-left:10px;">Zadzwoń</a>
             </div>
         </div>
     </header>
 
     <section class="container">
         <div class="calculator-card">
-            <div class="calc-header">
-                <h2>Kalkulator Oszczędności Sun Energy</h2>
-                <p>Sprawdź, ile realnie zostanie w kieszeni po optymalizacji.</p>
+            <h2 style="text-align:center; margin-bottom:20px;">Kalkulator Oszczędności</h2>
+            <div class="input-group" style="margin-bottom:20px;">
+                <label style="display:block; margin-bottom:5px; font-weight:bold;">Miesięczny rachunek (zł):</label>
+                <input type="number" id="rachunek" style="width:100%; padding:12px; border-radius:8px; border:1px solid #ddd;" placeholder="Np. 300">
             </div>
-            <div class="calc-body">
-                <div class="input-group">
-                    <label>Twój obecny miesięczny rachunek (zł):</label>
-                    <input type="number" id="rachunek" placeholder="Np. 320">
-                </div>
-                <button class="btn btn-full" onclick="oblicz()">Oblicz roczną oszczędność</button>
-                <div id="wynik-box" class="wynik-box">
-                    <span id="wynik-label">Twoja roczna oszczędność:</span>
-                    <h3 id="wynik-kwota">0 zł</h3>
-                </div>
+            <button class="btn" style="width:100%; border:none;" onclick="oblicz()">Oblicz roczny zysk</button>
+            <div id="wynik" style="display:none; text-align:center; margin-top:20px; font-size:1.5rem; font-weight:bold; color:#f39c12;">
+                Oszczędzisz: <span id="kwota">0</span> zł / rok
             </div>
         </div>
     </section>
@@ -46,72 +38,50 @@
     <section class="container">
         <div class="grid">
             <div class="text-box">
-                <span class="section-tag">Technologia Inżynieryjna</span>
-                <h2>Silna Autokonsumpcja</h2>
-                <p>Nie budujemy "pomników" na dachu. Skupiamy się na tym, abyś zużywał 80-90% własnej produkcji energii. Magazynowanie prądu w szczycie produkcji to jedyna droga do opłacalności bez dotacji.</p>
-                <ul class="features">
-                    <li>✓ Inteligentne magazynowanie energii</li>
-                    <li>✓ Zarządzanie odbiornikami w szczycie produkcji</li>
-                    <li>✓ Zero strat na przesyle do sieci</li>
-                </ul>
+                <h2>Maksymalna Autokonsumpcja</h2>
+                <p>Nie oddawaj energii za darmo. Projektujemy systemy z magazynami energii, które pozwalają na wykorzystanie prądu wtedy, gdy go naprawdę potrzebujesz. Stawiamy na inżynieryjną precyzję, a nie na masową sprzedaż.</p>
             </div>
             <div class="image-box img-autokonsumpcja"></div>
         </div>
     </section>
 
-    <section class="container" style="background: #fff; max-width: 100%;">
+    <section class="container" style="background:#fff;">
         <div class="container">
-            <div class="grid reverse">
-                <div class="image-box img-serwis"></div>
-                <div class="text-box">
-                    <span class="section-tag">Serwis i Bezpieczeństwo</span>
-                    <h2>Serwis, Pomiary, Naprawy</h2>
-                    <p>Twoja instalacja przestała działać, a firma montażowa nie odbiera? My nie uciekamy od trudnych zadań. Diagnozujemy usterki, wykonujemy pomiary profesjonalną kamerą termowizyjną i rozbudowujemy systemy o magazyny energii.</p>
-                    <ul class="features">
-                        <li>✓ Diagnostyka falowników i optymalizatorów</li>
-                        <li>✓ Serwis i naprawy pogwarancyjne</li>
-                        <li>✓ Rozbudowa o Backup i EMS</li>
-                    </ul>
+            <div class="grid" style="direction:rtl;">
+                <div class="text-box" style="direction:ltr;">
+                    <h2>Serwis i Naprawy PV</h2>
+                    <p>Twoja instalacja nie działa poprawnie? Wykonujemy profesjonalne pomiary, przeglądy kamerą termowizyjną oraz naprawy pogwarancyjne. Przywracamy sprawność systemom, o których inni zapomnieli.</p>
                 </div>
+                <div class="image-box img-serwis" style="direction:ltr;"></div>
             </div>
         </div>
     </section>
 
-    <section id="kontakt" class="container">
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <h2>Zacznijmy od darmowego audytu</h2>
-                <p>Porozmawiajmy o Twojej niezależności energetycznej.</p>
-                <div class="contact-details">
-                    <p><strong>Telefon:</strong> 691 875 997</p>
-                    <p><strong>Email:</strong> Sun.energy.as@gmail.com</p>
-                </div>
-            </div>
-            <div class="contact-form-box">
-                <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Twoje Imię i Nazwisko" required>
-                    <input type="tel" name="phone" placeholder="Numer telefonu" required>
-                    <textarea name="msg" placeholder="W czym możemy pomóc? Opisz instalację lub usterkę." rows="4"></textarea>
-                    <button type="submit" class="btn btn-full">Wyślij zapytanie</button>
-                </form>
-            </div>
+    <section id="kontakt" class="container" style="text-align:center;">
+        <h2>Potrzebujesz pomocy eksperta?</h2>
+        <p style="margin-bottom:30px;">Zadzwoń lub napisz do nas – działamy szybko i konkretnie.</p>
+        <div style="background:white; padding:40px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.05); display:inline-block; min-width:320px;">
+            <p><strong>Telefon:</strong> 691 875 997</p>
+            <p><strong>E-mail:</strong> Sun.energy.as@gmail.com</p>
+            <br>
+            <a href="tel:691875997" class="btn">Zadzwoń teraz</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sun Energy | Sun.energy.as@gmail.com | Tel: 691 875 997</p>
+        <p>&copy; 2026 Sun Energy. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
     <script>
         function oblicz() {
-            let kwota = document.getElementById('rachunek').value;
-            let box = document.getElementById('wynik-box');
-            if(kwota > 0) {
-                let rocznie = kwota * 12 * 0.85; 
-                document.getElementById('wynik-kwota').innerText = rocznie.toFixed(0) + " zł";
-                box.classList.add('active');
+            const r = document.getElementById('rachunek').value;
+            if(r > 0) {
+                const zysk = Math.round(r * 12 * 0.8);
+                document.getElementById('kwota').innerText = zysk;
+                document.getElementById('wynik').style.display = 'block';
             }
         }
     </script>
+
 </body>
 </html>
