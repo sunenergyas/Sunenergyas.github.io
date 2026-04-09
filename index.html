@@ -1,274 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sun Energy AS - fotowoltaika bez dotacji ma sens</title>
-  <meta name="description" content="Sun Energy AS - doradztwo, audyty, magazyny energii, EMS i naprawy instalacji PV w całej Polsce." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="Styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optymalizacja Energii - Fotowoltaika, która ma sens</title>
+    <!-- Nowoczesny font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET I BAZA */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { color: #111; margin-bottom: 1rem; }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 1. HERO SECTION (Efekt WOW na start z Paralaksą) */
+        .hero {
+            height: 100vh;
+            /* Zdjęcie dachu z panelami + przyciemnienie */
+            background: linear-gradient(rgba(10, 20, 30, 0.7), rgba(10, 20, 30, 0.7)), 
+                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #e67e22; /* Pomarańczowy akcent energetyczny */
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4);
+        }
+
+        /* 2. ZIG-ZAG SECTION (Argumenty) */
+        .section-padding { padding: 100px 0; }
+        
+        .zig-zag {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .zig-zag:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .zig-zag-text { flex: 1; }
+        
+        .zig-zag-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .zig-zag-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .zig-zag-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .zig-zag-img:hover img { transform: scale(1.05); }
+
+        /* 3. PROCES (3 Kroki) */
+        .process-section {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .process-section h2 { font-size: 3rem; margin-bottom: 60px; }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .process-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .process-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px auto;
+            border: 5px solid #e67e22;
+        }
+
+        /* 4. EMS MOCKUP SECTION */
+        .ems-section {
+            background: #1a1a2e; /* Ciemne tło premium */
+            color: white;
+        }
+
+        .ems-section h2 { color: white; font-size: 2.5rem; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        .stat-box h3 { color: #e67e22; font-size: 2rem; margin: 0; }
+
+        /* MEDIA QUERIES (Dla telefonów) */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .zig-zag, .zig-zag:nth-child(even) { flex-direction: column; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <div class="bg-shapes" aria-hidden="true"></div>
 
-  <header class="nav">
-    <div class="brand">
-      <span class="brand-badge" aria-hidden="true"></span>
-      <div class="brand-copy">
-        <strong>Sun Energy AS</strong>
-        <span>fotowoltaika, magazyny, audyty</span>
-      </div>
-    </div>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#dlaczego">Dlaczego teraz</a>
-      <a href="#realizacje">Realizacje</a>
-      <a href="#jak-dzialamy">Jak działamy</a>
-      <a href="#kalkulator">Kalkulator</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-    <a class="btn btn-primary btn-small" href="#kontakt">Zamów audyt</a>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Fotowoltaika bez dotacji ma sens</p>
-          <h1>Przy dotacji 2026 na magazyny energii wygląda to jeszcze lepiej.</h1>
-          <p class="lead">Tworzymy instalacje, które są efektowne wizualnie, ale przede wszystkim opłacalne. Doradztwo, audyty, EMS, magazyny energii i naprawy po źle wykonanych instalacjach składamy w jeden uporządkowany proces.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#kontakt">Bezpłatna analiza rachunków</a>
-            <a class="btn btn-ghost" href="#realizacje">Zobacz realizacje</a>
-          </div>
-          <div class="hero-tags">
-            <span>Dotacja 2026 na magazyny energii</span>
-            <span>Autokonsumpcja zamiast pustych obietnic</span>
-            <span>Audyty i naprawy po błędnych montażach</span>
-          </div>
+    <!-- SEKACJA 1: HERO (Ekran startowy) -->
+    <header class="hero">
+        <div>
+            <h1>Fotowoltaika bez dotacji ma sens</h1>
+            <p>Projektujemy systemy nastawione na maksymalną autokonsumpcję. Magazyny energii, EMS i pełna niezależność. Prawdziwa optymalizacja, zero ściemy.</p>
+            <a href="#kontakt" class="btn">Darmowy Audyt</a>
         </div>
+    </header>
 
-        <div class="hero-glass">
-          <div class="hero-visual">
-            <div class="hero-stat">
-              <span>Autokonsumpcja</span>
-              <strong>45-80%</strong>
-              <small>w zależności od profilu zużycia</small>
+    <!-- SEKACJA 2: ARGUMENTY (Układ Zyg-Zag) -->
+    <section class="section-padding container">
+        
+        <!-- Blok 1 -->
+        <div class="zig-zag">
+            <div class="zig-zag-text">
+                <h2>Silna Autokonsumpcja</h2>
+                <p>Nie produkuj prądu dla zakładu energetycznego. Optymalizujemy instalację tak, abyś zużywał prąd wtedy, kiedy go najwięcej generujesz. Dopasowujemy sprzęt pod Twoje realne potrzeby, a nie pod maksymalną dotację.</p>
             </div>
-            <div class="hero-stat">
-              <span>Dotacja 2026</span>
-              <strong>Magazyny energii</strong>
-              <small>jeszcze lepszy bilans inwestycji</small>
+            <div class="zig-zag-img">
+                <!-- Zdjęcie nowoczesnego domu z magazynem (placeholder) -->
+                <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Magazyn Energii">
             </div>
-            <div class="hero-stat">
-              <span>Doświadczenie</span>
-              <strong>8+ lat</strong>
-              <small>zadowolonych klientów w fotowoltaice</small>
+        </div>
+
+        <!-- Blok 2 (Odwrócony) -->
+        <div class="zig-zag">
+            <div class="zig-zag-text">
+                <h2>Serwis i Uczciwe Naprawy</h2>
+                <p>Instalacja to inwestycja na lata. Nie uciekamy po montażu. Diagnozujemy usterki, używamy kamer termowizyjnych i dbamy o to, żeby Twój system pracował z pełną wydajnością. Uczciwe podejście do każdego klienta.</p>
             </div>
-          </div>
-          <p class="hero-note">Najpierw protokół, pomiary i opis stanu technicznego. Dopiero potem projekt, naprawa albo montaż.</p>
+            <div class="zig-zag-img">
+                <!-- Zdjęcie inżyniera / serwisu -->
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Serwis Fotowoltaiki">
+            </div>
         </div>
-      </div>
+
     </section>
 
-    <section id="dlaczego" class="section">
-      <div class="section-title">
-        <p class="eyebrow warm">Dlaczego warto teraz</p>
-        <h2>Fotowoltaika bez dotacji nadal się spina. Z magazynem energii robi się po prostu jeszcze mocniejsza.</h2>
-        <p>Nie budujemy oferty na modnych hasłach. Liczymy realny sens inwestycji na Twoich rachunkach, godzinach zużycia i możliwościach magazynowania energii. To daje efekt, który widać na fakturach, a nie tylko w prezentacji.</p>
-      </div>
-      <div class="grid three">
-        <article class="tile">
-          <h3>Projekt pod realia 2026</h3>
-          <p>Uwzględniamy nowe warunki rynku i sens wykorzystania dotacji na magazyn energii, a nie tylko samą moc paneli.</p>
-        </article>
-        <article class="tile">
-          <h3>Silna autokonsumpcja</h3>
-          <p>Im więcej energii zużywasz u siebie, tym mniej oddajesz ją za słabe stawki. Tu EMS i magazyn mają największy sens.</p>
-        </article>
-        <article class="tile">
-          <h3>Naprawy też są opłacalne</h3>
-          <p>Kiedy instalacja jest źle wykonana, zaczynamy od audytu i protokołu. Czasem dobra naprawa daje lepszy wynik niż wymiana wszystkiego.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="realizacje" class="section section-dark">
-      <div class="section-title section-title-light">
-        <p class="eyebrow">Realizacje AI</p>
-        <h2>Nowoczesny obraz inwestycji, która wygląda premium i pracuje jak trzeba.</h2>
-        <p>To wizualizacje AI stworzone po to, by pokazać klimat naszych realizacji. Elegancki dach, czyste linie modułów, sensowny projekt i technika, która ma pracować długo i przewidywalnie.</p>
-      </div>
-      <div class="grid three">
-        <article class="tile tile-dark showcase-card">
-          <img class="ai-art" src="assets/realizacja-niechorze.svg" alt="Niechorze 30 kWp" />
-          <h3>Niechorze - 30 kWp</h3>
-          <p>Obiekt usługowy z dużym dachem. Liczył się mocny uzysk, estetyka i praca systemu w rytmie sezonowego obciążenia.</p>
-        </article>
-        <article class="tile tile-dark showcase-card">
-          <img class="ai-art" src="assets/magazyn-falownik.svg" alt="Dom z magazynem energii" />
-          <h3>Dom + magazyn energii</h3>
-          <p>Scenariusz dla klienta, który chce mieć spokój wieczorem i większy udział energii u siebie. EMS i magazyn robią tu prawdziwą różnicę.</p>
-        </article>
-        <article class="tile tile-dark showcase-card">
-          <img class="ai-art" src="assets/budynek-firma.svg" alt="Audyt i naprawa instalacji" />
-          <h3>Audyt i naprawa instalacji</h3>
-          <p>Kiedy coś nie działa jak powinno, zaczynamy od pomiarów, protokołu i opisu problemu. Dopiero potem wdrażamy sensowną naprawę.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="ems" class="section split">
-      <div>
-        <p class="eyebrow warm">EMS + Magazyn</p>
-        <h2>Inteligentne sterowanie robi z dobrej instalacji system, który naprawdę zarządza energią.</h2>
-        <p class="section-copy">EMS decyduje, kiedy ładować magazyn, kiedy uruchomić urządzenia i kiedy energię wykorzystać na miejscu. Właśnie tu zaczyna się przewaga dobrze zaprojektowanej fotowoltaiki nad przypadkowym montażem.</p>
-        <ul class="list">
-          <li>automatyczne przesuwanie pracy urządzeń na godziny produkcji</li>
-          <li>magazyn pokrywa wieczorne szczyty zużycia</li>
-          <li>stała kontrola kosztu 1 kWh i mniejsza zależność od sieci</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <div class="card-header">Przykładowy dzień pracy systemu</div>
-        <div class="panel-row"><span>Produkcja dzienna</span><strong>100%</strong></div>
-        <div class="panel-bar"><div class="bar bar-solar"></div></div>
-        <div class="panel-row"><span>Zużycie na miejscu</span><strong>+ 60%</strong></div>
-        <div class="panel-bar"><div class="bar bar-home"></div></div>
-        <div class="panel-row"><span>Magazyn - wieczór</span><strong>+ 20%</strong></div>
-        <div class="panel-bar"><div class="bar bar-battery"></div></div>
-        <p class="panel-note">To modelowy przykład. Ostateczny wynik zależy od Twojego profilu zużycia i sensownie dobranego magazynu.</p>
-      </div>
-    </section>
-
-    <section id="jak-dzialamy" class="section highlight">
-      <div class="section-title">
-        <p class="eyebrow">Proces</p>
-        <h2>3 kroki do niższych rachunków i spokojnej głowy</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span>1</span><h3>Audyt i protokół</h3><p>Zaczynamy od rachunków, pomiarów i opisu stanu technicznego. Bez zgadywania.</p></div>
-        <div class="step"><span>2</span><h3>Projekt z EMS</h3><p>Dobieramy instalację, magazyn i automatykę do realnego profilu zużycia.</p></div>
-        <div class="step"><span>3</span><h3>Montaż lub naprawa</h3><p>Uruchamiamy nowy system albo porządkujemy stary tak, żeby wreszcie zaczął pracować jak trzeba.</p></div>
-      </div>
-    </section>
-
-    <section id="faq" class="section faq">
-      <div class="section-title">
-        <p class="eyebrow warm">FAQ</p>
-        <h2>Najczęściej zadawane pytania</h2>
-      </div>
-      <div class="grid two">
-        <div class="tile"><h3>Czy bez dotacji to ma sens?</h3><p>Tak. Fotowoltaika bez dotacji ma sens, jeśli instalacja jest dobrze dobrana do zużycia i pracuje na autokonsumpcję.</p></div>
-        <div class="tile"><h3>Czy dotacja 2026 na magazyny coś zmienia?</h3><p>Tak, bo przy dobrze dobranym magazynie energii jeszcze mocniej poprawia się logika ekonomiczna całego projektu.</p></div>
-        <div class="tile"><h3>Jak długo trwa analiza?</h3><p>Zwykle 24-48 godzin od otrzymania rachunków i podstawowych danych technicznych.</p></div>
-        <div class="tile"><h3>Czy naprawiacie cudze instalacje?</h3><p>Tak. Audyt, protokół i naprawy po błędnych montażach to jedna z naszych specjalizacji.</p></div>
-      </div>
-    </section>
-
-    <section id="kalkulator" class="section calculator">
-      <div class="section-title">
-        <p class="eyebrow warm">Kalkulator oszczędności</p>
-        <h2>Policz, ile możesz oszczędzić rocznie</h2>
-        <p>To szybki szacunek oparty o rachunek miesięczny, autokonsumpcję i cenę 1 kWh.</p>
-      </div>
-      <div class="calc-card">
-        <div class="calc-fields">
-          <label>Rachunek miesięczny (zł)<input id="bill" type="number" inputmode="decimal" value="300" min="0" step="10" /></label>
-          <label>Autokonsumpcja (%)<input id="auto" type="number" inputmode="decimal" value="60" min="0" max="100" step="5" /></label>
-          <label>Cena 1 kWh brutto (zł)<input id="price" type="number" inputmode="decimal" value="1.23" min="0" step="0.01" /></label>
+    <!-- SEKACJA 3: EMS i MAGAZYNY -->
+    <section class="section-padding ems-section">
+        <div class="container zig-zag" style="margin-bottom: 0;">
+            <div class="zig-zag-img" style="box-shadow: none;">
+                <!-- Zdjęcie smartfona / technologii (Mockup) -->
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aplikacja EMS" style="border-radius: 20px;">
+            </div>
+            <div class="zig-zag-text">
+                <h2>EMS - Inteligencja Twojego Domu</h2>
+                <p>System zarządzania energią (EMS) automatycznie przesuwa pracę urządzeń na czas, gdy słońce świeci najmocniej. Masz pełną kontrolę w swoim telefonie.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Produkcja</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>60%</h3>
+                        <p>Bieżące zużycie</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>20%</h3>
+                        <p>Magazyn</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="calc-result">
-          <div class="result-label">Szacowane oszczędności roczne</div>
-          <div class="result-value"><span id="savings">2 160</span> zł</div>
-          <div class="result-kwh">Szacowane zużycie: <span id="kwh">244</span> kWh / mies.</div>
-          <div class="result-bar"><div id="savings-bar" class="result-fill"></div></div>
-          <p class="card-note">To punkt wyjścia. Dokładniejszy wynik liczymy po analizie Twoich rachunków i profilu pracy domu albo firmy.</p>
-        </div>
-      </div>
     </section>
 
-    <section id="kontakt" class="section cta">
-      <div>
-        <h2>Chcesz wiedzieć, ile realnie możesz oszczędzić?</h2>
-        <p>Wypełnij krótki formularz, a przygotujemy bezpłatną analizę rachunków, wariantów instalacji i sensownego wykorzystania magazynu energii.</p>
-      </div>
-      <form class="form" action="mailto:Sun.energy.as@gmail.com" method="POST" enctype="text/plain">
-        <label>Imię i nazwisko<input type="text" name="name" placeholder="Jan Kowalski" required /></label>
-        <label>Telefon<input type="tel" name="phone" placeholder="+48 691 875 997" required /></label>
-        <label>E-mail<input type="email" name="email" placeholder="jan@email.pl" required /></label>
-        <label>Miesięczny rachunek<input type="text" name="bill" placeholder="np. 450 zł" /></label>
-        <input type="hidden" name="Temat" value="Bezpłatna wycena - Sun Energy AS" />
-        <button class="btn btn-primary" type="submit">Bezpłatna wycena</button>
-        <p class="form-note">Klikając przycisk, otworzysz gotową wiadomość e-mail do Sun.energy.as@gmail.com.</p>
-        <label class="rodo"><input type="checkbox" name="rodo" required /><span>Wyrażam zgodę na kontakt w celu przedstawienia oferty oraz przygotowania analizy.</span></label>
-        <div class="form-links">
-          <a class="icon-link" href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
-          <a class="icon-link" href="tel:+48691875997">+48 691 875 997</a>
-          <a class="icon-link" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp: +48 691 875 997</a>
+    <!-- SEKACJA 4: PROCES (3 KROKI) -->
+    <section class="section-padding process-section">
+        <div class="container">
+            <h2>3 Kroki do niższych rachunków</h2>
+            <div class="process-grid">
+                
+                <div class="process-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Audyt" class="process-img">
+                    <h3>1. Szczery Audyt</h3>
+                    <p>Analizujemy Twoje rachunki i realne zużycie prądu. Bez mydlenia oczu.</p>
+                </div>
+
+                <div class="process-card">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Projekt" class="process-img">
+                    <h3>2. Projekt pod realia</h3>
+                    <p>Dobieramy sprzęt tak, aby zwrócił się jak najszybciej. Mniej znaczy często więcej.</p>
+                </div>
+
+                <div class="process-card">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Montaż" class="process-img">
+                    <h3>3. Profesjonalny Montaż</h3>
+                    <p>Nasi fachowcy instalują sprzęt z dbałością o detale i estetykę Twojego dachu.</p>
+                </div>
+
+            </div>
         </div>
-      </form>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="footer-brand">
-      <strong>Sun Energy AS</strong>
-      <span>Cały kraj, jedna odpowiedzialna ekipa</span>
-    </div>
-    <div class="footer-links">
-      <a class="icon-link" href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
-      <a class="icon-link" href="tel:+48691875997">+48 691 875 997</a>
-      <a class="icon-link" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a>
-    </div>
-  </footer>
+    <!-- SEKACJA 5: FOOTER / CTA -->
+    <footer id="kontakt" style="background: #2c3e50; color: white; text-align: center; padding: 60px 20px;">
+        <h2 style="color: white; margin-bottom: 20px;">Gotowy na zyskowną energię?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2rem;">Porozmawiajmy o systemie dla Ciebie. Wyślij zapytanie, a my zajmiemy się resztą.</p>
+        <a href="mailto:kontakt@optymalizacjaenergii.org" class="btn">Napisz do nas</a>
+        <p style="margin-top: 50px; font-size: 0.9rem; color: #aaa;">&copy; 2026 OptymalizacjaEnergii.org - Fotowoltaika, Magazyny, EMS</p>
+    </footer>
 
-  <a class="sticky-call" href="tel:+48691875997">Zadzwoń teraz: +48 691 875 997</a>
-  <a class="sticky-whatsapp" href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a>
-
-  <script>
-    const billEl = document.getElementById("bill");
-    const autoEl = document.getElementById("auto");
-    const priceEl = document.getElementById("price");
-    const savingsEl = document.getElementById("savings");
-    const kwhEl = document.getElementById("kwh");
-    const barEl = document.getElementById("savings-bar");
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-
-    function formatPLN(value) {
-      return value.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
-    }
-
-    function recalc() {
-      const bill = Math.max(0, Number(billEl.value) || 0);
-      const autoPct = Math.min(100, Math.max(0, Number(autoEl.value) || 0)) / 100;
-      const price = Math.max(0.01, Number(priceEl.value) || 0.01);
-      const annualBill = bill * 12;
-      const monthlyKwh = bill / price;
-      const savings = annualBill * autoPct;
-
-      savingsEl.textContent = formatPLN(savings);
-      kwhEl.textContent = monthlyKwh.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
-      const ratio = Math.min(1, annualBill === 0 ? 0 : savings / annualBill);
-      barEl.style.width = `${Math.max(6, ratio * 100)}%`;
-    }
-
-    [billEl, autoEl, priceEl].forEach((el) => el.addEventListener("input", recalc));
-    recalc();
-
-    if (hamburger && navLinks) {
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
-    }
-  </script>
 </body>
 </html>
