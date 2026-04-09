@@ -3,79 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Inżynieria Niezależności</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Sun Energy - Fotowoltaika</title>
+    <!-- Poprawiona nazwa pliku na Styles.css z dużej litery -->
     <link rel="stylesheet" href="Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="grid-bg"></div>
-
-<header class="hero">
-    <div class="hero-inner">
-        <div class="top-badge">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
-        <h1>FOTOWOLTAIKA <br><span class="orange-text">BEZ DOTACJI MA SENS</span></h1>
-        <p class="hero-sub">Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS)</p>
-        <div class="hero-actions">
-            <a href="#" class="btn-fill">DARMOWY AUDYT TECHNICZNY</a>
-            <a href="tel:691875997" class="btn-outline">ZADZWOŃ: 691 875 997</a>
+    <header class="hero-section">
+        <div class="hero-content">
+            <div class="badge">INŻYNIERIA NIEZALEŻNOŚCI<br>2026</div>
+            <h1><span class="text-orange">FOTOWOLTAIKA</span><br>BEZ DOTACJI <span class="text-white">MA SENS</span></h1>
+            <p>Optymalizacja autokonsumpcji i inteligentne<br>zarządzanie energią (EMS)</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">DARMOWY AUDYT TECHNICZNY</a>
+                <a href="#" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="calc-section">
-    <div class="calc-card">
-        <h3>Kalkulator Oszczędności</h3>
-        <div class="calc-row">
-            <div class="calc-group">
-                <label>Twój miesięczny rachunek:</label>
-                <div class="input-wrap">
-                    <input type="number" id="rachunek" value="350"> <span>zł</span>
+    <section class="calculator-section">
+        <div class="calculator-card">
+            <h2>Kalkulator Oszczędności</h2>
+            <div class="calc-flex">
+                <div class="calc-box">
+                    <p>Twój miesięczny rachunek:</p>
+                    <div class="calc-value">350 zł</div>
+                </div>
+                <div class="calc-arrow">➔</div>
+                <div class="calc-box">
+                    <p>Szacowany roczny zysk:</p>
+                    <div class="calc-value highlight">3570 zł</div>
                 </div>
             </div>
-            <div class="calc-arrow">→</div>
-            <div class="calc-group">
-                <label>Szacowany roczny zysk:</label>
-                <div class="result-box" id="wynik">3570 zł</div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="feature">
+            <div class="image-placeholder">Ilustracja Autokonsumpcji</div>
+            <h3>Silna Autokonsumpcja</h3>
+            <p>Optymalne wykorzystanie energii z paneli bezpośrednio w Twoim domu dzięki nowoczesnym systemom EMS.</p>
+        </div>
+        <div class="feature">
+            <div class="image-placeholder">Ilustracja Serwis/Pomiary</div>
+            <h3>Serwis i Pomiary</h3>
+            <p>Profesjonalne pomiary termowizyjne oraz przeglądy instalacji dla maksymalnego bezpieczeństwa.</p>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-number">90% <span class="arrow">↑</span></div>
+                <div class="stat-label">AUTOKONSUMPCJI</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number text-orange">100%</div>
+                <div class="stat-label">BEZPIECZEŃSTWA</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number text-orange">24/7</div>
+                <div class="stat-label">MONITORING</div>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="features">
-    <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/4064/4064313.png" alt="Inwerter" class="tech-img">
-        <h2>Silna Autokonsumpcja</h2>
-        <p>Systemy projektowane pod maksymalne wykorzystanie energii na miejscu.</p>
-    </div>
-    <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3565/3565345.png" alt="Pomiary" class="tech-img">
-        <h2>Serwis i Pomiary</h2>
-        <p>Profesjonalna diagnostyka i pomiary instalacji miernikami Sonel.</p>
-    </div>
-</section>
-
-<section class="stats-footer">
-    <div class="stat"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
-    <div class="stat"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
-    <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
-</section>
-
-<section class="final-contact">
-    <div class="contact-form">
-        <input type="text" placeholder="Imię i Nazwisko">
-        <input type="email" placeholder="E-mail">
-        <input type="tel" placeholder="Telefon">
-        <button class="btn-fill">ZAMÓW KONTAKT</button>
-    </div>
-</section>
-
-<script>
-    document.getElementById('rachunek').addEventListener('input', function(e) {
-        let v = e.target.value;
-        document.getElementById('wynik').innerText = Math.round(v * 12 * 0.85) + " zł";
-    });
-</script>
+        <div class="contact-row">
+            <div class="contact-icons">
+                <span>📱</span>
+                <span>✉️</span>
+            </div>
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <input type="text" placeholder="Imię i nazwisko">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Hasło">
+                    <button type="submit" class="btn btn-primary btn-block">ZADZWOŃ</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Sun Energy - Inżynieria Optymalizacji Energii.
+        </div>
+    </footer>
 
 </body>
 </html>
