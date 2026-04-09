@@ -3,78 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Inżynieria Niezależności</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Sun Energy | Ekspercka Fotowoltaika</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
-    <div class="grid-overlay"></div>
+<div class="bg-grid"></div>
 
-    <header class="hero">
-        <div class="hero-box">
-            <div class="tech-label">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
-            <h1>FOTOWOLTAIKA<br><span class="glow">BEZ DOTACJI MA SENS</span></h1>
-            <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS). Projektujemy systemy, które realnie zarabiają.</p>
-            <div class="hero-btns">
-                <a href="#kontakt" class="btn btn-primary">DARMOWY AUDYT TECHNICZNY</a>
-                <a href="tel:691875997" class="btn btn-outline">ZADZWOŃ: 691 875 997</a>
+<header class="hero">
+    <div class="hero-content">
+        <div class="top-tag">PROTOKÓŁ NIEZALEŻNOŚCI 2026</div>
+        <h1>FOTOWOLTAIKA <br><span class="orange-glow">BEZ DOTACJI MA SENS</span></h1>
+        <p>Inżynieria autokonsumpcji. EMS. Magazynowanie energii. Serwis Sonel.</p>
+        <div class="hero-btns">
+            <a href="tel:691875997" class="btn-main">ZADZWOŃ: 691 875 997</a>
+        </div>
+    </div>
+</header>
+
+<section class="container">
+    <div class="calc-panel">
+        <div class="calc-head">KALKULATOR OPTYMALIZACJI</div>
+        <div class="calc-grid">
+            <div class="c-input">
+                <label>RACHUNEK MIESIĘCZNY (ZŁ)</label>
+                <input type="number" id="rachunek" placeholder="350">
+            </div>
+            <div class="c-arrow">>>></div>
+            <div class="c-result">
+                <label>ZYSK ROCZNY</label>
+                <div id="wynik" class="res-tag">3570 ZŁ</div>
             </div>
         </div>
-    </header>
+        <button class="btn-action" onclick="oblicz()">URUCHOM SYMULACJĘ</button>
+    </div>
+</section>
 
-    <section class="container">
-        <div class="calculator-card">
-            <h3>Kalkulator Oszczędności</h3>
-            <div class="calc-row">
-                <div class="input-group">
-                    <label>Twój miesięczny rachunek:</label>
-                    <div class="input-field">
-                        <input type="number" id="rachunek" placeholder="350">
-                        <span>zł</span>
-                    </div>
-                </div>
-                <div class="arrow">→</div>
-                <div class="result-group">
-                    <label>Szacowany roczny zysk:</label>
-                    <div id="wynik-box" class="result-tag">3570 zł</div>
-                </div>
-            </div>
-            <button class="btn-calc" onclick="oblicz()">PRZELICZ SYSTEM</button>
-        </div>
-    </section>
+<section class="container info-grid">
+    <div class="info-card">
+        <h3>01. AUTOKONSUMPCJA</h3>
+        <p>Projektujemy systemy tak, aby 90% energii zostawało w Twoim domu. Wykorzystujemy inteligentne sterowniki i bufory ciepła.</p>
+    </div>
+    <div class="info-card">
+        <h3>02. SERWIS I POMIARY</h3>
+        <p>Pełna diagnostyka instalacji. Pomiary rezystancji, termowizja, naprawy falowników. Pracujemy na sprzęcie marki Sonel.</p>
+    </div>
+</section>
 
-    <section class="container tech-grid">
-        <div class="tech-card">
-            <div class="icon-svg">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h2>Silna Autokonsumpcja</h2>
-            <p>Schematy przepływu energii zorientowane na domowe magazyny LiFePO4 i systemy grzewcze.</p>
-        </div>
-        <div class="tech-card">
-            <div class="icon-svg">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h2>Serwis i Pomiary</h2>
-            <p>Diagnostyka techniczna, audyty termowizyjne oraz pełne pomiary instalacji miernikami Sonel.</p>
-        </div>
-    </section>
+<div class="footer-stats">
+    <div class="s-item"><strong>90%</strong><span>EFFICIENCY</span></div>
+    <div class="s-item"><strong>24/7</strong><span>MONITORING</span></div>
+    <div class="s-item"><strong>SONEL</strong><span>TESTED</span></div>
+</div>
 
-    <section class="stats-footer">
-        <div class="stat-box"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
-        <div class="stat-box"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
-        <div class="stat-box"><strong>24/7</strong><span>MONITORING</span></div>
-    </section>
-
-    <script>
-        function oblicz() {
-            let kwota = document.getElementById('rachunek').value;
-            if(kwota > 0) {
-                let rocznie = kwota * 12 * 0.85; 
-                document.getElementById('wynik-box').innerText = rocznie.toFixed(0) + " zł";
-            }
+<script>
+    function oblicz() {
+        let r = document.getElementById('rachunek').value;
+        if(r > 0) {
+            document.getElementById('wynik').innerText = Math.round(r * 12 * 0.85) + " ZŁ";
         }
-    </script>
+    }
+</script>
 </body>
 </html>
