@@ -3,87 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Fotowoltaika i Serwis</title>
+    <title>Sun Energy | Eksperci od Autokonsumpcji</title>
     
-    <!-- CZCIONKA GOOGLE -->
+    <!-- CZCIONKA PREMIUM -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <!-- POPRAWIONA NAZWA PLIKU (jedno 's' na końcu) -->
+    <!-- POŁĄCZENIE ZE STYLAMI -->
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
     <header class="hero">
         <div class="hero-box">
+            <span class="badge">Niezależność Energetyczna 2026</span>
             <h1>Fotowoltaika bez dotacji ma sens</h1>
-            <p>Maksymalna autokonsumpcja i inteligentne zarządzanie energią (EMS).</p>
-            <div style="margin-top: 25px;">
-                <a href="#kontakt" class="btn">Darmowa Analiza</a>
-                <p style="margin-top: 15px; font-weight: 900; font-size: 1.4rem;">TEL: 691 875 997</p>
+            <p>Projektujemy systemy oparte na maksymalnej autokonsumpcji i inteligentnym zarządzaniu energią (EMS). Budujemy instalacje, które zarabiają na siebie od pierwszego dnia.</p>
+            <div class="hero-btns">
+                <a href="#kontakt" class="btn">Darmowy Audyt i Wykonanie</a>
+                <a href="tel:691875997" class="btn btn-outline">Zadzwoń: 691 875 997</a>
             </div>
         </div>
     </header>
 
     <section class="container">
-        <div class="calculator-box">
-            <h2>Kalkulator Oszczędności Sun Energy</h2>
-            <p>Wpisz swój miesięczny rachunek (zł):</p>
-            <div style="margin: 20px 0;">
-                <input type="number" id="rachunek" placeholder="Kwota rachunku">
-                <button class="btn" onclick="oblicz()">Oblicz zysk</button>
+        <div class="calculator-card">
+            <div class="calc-header">
+                <h2>Kalkulator Zysku Sun Energy</h2>
+                <p>Sprawdź, ile realnie zaoszczędzisz na optymalizacji</p>
             </div>
-            <h3 id="wynik" style="color: #f39c12; min-height: 1.5em; font-weight: 700;"></h3>
+            <div class="calc-body">
+                <div class="input-group">
+                    <label>Twój miesięczny rachunek za prąd:</label>
+                    <input type="number" id="rachunek" placeholder="Wpisz kwotę w zł">
+                </div>
+                <button class="btn btn-full" onclick="oblicz()">Oblicz roczną oszczędność</button>
+                <div id="wynik-box" class="wynik-box">
+                    <span id="wynik-label">Szacowany zysk roczny:</span>
+                    <h3 id="wynik-kwota">0 zł</h3>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="container">
         <div class="grid">
             <div class="text-box">
+                <span class="section-tag">Technologia</span>
                 <h2>Silna Autokonsumpcja</h2>
-                <p>Projektujemy systemy tak, abyś zużywał prąd u siebie. Magazyny energii dobieramy pod realne zużycie, a nie pod wielkość dachu.</p>
+                <p>Nie skupiamy się na wielkości instalacji, ale na jej efektywności. Dobieramy magazyny energii i systemy grzewcze tak, abyś zużywał 80-90% własnej produkcji zamiast oddawać ją za bezcen do sieci.</p>
+                <ul class="features">
+                    <li>✓ Inteligentne magazynowanie energii</li>
+                    <li>✓ Zarządzanie odbiornikami w szczycie produkcji</li>
+                    <li>✓ Zero strat na przesyle do sieci</li>
+                </ul>
             </div>
             <div class="image-box img-autokonsumpcja"></div>
         </div>
     </section>
 
-    <section class="container" style="background-color: #fff; max-width: 100%;">
+    <section class="container" style="background: #fff; max-width: 100%;">
         <div class="container">
-            <div class="grid">
+            <div class="grid reverse">
                 <div class="image-box img-serwis"></div>
                 <div class="text-box">
-                    <h2>Serwis i Naprawy</h2>
-                    <p>Naprawiamy instalacje po innych firmach. Wykonujemy pomiary termowizyjne, audyty i rozbudowy o systemy EMS.</p>
+                    <span class="section-tag">Bezpieczeństwo</span>
+                    <h2>Serwis, Pomiary, Naprawy</h2>
+                    <p>Twoja instalacja przestała działać, a firma montażowa nie odbiera? My nie uciekamy od trudnych zadań. Diagnozujemy usterki, wykonujemy pomiary i przywracamy system do pełnej sprawności.</p>
+                    <ul class="features">
+                        <li>✓ Diagnostyka falowników i optymalizatorów</li>
+                        <li>✓ Pomiary profesjonalną kamerą termowizyjną</li>
+                        <li>✓ Rozbudowa o systemy EMS i Backup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Bezpieczeństwa</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Monitoring systemu</p>
+                </div>
+                <div class="stat-item">
+                    <h3>85%</h3>
+                    <p>Średniej autokonsumpcji</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="kontakt" class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2>Zadzwoń do nas</h2>
-            <p><strong>691 875 997</strong> | <strong>Sun.energy.as@gmail.com</strong></p>
-        </div>
-        
-        <div class="contact-form">
-            <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
-                <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
-                <input type="text" name="tel" placeholder="Twój Telefon" required>
-                <textarea name="wiadomosc" placeholder="Opisz krótko sprawę..." rows="4"></textarea>
-                <button type="submit" class="btn" style="width: 100%;">Wyślij zapytanie</button>
-            </form>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Gotowy na zmiany?</h2>
+                <p>Porozmawiajmy o Twojej niezależności energetycznej.</p>
+                <div class="contact-details">
+                    <p><strong>Telefon:</strong> 691 875 997</p>
+                    <p><strong>Email:</strong> Sun.energy.as@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-form-box">
+                <form action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Twoje Imię" required>
+                    <input type="tel" name="phone" placeholder="Numer telefonu" required>
+                    <textarea name="msg" placeholder="W czym możemy pomóc?" rows="4"></textarea>
+                    <button type="submit" class="btn btn-full">Wyślij zapytanie</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sun Energy | 691 875 997</p>
+        <p>&copy; 2026 Sun Energy - Optymalizacja Energii. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
     <script>
         function oblicz() {
             let kwota = document.getElementById('rachunek').value;
+            let box = document.getElementById('wynik-box');
             if(kwota > 0) {
                 let rocznie = kwota * 12 * 0.85; 
-                document.getElementById('wynik').innerText = "Oszczędzisz ok. " + rocznie.toFixed(0) + " zł rocznie!";
+                document.getElementById('wynik-kwota').innerText = rocznie.toFixed(0) + " zł";
+                box.classList.add('active');
             }
         }
     </script>
