@@ -1,89 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Inżynieria Niezależności</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Optymalizacja Energii - fotowoltaika bez dotacji ma sens</title>
+  <meta name="description" content="Fotowoltaika, magazyny energii, EMS, audyty i naprawy instalacji PV." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Styles.css" />
 </head>
 <body>
+  <div class="grid-overlay" aria-hidden="true"></div>
 
-<div class="grid-overlay"></div>
-
-<header class="hero">
-    <div class="hero-content">
-        <div class="badge">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
-        <h1>FOTOWOLTAIKA <br><span class="glow">BEZ DOTACJI MA SENS</span></h1>
-        <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS).</p>
-        <div class="hero-btns">
-            <a href="#kontakt" class="btn-main">DARMOWY AUDYT TECHNICZNY</a>
-            <a href="tel:691875997" class="btn-sub">ZADZWOŃ: 691 875 997</a>
-        </div>
+  <header class="hero">
+    <div>
+      <span class="badge">OPTYMALIZACJA ENERGII</span>
+      <h1>Fotowoltaika bez dotacji <span class="glow">ma sens</span></h1>
+      <p>Przy dotacji 2026 na magazyny energii efekt jest jeszcze mocniejszy. Projektujemy instalacje, które realnie obniżają rachunki.</p>
+      <div class="hero-btns">
+        <a class="btn-main" href="#kalkulator">Policz oszczędności</a>
+        <a class="btn-sub" href="#kontakt">Bezpłatna wycena</a>
+      </div>
     </div>
-</header>
+  </header>
 
-<section class="calc-area">
-    <div class="white-card">
-        <h3>Kalkulator Oszczędności</h3>
+  <main>
+    <section id="kalkulator" class="calc-area">
+      <div class="white-card">
+        <h3>KALKULATOR OSZCZĘDNOŚCI</h3>
         <div class="calc-grid">
-            <div class="c-box">
-                <label>Twój miesięczny rachunek:</label>
-                <div class="input-row">
-                    <input type="number" id="rachunek" value="350"> <span>zł</span>
-                </div>
+          <div>
+            <div class="label">Rachunek miesięczny (zł)</div>
+            <div class="input-row">
+              <input id="bill" type="number" value="350" min="0" step="10">
             </div>
-            <div class="c-arrow">→</div>
-            <div class="c-box">
-                <label>Szacowany roczny zysk:</label>
-                <div class="result-pill" id="wynik">3570 zł</div>
+          </div>
+          <div>
+            <div class="label">Autokonsumpcja (%)</div>
+            <div class="input-row">
+              <input id="auto" type="number" value="60" min="0" max="100" step="5">
             </div>
+          </div>
+          <div class="result-pill">
+            <span id="result">2 520</span> zł/rok
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="tech-cards">
-    <div class="t-card">
+    <section class="tech-cards">
+      <article class="t-card">
         <div class="icon-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/3104/3104617.png" alt="Inwerter">
+          <svg viewBox="0 0 120 120" width="100" height="100" fill="none" stroke="currentColor" stroke-width="3">
+            <rect x="15" y="20" width="90" height="70" rx="6"></rect>
+            <path d="M25 35h70M25 50h70M25 65h70M35 25v60M50 25v60M65 25v60M80 25v60"></path>
+          </svg>
         </div>
-        <h2>Silna Autokonsumpcja</h2>
-        <p>Systemy zorientowane na domowe magazyny energii i bufory ciepła dla maksymalnej niezależności.</p>
-    </div>
-    <div class="t-card">
+        <h2>Fotowoltaika dla domu i firmy</h2>
+        <p>Dobieramy moc pod realne zużycie, a nie pod szablon. Cel: większa autokonsumpcja i niższe rachunki.</p>
+      </article>
+
+      <article class="t-card">
         <div class="icon-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/2995/2995467.png" alt="Pomiary">
+          <svg viewBox="0 0 120 120" width="100" height="100" fill="none" stroke="currentColor" stroke-width="3">
+            <rect x="30" y="12" width="60" height="96" rx="10"></rect>
+            <path d="M45 32h30M45 50h30M45 68h30"></path>
+            <rect x="48" y="84" width="24" height="10" rx="4" fill="currentColor" stroke="none"></rect>
+          </svg>
         </div>
-        <h2>Serwis i Pomiary</h2>
-        <p>Diagnostyka techniczna, termowizja i pełne pomiary profesjonalnymi miernikami Sonel.</p>
-    </div>
-</section>
+        <h2>Magazyn energii + EMS</h2>
+        <p>Sterowanie energią i magazyn zwiększają wykorzystanie własnego prądu i poprawiają opłacalność inwestycji.</p>
+      </article>
+    </section>
 
-<section class="stats">
-    <div class="s-item"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
-    <div class="s-item"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
-    <div class="s-item"><strong>24/7</strong><span>MONITORING</span></div>
-</section>
+    <section class="stats">
+      <div class="s-item"><strong>8+ LAT</strong><span>DOŚWIADCZENIA</span></div>
+      <div class="s-item"><strong>24-48H</strong><span>ANALIZA RACHUNKÓW</span></div>
+      <div class="s-item"><strong>CAŁA POLSKA</strong><span>MONTAŻ I AUDYTY</span></div>
+    </section>
 
-<section id="kontakt" class="form-section">
-    <div class="dark-form-card">
-        <h3>ZAMÓW KONTAKT</h3>
-        <form action="https://formsubmit.co/Sun.energy.as@gmail.com" method="POST" class="main-form">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Imię i Nazwisko" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="tel" name="phone" placeholder="Telefon" required>
-            <textarea name="message" placeholder="W czym możemy pomóc?"></textarea>
-            <button type="submit" class="btn-main">ZADZWOŃ DO MNIE</button>
+    <section id="kontakt" class="form-section">
+      <div class="dark-form-card">
+        <h3>BEZPŁATNA WYCENA</h3>
+        <form class="main-form" action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="Imię i nazwisko" placeholder="Imię i nazwisko" required>
+          <input type="tel" name="Telefon" placeholder="Telefon" required>
+          <input type="email" name="Email" placeholder="E-mail" required>
+          <textarea name="Wiadomość" placeholder="Krótki opis: dom/firma, rachunek, lokalizacja"></textarea>
+          <button class="btn-main" type="submit">Wyślij zapytanie</button>
         </form>
-    </div>
-</section>
+        <p class="contact-links">
+          <a href="tel:+48691875997">+48 691 875 997</a> |
+          <a href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a> |
+          <a href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-<script>
-    document.getElementById('rachunek').addEventListener('input', function(e){
-        document.getElementById('wynik').innerText = Math.round(e.target.value * 12 * 0.85) + " zł";
-    });
-</script>
+  <script>
+    const bill = document.getElementById("bill");
+    const auto = document.getElementById("auto");
+    const result = document.getElementById("result");
 
+    function recalc() {
+      const b = Math.max(0, Number(bill.value) || 0);
+      const a = Math.min(100, Math.max(0, Number(auto.value) || 0)) / 100;
+      const yearly = b * 12 * a;
+      result.textContent = yearly.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
+    }
+
+    bill.addEventListener("input", recalc);
+    auto.addEventListener("input", recalc);
+    recalc();
+  </script>
 </body>
 </html>
+```
+
+W następnej wiadomości dam Ci samo `Styles.css`.
