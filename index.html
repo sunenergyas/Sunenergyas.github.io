@@ -3,107 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sun Energy | Professional PV Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Sun Energy | Inżynieria Niezależności</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
-    <header class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <span class="tag">TECHNOLOGIA PRZYSZŁOŚCI 2026</span>
-            <h1>FOTOWOLTAIKA <br><span class="highlight">BEZ DOTACJI MA SENS</span></h1>
-            <p>Maksymalna autokonsumpcja. Inteligentne magazynowanie. Serwis inżynieryjny.</p>
-            <a href="#kontakt" class="cta-btn">ZAMÓW DARMOWY AUDYT</a>
-        </div>
-    </header>
+<div class="grid-overlay"></div>
 
-    <section class="calculator-section">
-        <div class="calc-box">
-            <h2>KALKULATOR OPTYMALIZACJI</h2>
-            <div class="calc-flex">
-                <div class="c-field">
-                    <label>TWÓJ RACHUNEK (ZŁ)</label>
-                    <input type="number" id="rachunek" value="350">
-                </div>
-                <div class="c-divider">>>></div>
-                <div class="c-field">
-                    <label>ZYSK ROCZNY (ZŁ)</label>
-                    <div id="wynik" class="result-badge">3570 ZŁ</div>
-                </div>
-            </div>
+<header class="hero">
+    <div class="hero-content">
+        <div class="badge">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
+        <h1>FOTOWOLTAIKA <br><span class="glow">BEZ DOTACJI MA SENS</span></h1>
+        <p>Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS).</p>
+        <div class="hero-btns">
+            <a href="#kontakt" class="btn-main">DARMOWY AUDYT TECHNICZNY</a>
+            <a href="tel:691875997" class="btn-sub">ZADZWOŃ: 691 875 997</a>
         </div>
-    </section>
-
-    <section class="features">
-        <div class="feature-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1558444479-c849519d7360?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="card-text">
-                <h3>01. AUTOKONSUMPCJA</h3>
-                <p>Projektujemy systemy zorientowane na zatrzymanie energii wewnątrz budynku. Wykorzystujemy 90% produkcji własnej za pomocą magazynów i EMS.</p>
-            </div>
-        </div>
-        <div class="feature-card">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&w=600&q=80')"></div>
-            <div class="card-text">
-                <h3>02. SERWIS I POMIARY</h3>
-                <p>Wykonujemy profesjonalne pomiary instalacji miernikami Sonel. Diagnozujemy usterki, badamy izolację i wykonujemy audyty termowizyjne.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="kontakt" class="contact-area">
-        <div class="contact-card">
-            <h2 class="orbitron">DANE KONTAKTOWE</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info-box">
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <h3>TELEFON SERWIS / WYCENY</h3>
-                        <a href="tel:691875997" class="contact-link">691 875 997</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <h3>E-MAIL</h3>
-                        <a href="mailto:Sun.energy.as@gmail.com" class="contact-link">Sun.energy.as@gmail.com</a>
-                    </div>
-                </div>
-
-                <div class="contact-form-box">
-                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Orbitron';">Napisz do nas</h3>
-                    <form action="https://formsubmit.co/Sun.energy.as@gmail.com" method="POST" class="contact-form">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="Zgłoszenie ze strony Sun Energy!">
-                        
-                        <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
-                        <input type="email" name="email" placeholder="Twój E-mail" required>
-                        <input type="tel" name="telefon" placeholder="Numer telefonu" required>
-                        <textarea name="wiadomosc" placeholder="W czym możemy pomóc? (Awaria, audyt, wycena...)" required></textarea>
-                        
-                        <button type="submit" class="run-btn" style="margin-top: 10px;">WYŚLIJ ZGŁOSZENIE</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="tech-footer">
-        <div class="stat"><strong>90%</strong><span>PRODUKCJI U CIEBIE</span></div>
-        <div class="stat"><strong>SONEL</strong><span>POMIARY</span></div>
-        <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
     </div>
+</header>
 
-    <script>
-        document.getElementById('rachunek').addEventListener('input', function(e) {
-            let r = e.target.value;
-            if(r > 0) {
-                document.getElementById('wynik').innerText = Math.round(r * 12 * 0.85) + " ZŁ";
-            } else {
-                document.getElementById('wynik').innerText = "0 ZŁ";
-            }
-        });
-    </script>
+<section class="calc-area">
+    <div class="white-card">
+        <h3>Kalkulator Oszczędności</h3>
+        <div class="calc-grid">
+            <div class="c-box">
+                <label>Twój miesięczny rachunek:</label>
+                <div class="input-row">
+                    <input type="number" id="rachunek" value="350"> <span>zł</span>
+                </div>
+            </div>
+            <div class="c-arrow">→</div>
+            <div class="c-box">
+                <label>Szacowany roczny zysk:</label>
+                <div class="result-pill" id="wynik">3570 zł</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tech-cards">
+    <div class="t-card">
+        <div class="icon-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3104/3104617.png" alt="Inwerter">
+        </div>
+        <h2>Silna Autokonsumpcja</h2>
+        <p>Systemy zorientowane na domowe magazyny energii i bufory ciepła dla maksymalnej niezależności.</p>
+    </div>
+    <div class="t-card">
+        <div class="icon-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2995/2995467.png" alt="Pomiary">
+        </div>
+        <h2>Serwis i Pomiary</h2>
+        <p>Diagnostyka techniczna, termowizja i pełne pomiary profesjonalnymi miernikami Sonel.</p>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="s-item"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
+    <div class="s-item"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
+    <div class="s-item"><strong>24/7</strong><span>MONITORING</span></div>
+</section>
+
+<section id="kontakt" class="form-section">
+    <div class="dark-form-card">
+        <h3>ZAMÓW KONTAKT</h3>
+        <form action="https://formsubmit.co/Sun.energy.as@gmail.com" method="POST" class="main-form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Imię i Nazwisko" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" name="phone" placeholder="Telefon" required>
+            <textarea name="message" placeholder="W czym możemy pomóc?"></textarea>
+            <button type="submit" class="btn-main">ZADZWOŃ DO MNIE</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById('rachunek').addEventListener('input', function(e){
+        document.getElementById('wynik').innerText = Math.round(e.target.value * 12 * 0.85) + " zł";
+    });
+</script>
+
 </body>
 </html>
