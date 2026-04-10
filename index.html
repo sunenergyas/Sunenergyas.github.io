@@ -3,101 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inżynieria Optymalizacji Energii | Sun Energy</title>
-    <link rel="stylesheet" href="Styles.css?v=expert_v3">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <title>Sun Energy | Inżynieria Niezależności</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
 
-    <!-- Nawigacja / Header -->
-    <header class="hero">
-        <div class="hero-inner">
-            <div class="top-meta">
-                <span class="line"></span> 
-                <span class="meta-text">SYSTEMY KLASY ENTERPRISE</span>
+<div class="grid-bg"></div>
+
+<header class="hero">
+    <div class="hero-inner">
+        <div class="top-badge">INŻYNIERIA NIEZALEŻNOŚCI 2026</div>
+        <h1>FOTOWOLTAIKA <br><span class="orange-text">BEZ DOTACJI MA SENS</span></h1>
+        <p class="hero-sub">Optymalizacja autokonsumpcji i inteligentne zarządzanie energią (EMS)</p>
+        <div class="hero-actions">
+            <a href="#kontakt" class="btn-fill">DARMOWY AUDYT TECHNICZNY</a>
+            <a href="tel:691875997" class="btn-outline">ZADZWOŃ: 691 875 997</a>
+        </div>
+    </div>
+</header>
+
+<section class="calc-section">
+    <div class="calc-card">
+        <h3>Kalkulator Oszczędności</h3>
+        <div class="calc-row">
+            <div class="calc-group">
+                <label>Twój miesięczny rachunek:</label>
+                <div class="input-wrap">
+                    <input type="number" id="rachunek" value="350"> <span>zł</span>
+                </div>
             </div>
-            <h1>INTELIGENTNA <br><span class="gradient-text">AUTOKONSUMPCJA</span></h1>
-            <p class="hero-sub">Projektujemy układy energetyczne, które zarabiają na taryfach dynamicznych. Wykorzystujemy algorytmy predykcyjne do zarządzania magazynami energii i pompami ciepła.</p>
+            <div class="calc-arrow">→</div>
+            <div class="calc-group">
+                <label>Szacowany roczny zysk:</label>
+                <div class="result-box" id="wynik">3570 zł</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4064/4064313.png" alt="Inwerter" class="tech-img">
+        <h2>Silna Autokonsumpcja</h2>
+        <p>Systemy projektowane pod maksymalne wykorzystanie energii na miejscu.</p>
+    </div>
+    <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3565/3565345.png" alt="Pomiary" class="tech-img">
+        <h2>Serwis i Pomiary</h2>
+        <p>Profesjonalna diagnostyka i pomiary instalacji miernikami Sonel.</p>
+    </div>
+</section>
+
+<section class="stats-footer">
+    <div class="stat"><strong>90% ↑</strong><span>AUTOKONSUMPCJI</span></div>
+    <div class="stat"><strong>100%</strong><span>BEZPIECZEŃSTWA</span></div>
+    <div class="stat"><strong>24/7</strong><span>MONITORING</span></div>
+</section>
+
+<!-- DZIAŁAJĄCY FORMULARZ KONTAKTOWY -->
+<section id="kontakt" class="final-contact">
+    <div class="contact-form-container">
+        <h3>ZAMÓW KONTAKT LUB AUDYT</h3>
+        <!-- W action jest podany system Formsubmit i Twój e-mail -->
+        <form action="https://formsubmit.co/Sun.energy.as@gmail.com" method="POST" class="contact-form">
+            <!-- Ukryte pole wyłączające weryfikację obrazkową dla klientów (opcjonalne) -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Tytuł maila, jakiego dostaniesz -->
+            <input type="hidden" name="_subject" value="Nowe zapytanie ze strony Sun Energy!">
             
-            <div class="hero-cta">
-                <a href="tel:691875997" class="btn-primary">KONSULTACJA TECHNICZNA</a>
-                <div class="phone-box">
-                    <small>Inżynier dyżurny:</small>
-                    <a href="tel:691875997">691 875 997</a>
-                </div>
-            </div>
-        </div>
-    </header>
+            <input type="text" name="imie" placeholder="Imię i Nazwisko" required>
+            <input type="email" name="email" placeholder="Twój E-mail" required>
+            <input type="tel" name="telefon" placeholder="Numer telefonu" required>
+            <textarea name="wiadomosc" placeholder="W czym możemy pomóc? (Awaria, audyt, wycena...)" required></textarea>
+            
+            <button type="submit" class="btn-fill submit-btn">WYŚLIJ ZGŁOSZENIE</button>
+        </form>
+    </div>
+</section>
 
-    <main class="container">
-        <!-- Sekcja ROI -->
-        <section class="roi-section">
-            <div class="roi-card">
-                <div class="roi-header">
-                    <h2>Analiza Rentowności Instalacji</h2>
-                    <p>Współczynnik zwrotu z inwestycji (ROI) obliczany na podstawie realnych profilów zużycia.</p>
-                </div>
-                <div class="roi-stats">
-                    <div class="stat">
-                        <span class="label">Efektywność EMS</span>
-                        <span class="value">+45%</span>
-                    </div>
-                    <div class="stat">
-                        <span class="label">Prognozowany LCOE</span>
-                        <span class="value">0,12 PLN/kWh</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trzy Filary Inżynierii -->
-        <section class="expert-grid">
-            <div class="expert-card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558442086-8418106d4a6a?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-content">
-                    <div class="tag">TOPOLOGIA HYBRYDOWA</div>
-                    <h3>Peak Shaving & Load Shifting</h3>
-                    <p>Zaawansowane techniki redukcji szczytowego zapotrzebowania, obniżające koszty dystrybucyjne i zwiększające żywotność magazynów energii.</p>
-                </div>
-            </div>
-
-            <div class="expert-card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-content">
-                    <div class="tag">INTELIGENTNE ZARZĄDZANIE</div>
-                    <h3>Integracja EMS/BMS</h3>
-                    <p>Centralny system sterowania integrujący fotowoltaikę, pompy ciepła i stacje ładowania EV w jeden, spójny organizm energetyczny.</p>
-                </div>
-            </div>
-
-            <div class="expert-card">
-                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="card-content">
-                    <div class="tag">DIAGNOSTYKA</div>
-                    <h3>Audyt Termowizyjny</h3>
-                    <p>Precyzyjna weryfikacja strat energii oraz stanu technicznego modułów przy użyciu certyfikowanej aparatury pomiarowej.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Expert -->
-    <footer class="expert-footer">
-        <div class="footer-content">
-            <div class="contact-info">
-                <h2>Gotowy na niezależność?</h2>
-                <p>Zoptymalizuj swoje koszty stałe już dziś.</p>
-                <form class="expert-form">
-                    <input type="text" placeholder="Imię i nazwisko">
-                    <input type="tel" placeholder="Numer telefonu">
-                    <button type="submit">ZAMÓW AUDYT TECHNICZNY</button>
-                </form>
-            </div>
-        </div>
-        <div class="bottom-bar">
-            <span>© 2026 optymalizacjaenergii.org | Inżynieria OZE</span>
-        </div>
-    </footer>
+<script>
+    // Skrypt kalkulatora
+    document.getElementById('rachunek').addEventListener('input', function(e) {
+        let v = e.target.value;
+        if(v > 0) {
+            document.getElementById('wynik').innerText = Math.round(v * 12 * 0.85) + " zł";
+        } else {
+            document.getElementById('wynik').innerText = "0 zł";
+        }
+    });
+</script>
 
 </body>
 </html>
