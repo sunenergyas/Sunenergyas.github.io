@@ -1,120 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Optymalizacja Energii - fotowoltaika bez dotacji ma sens</title>
-  <meta name="description" content="Fotowoltaika, magazyny energii, EMS, audyty i naprawy instalacji PV." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Energy AS - Fotowoltaika bez dotacji ma sens</title>
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-  <div class="grid-overlay" aria-hidden="true"></div>
 
-  <header class="hero">
-    <div>
-      <span class="badge">OPTYMALIZACJA ENERGII</span>
-      <h1>Fotowoltaika bez dotacji <span class="glow">ma sens</span></h1>
-      <p>Przy dotacji 2026 na magazyny energii efekt jest jeszcze mocniejszy. Projektujemy instalacje, które realnie obniżają rachunki.</p>
-      <div class="hero-btns">
-        <a class="btn-main" href="#kalkulator">Policz oszczędności</a>
-        <a class="btn-sub" href="#kontakt">Bezpłatna wycena</a>
-      </div>
-    </div>
-  </header>
+    <header>
+        <a href="#" class="logo">Sun Energy AS</a>
+        <nav>
+            <a href="#dlaczego-warto">Dlaczego teraz</a>
+            <a href="#kalkulator">Kalkulator ROI</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="kalkulator" class="calc-area">
-      <div class="white-card">
-        <h3>KALKULATOR OSZCZĘDNOŚCI</h3>
-        <div class="calc-grid">
-          <div>
-            <div class="label">Rachunek miesięczny (zł)</div>
-            <div class="input-row">
-              <input id="bill" type="number" value="350" min="0" step="10">
+    <section class="hero">
+        <h1>Fotowoltaika bez dotacji ma sens</h1>
+        <p>Przy dotacji 2026 na magazyny energii wygląda to jeszcze lepiej. Tworzymy instalacje, które są efektowne wizualnie, ale przede wszystkim opłacalne dla Twojego biznesu i domu. Doradztwo, audyty, EMS, magazyny energii.</p>
+        <a href="#kalkulator" class="btn">Oblicz Rentowność (ROI)</a>
+    </section>
+
+    <section id="dlaczego-warto" class="section">
+        <h2>Dlaczego warto teraz?</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Dotacja 2026 na magazyny</h3>
+                <p>Magazyny energii dają jeszcze lepszy bilans inwestycji. Uwzględniamy nowe warunki rynku.</p>
             </div>
-          </div>
-          <div>
-            <div class="label">Autokonsumpcja (%)</div>
-            <div class="input-row">
-              <input id="auto" type="number" value="60" min="0" max="100" step="5">
+            <div class="card">
+                <h3>Silna autokonsumpcja</h3>
+                <p>Im więcej energii zużywasz u siebie, tym mniej oddajesz ją do sieci. EMS i magazyn mają największy sens.</p>
             </div>
-          </div>
-          <div class="result-pill">
-            <span id="result">2 520</span> zł/rok
-          </div>
+            <div class="card">
+                <h3>Audyt i Naprawy</h3>
+                <p>Zaczynamy od protokołu i pomiarów. Naprawiamy również błędne instalacje po innych wykonawcach.</p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section class="tech-cards">
-      <article class="t-card">
-        <div class="icon-box">
-          <svg viewBox="0 0 120 120" width="100" height="100" fill="none" stroke="currentColor" stroke-width="3">
-            <rect x="15" y="20" width="90" height="70" rx="6"></rect>
-            <path d="M25 35h70M25 50h70M25 65h70M35 25v60M50 25v60M65 25v60M80 25v60"></path>
-          </svg>
+    <section id="kalkulator" class="section" style="background-color: var(--light-bg); padding-bottom: 80px;">
+        <h2>Kalkulator ROI dla Firm i Domów</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">Nie budujemy oferty na modnych hasłach. Liczymy realny sens inwestycji. Wprowadź dane swojej firmy lub domu i sprawdź, jak szybko zwróci Ci się inwestycja w fotowoltaikę i magazyn energii.</p>
+        
+        <div id="oze-calculator-container">
+            <div class="input-group">
+                <label for="cost">Całkowity koszt instalacji netto (PLN)</label>
+                <input type="number" id="cost" placeholder="np. 100000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="savings">Szacowane roczne oszczędności netto (PLN)</label>
+                <input type="number" id="savings" placeholder="np. 20000" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="subsidies">Kwota dofinansowania np. z programu 2026 (PLN)</label>
+                <input type="number" id="subsidies" placeholder="np. 20000" value="0" min="0">
+            </div>
+
+            <button onclick="calculateROI()">OBLICZ RENTOWNOŚĆ I ZWROT</button>
+
+            <div id="results" class="results-box" style="display: none;">
+                <div class="result-item">
+                    <span class="label">Rzeczywisty koszt inwestycji:</span>
+                    <span id="realCost" class="value">0 PLN</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Czas zwrotu (Payback Period):</span>
+                    <span id="payback" class="value highlight">0 lat</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Roczna stopa zwrotu (ROI):</span>
+                    <span id="roi" class="value highlight">0 %</span>
+                </div>
+                <p class="disclaimer">* Obliczenia są szacunkowe. Dokładniejszy wynik liczymy po analizie Twoich rachunków.</p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="mailto:Sun.energy.as@gmail.com" class="btn" style="width: 100%; box-sizing: border-box;">ZAMÓW BEZPŁATNY AUDYT</a>
+                </div>
+            </div>
         </div>
-        <h2>Fotowoltaika dla domu i firmy</h2>
-        <p>Dobieramy moc pod realne zużycie, a nie pod szablon. Cel: większa autokonsumpcja i niższe rachunki.</p>
-      </article>
-
-      <article class="t-card">
-        <div class="icon-box">
-          <svg viewBox="0 0 120 120" width="100" height="100" fill="none" stroke="currentColor" stroke-width="3">
-            <rect x="30" y="12" width="60" height="96" rx="10"></rect>
-            <path d="M45 32h30M45 50h30M45 68h30"></path>
-            <rect x="48" y="84" width="24" height="10" rx="4" fill="currentColor" stroke="none"></rect>
-          </svg>
-        </div>
-        <h2>Magazyn energii + EMS</h2>
-        <p>Sterowanie energią i magazyn zwiększają wykorzystanie własnego prądu i poprawiają opłacalność inwestycji.</p>
-      </article>
     </section>
 
-    <section class="stats">
-      <div class="s-item"><strong>8+ LAT</strong><span>DOŚWIADCZENIA</span></div>
-      <div class="s-item"><strong>24-48H</strong><span>ANALIZA RACHUNKÓW</span></div>
-      <div class="s-item"><strong>CAŁA POLSKA</strong><span>MONTAŻ I AUDYTY</span></div>
-    </section>
+    <footer id="kontakt">
+        <h2>Skontaktuj się z nami</h2>
+        <p><strong>Sun Energy AS</strong> - Cały kraj, jedna odpowiedzialna ekipa.</p>
+        <p>Email: <a href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a></p>
+        <p>Telefon / WhatsApp: <strong>+48 691 875 997</strong></p>
+        <p style="margin-top: 30px; font-size: 12px; color: #777;">&copy; 2026 Sun Energy AS. Wszelkie prawa zastrzeżone.</p>
+    </footer>
 
-    <section id="kontakt" class="form-section">
-      <div class="dark-form-card">
-        <h3>BEZPŁATNA WYCENA</h3>
-        <form class="main-form" action="mailto:Sun.energy.as@gmail.com" method="post" enctype="text/plain">
-          <input type="text" name="Imię i nazwisko" placeholder="Imię i nazwisko" required>
-          <input type="tel" name="Telefon" placeholder="Telefon" required>
-          <input type="email" name="Email" placeholder="E-mail" required>
-          <textarea name="Wiadomość" placeholder="Krótki opis: dom/firma, rachunek, lokalizacja"></textarea>
-          <button class="btn-main" type="submit">Wyślij zapytanie</button>
-        </form>
-        <p class="contact-links">
-          <a href="tel:+48691875997">+48 691 875 997</a> |
-          <a href="https://wa.me/48691875997" target="_blank" rel="noreferrer">WhatsApp</a> |
-          <a href="mailto:Sun.energy.as@gmail.com">Sun.energy.as@gmail.com</a>
-        </p>
-      </div>
-    </section>
-  </main>
+    <script>
+    function calculateROI() {
+        const cost = parseFloat(document.getElementById('cost').value);
+        const savings = parseFloat(document.getElementById('savings').value);
+        const subsidies = parseFloat(document.getElementById('subsidies').value) || 0;
 
-  <script>
-    const bill = document.getElementById("bill");
-    const auto = document.getElementById("auto");
-    const result = document.getElementById("result");
+        if (cost > 0 && savings > 0) {
+            const realCost = cost - subsidies;
+            
+            if(realCost <= 0) {
+                alert("Kwota dofinansowania nie może być większa lub równa kosztom całkowitym.");
+                return;
+            }
 
-    function recalc() {
-      const b = Math.max(0, Number(bill.value) || 0);
-      const a = Math.min(100, Math.max(0, Number(auto.value) || 0)) / 100;
-      const yearly = b * 12 * a;
-      result.textContent = yearly.toLocaleString("pl-PL", { maximumFractionDigits: 0 });
+            const payback = realCost / savings;
+            const roi = (savings / realCost) * 100;
+
+            document.getElementById('realCost').innerText = realCost.toLocaleString('pl-PL') + " PLN";
+            document.getElementById('payback').innerText = payback.toFixed(1) + " lat";
+            document.getElementById('roi').innerText = roi.toFixed(2) + " %";
+            
+            document.getElementById('results').style.display = 'block';
+        } else {
+            alert("Proszę wpisać poprawne wartości kosztów instalacji i rocznych oszczędności.");
+        }
     }
+    </script>
 
-    bill.addEventListener("input", recalc);
-    auto.addEventListener("input", recalc);
-    recalc();
-  </script>
 </body>
 </html>
-
